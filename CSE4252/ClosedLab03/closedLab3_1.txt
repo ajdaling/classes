@@ -1,0 +1,9 @@
+Script started on Wed 15 Feb 2017 11:20:06 AM EST
+]0;aj@Ulivia: ~/OSU/CSE4252/ClosedLab03[01;32maj@Ulivia[00m:[01;34m~/OSU/CSE4252/ClosedLab03[00m$ g++ ClosedLab03_1.cpp -o CLose[K[K[K[KlosedLab03_1
+]0;aj@Ulivia: ~/OSU/CSE4252/ClosedLab03[01;32maj@Ulivia[00m:[01;34m~/OSU/CSE4252/ClosedLab03[00m$ ./ClosedLab03_1 
+0123456789
+13579
+]0;aj@Ulivia: ~/OSU/CSE4252/ClosedLab03[01;32maj@Ulivia[00m:[01;34m~/OSU/CSE4252/ClosedLab03[00m$ exit
+exit
+
+Script done on Wed 15 Feb 2017 11:20:26 AM EST

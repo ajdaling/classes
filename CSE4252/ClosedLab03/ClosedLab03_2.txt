@@ -1,0 +1,18 @@
+Script started on Wed 15 Feb 2017 12:20:49 PM EST
+]0;aj@Ulivia: ~/OSU/CSE4252/ClosedLab03[01;32maj@Ulivia[00m:[01;34m~/OSU/CSE4252/ClosedLab03[00m$ g++ ClosedLab03_2.cpp -o ClosedLab02[K3_2
+]0;aj@Ulivia: ~/OSU/CSE4252/ClosedLab03[01;32maj@Ulivia[00m:[01;34m~/OSU/CSE4252/ClosedLab03[00m$ Cl[K[K./ClosedLab03_2 
+Printing addresses and content of each array element 
+Position 0: Mon
+Position 1: Tue
+Position 2: Wed
+Position 3: Thu
+Position 4: Fri
+Position 5: Sat
+*p2 is: Mon, days[0] is: Mon, *days is: Mon
+pRef[0] is: Mon, &pRef is: 0x7ffee16b7f40
+*p before incrementing is: Wed
+*p after incrementing is: Thu
+]0;aj@Ulivia: ~/OSU/CSE4252/ClosedLab03[01;32maj@Ulivia[00m:[01;34m~/OSU/CSE4252/ClosedLab03[00m$ ei[Kxit
+exit
+
+Script done on Wed 15 Feb 2017 12:21:10 PM EST

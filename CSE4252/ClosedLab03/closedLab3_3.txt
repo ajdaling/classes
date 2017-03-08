@@ -1,0 +1,33 @@
+Script started on Wed 15 Feb 2017 03:39:57 PM EST
+]0;aj@Ulivia: ~/OSU/CSE4252/ClosedLab03[01;32maj@Ulivia[00m:[01;34m~/OSU/CSE4252/ClosedLab03[00m$ ssh richardhughes@superhindex.comHughes@superhindex.comls[Kexit[2Plsssh richardHughes@superhindex.comhughes@superhindex.com[Kg++ CLose[K[K[K[KlosedLab03_3.cpp -o ClosedLab03)_[K[K_3
+]0;aj@Ulivia: ~/OSU/CSE4252/ClosedLab03[01;32maj@Ulivia[00m:[01;34m~/OSU/CSE4252/ClosedLab03[00m$ ./CL[KlosedLab03_3 
+Initial variable values: 
+int v = 5 int x = 10
+
+The memory location of v before the call is: 0x7ffe23877280
+The memory location of x before the call is: 0x7ffe23877284
+These memory addresses are passed as parameters to p_swap().
+
+Inside p_swap, the memory addresses passed in as parameters are used to dereference v and x in order to perform the swap
+ Inside the function. value of *v: 5 value of *x:  10
+Values after swapping using p_swap(&v,&x): 
+value of v= 10 value of x= 5
+
+After the first swap, the memory location of v is: 0x7ffe23877280
+After the first swap, the memory location of x is: 0x7ffe23877284
+Initial variable values: 
+int v = 5 int x = 10
+These values are passed in as parameters to r_swap directly.
+
+Inside r_swap, references to v and x are obtained using the address_of operator (&)
+Inside the second function before the swap, the memory location of v is: 0x7ffe23877280
+Inside the second function before the swap, the memory location of x is: 0x7ffe23877284
+Inside second function. value of &v: 0x7ffe23877280 value of &x: 0x7ffe23877284
+Values after swapping using r_swap(v,x): 
+value of v= 10 value of x= 5
+After the second swap, the memory location of v is: 0x7ffe23877280
+After the second swap, the memory location of x is: 0x7ffe23877284
+]0;aj@Ulivia: ~/OSU/CSE4252/ClosedLab03[01;32maj@Ulivia[00m:[01;34m~/OSU/CSE4252/ClosedLab03[00m$ exit
+exit
+
+Script done on Wed 15 Feb 2017 03:40:29 PM EST
