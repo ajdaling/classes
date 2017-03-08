@@ -1,0 +1,12 @@
+
+# Calculation of quadratic equation roots in single precision
+
+#     1/c    |relative error 1|  |relative error 2|
+# 8.333333e-02  nan        nan
+# 8.333333e-01  nan        nan
+  8.333333e+00  6.926302e-08        0.000000e+00
+  8.333333e+01  1.025739e-06        9.966767e-07
+  8.333333e+02  6.086987e-06        6.104461e-06
+  8.333333e+03  3.815155e-06        3.819419e-06
+  8.333333e+04  8.485420e-04        8.492304e-04
+  8.333333e+05  6.634243e-03        6.590513e-03
