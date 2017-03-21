@@ -1,0 +1,150 @@
+Script started on Tue 21 Mar 2017 02:22:45 PM EDT
+]0;aj@Ulivia: ~/OSU/classes/CSE4252/ClosedLab05[01;32maj@Ulivia[00m:[01;34m~/OSU/classes/CSE4252/ClosedLab05[00m$ g++ 0o [K[K[K-o ClosedLab05_2 manage_fleet.cpp drone.cpp autonomous_drrone.cpp
+]0;aj@Ulivia: ~/OSU/classes/CSE4252/ClosedLab05[01;32maj@Ulivia[00m:[01;34m~/OSU/classes/CSE4252/ClosedLab05[00m$ ./ClosedLab05_2
+Enter Command: 
+		1: Show drones.
+		2: Report Missing Drone.
+		3: Send Autonomous Drone.
+		4: Exit.
+1
+Drone: dumb1  id: 1
+Drone: dumb2  id: 2
+Drone: dumb3  id: 3
+Drone: dumb4  id: 4
+Drone: dumb5  id: 5
+Drone: smart1  id: 6 Long: 0 Lat: 111
+Drone: smart2  id: 7 Long: 111 Lat: 222
+Drone: smart3  id: 8 Long: 222 Lat: 333
+Drone: smart4  id: 9 Long: 333 Lat: 444
+Drone: smart5  id: 10 Long: 444 Lat: 555
+Enter Command: 
+		1: Show drones.
+		2: Report Missing Drone.
+		3: Send Autonomous Drone.
+		4: Exit.
+2
+Enter ID of missing drone.
+2
+Enter last known coordinates.
+Enter Latitude: 
+344
+Enter Longitude: 
+455
+Drone Drone: dumb2  id: 2 IS MISSING. Last known coordinates are: 
+Latitud=344	Longitud=455
+Enter Command: 
+		1: Show drones.
+		2: Report Missing Drone.
+		3: Send Autonomous Drone.
+		4: Exit.
+1
+Drone: dumb1  id: 1
+Drone: dumb2  id: 2
+Drone: dumb3  id: 3
+Drone: dumb4  id: 4
+Drone: dumb5  id: 5
+Drone: smart1  id: 6 Long: 0 Lat: 111
+Drone: smart2  id: 7 Long: 111 Lat: 222
+Drone: smart3  id: 8 Long: 222 Lat: 333
+Drone: smart4  id: 9 Long: 333 Lat: 444
+Drone: smart5  id: 10 Long: 444 Lat: 555
+Enter Command: 
+		1: Show drones.
+		2: Report Missing Drone.
+		3: Send Autonomous Drone.
+		4: Exit.
+3
+Enter ID of missing drone.
+2
+Autonomous Drone: smart1  id: 6 Long: 344 Lat: 455 WAS SENT TO MISSING DRONE LOCATION
+Missing Drone: dumb2  id: 2
+Enter Command: 
+		1: Show drones.
+		2: Report Missing Drone.
+		3: Send Autonomous Drone.
+		4: Exit.
+1
+Drone: dumb1  id: 1
+Drone: dumb2  id: 2
+Drone: dumb3  id: 3
+Drone: dumb4  id: 4
+Drone: dumb5  id: 5
+Drone: smart1  id: 6 Long: 344 Lat: 455
+Drone: smart2  id: 7 Long: 111 Lat: 222
+Drone: smart3  id: 8 Long: 222 Lat: 333
+Drone: smart4  id: 9 Long: 333 Lat: 444
+Drone: smart5  id: 10 Long: 444 Lat: 555
+Enter Command: 
+		1: Show drones.
+		2: Report Missing Drone.
+		3: Send Autonomous Drone.
+		4: Exit.
+2
+Enter ID of missing drone.
+7
+Drone Drone: smart2  id: 7 Long: 111 Lat: 222 IS MISSING. 
+Last known coordinates are: 
+Latitude=222		Longitude=111
+Enter Command: 
+		1: Show drones.
+		2: Report Missing Drone.
+		3: Send Autonomous Drone.
+		4: Exit.
+2
+Enter ID of missing drone.
+5
+Enter last known coordinates.
+Enter Latitude: 
+3
+Enter Longitude: 
+5
+Drone Drone: dumb5  id: 5 IS MISSING. Last known coordinates are: 
+Latitud=3	Longitud=5
+Enter Command: 
+		1: Show drones.
+		2: Report Missing Drone.
+		3: Send Autonomous Drone.
+		4: Exit.
+2
+Enter ID of missing drone.
+6
+Drone Drone: smart1  id: 6 Long: 344 Lat: 455 IS MISSING. 
+Last known coordinates are: 
+Latitude=455		Longitude=344
+Enter Command: 
+		1: Show drones.
+		2: Report Missing Drone.
+		3: Send Autonomous Drone.
+		4: Exit.
+3
+Enter ID of missing drone.
+6
+Autonomous Drone: smart3  id: 8 Long: 455 Lat: 344 WAS SENT TO MISSING DRONE LOCATION
+Missing Drone: smart1  id: 6
+Enter Command: 
+		1: Show drones.
+		2: Report Missing Drone.
+		3: Send Autonomous Drone.
+		4: Exit.
+1
+Drone: dumb1  id: 1
+Drone: dumb2  id: 2
+Drone: dumb3  id: 3
+Drone: dumb4  id: 4
+Drone: dumb5  id: 5
+Drone: smart1  id: 6 Long: 344 Lat: 455
+Drone: smart2  id: 7 Long: 111 Lat: 222
+Drone: smart3  id: 8 Long: 455 Lat: 344
+Drone: smart4  id: 9 Long: 333 Lat: 444
+Drone: smart5  id: 10 Long: 444 Lat: 555
+Enter Command: 
+		1: Show drones.
+		2: Report Missing Drone.
+		3: Send Autonomous Drone.
+		4: Exit.
+4
+Goodbye
+]0;aj@Ulivia: ~/OSU/classes/CSE4252/ClosedLab05[01;32maj@Ulivia[00m:[01;34m~/OSU/classes/CSE4252/ClosedLab05[00m$ exit
+exit
+
+Script done on Tue 21 Mar 2017 02:24:45 PM EDT

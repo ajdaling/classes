@@ -21,7 +21,9 @@ public:
   ~AutonomousDrone();
   void displayDrone();
   void setCourse(float latitud, float longitud);
-
+  void displayCourse();
+  int getLongitude();
+  int getLatitude();
  
   
 protected:

@@ -10,6 +10,7 @@ an onboard computer controller
 // Include section. Add any header, library, namespace that you may need
 #include "drone.h"
 #include  <iostream>
+#include <string>
 using namespace std;
 
 int Drone::droneSequenceNumber = 0;    //--> you may initialize static variable here to keep drone ID sequence.
@@ -50,7 +51,7 @@ void Drone::setDroneId(int drone_id) {
 }
 
 void Drone::displayDrone() {
-  cout << "Drone: " << droneName_ << "  id: " << droneId_ << endl;
+  cout << "Drone: " << droneName_ << "  id: " << droneId_;
 }
 
 int Drone::getNextDroneSequenceNumber() {

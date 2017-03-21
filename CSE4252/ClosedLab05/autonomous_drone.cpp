@@ -44,7 +44,7 @@ AutonomousDrone::AutonomousDrone(AutonomousDrone &currentDrone) {
 }
 
 void AutonomousDrone::displayDrone() {
-	cout << "Drone: " << droneName_ << "  id: " << droneId_ << " Long: " << longitud_ << " Lat: " << latitud_ << endl; 
+	cout << "Drone: " << droneName_ << "  id: " << droneId_ << " Long: " << longitud_ << " Lat: " << latitud_; 
 }
 
 void AutonomousDrone::setCourse(float longitud, float latitud) {
@@ -52,10 +52,19 @@ void AutonomousDrone::setCourse(float longitud, float latitud) {
 	latitud_ = latitud;
 }
 
+void AutonomousDrone::displayCourse(){
+	cout << "Latitude=" << latitud_ << "		Longitude=" << longitud_ << endl;
+}
 
 AutonomousDrone::~AutonomousDrone() {
   
 }
 
+int AutonomousDrone::getLongitude(){
+	return(longitud_);
+}
 
+int AutonomousDrone::getLatitude(){
+	return(latitud_);
+}
 
