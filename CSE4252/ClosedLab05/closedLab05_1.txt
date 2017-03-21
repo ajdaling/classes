@@ -1,0 +1,13 @@
+Script started on Tue 21 Mar 2017 10:26:52 AM EDT
+]0;aj@Ulivia: ~/OSU/classes/CSE4252/ClosedLab05[01;32maj@Ulivia[00m:[01;34m~/OSU/classes/CSE4252/ClosedLab05[00m$ g++ -o ClosedLab05_1 my_drone.cpp d rone.cpp autonomous_drone.cpp
+]0;aj@Ulivia: ~/OSU/classes/CSE4252/ClosedLab05[01;32maj@Ulivia[00m:[01;34m~/OSU/classes/CSE4252/ClosedLab05[00m$ ./ClosedLab05_1 
+Creating Spiri1
+Drone: Spirit1  id: 1 Long: 0 Lat: 0
+Changing course to 100,150
+Drone: Spirit1  id: 1 Long: 100 Lat: 150
+Creating Spirit2
+Drone: Spirit2  id: 2 Long: 0 Lat: 0
+]0;aj@Ulivia: ~/OSU/classes/CSE4252/ClosedLab05[01;32maj@Ulivia[00m:[01;34m~/OSU/classes/CSE4252/ClosedLab05[00m$ exit
+exit
+
+Script done on Tue 21 Mar 2017 10:27:30 AM EDT

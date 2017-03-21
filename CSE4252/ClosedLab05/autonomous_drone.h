@@ -8,6 +8,7 @@ It is an updated version of a drone that includes a GPS sensor
 #define  AUTONOMOUS_DRONE_H
 
 #include  <iostream>
+#include "drone.h"
 using namespace std;
 
 

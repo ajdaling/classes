@@ -17,23 +17,39 @@ using namespace std;
 //set to zero.
 
 AutonomousDrone::AutonomousDrone() {
-   
+	droneName_ = "";
+	roll_ = pitch_ = yaw_ = 0;
+	distance_ = 0;
+	batteryVoltage_ = 0;
+	longitud_ = latitud_ = 0;
 }
 
 AutonomousDrone::AutonomousDrone(string name, int drone_id, float longitud, float latitud) {
-  
+	droneName_ = name;
+  droneId_ = drone_id;  
+  roll_ = pitch_ = yaw_ = 0; 		
+  distance_ = 0; 			
+  batteryVoltage_ = 0; 
+  latitud_ = latitud;
+  longitud_ = longitud;
 }
 
 AutonomousDrone::AutonomousDrone(AutonomousDrone &currentDrone) {
-  
+  droneName_ = currentDrone.droneName_;
+  droneId_ = currentDrone.droneId_;
+  roll_ = pitch_ = yaw_ = 0;
+  batteryVoltage_ = 0;
+  latitud_ = longitud_ = 0;
+  distance_ = 0;
 }
 
 void AutonomousDrone::displayDrone() {
-
+	cout << "Drone: " << droneName_ << "  id: " << droneId_ << " Long: " << longitud_ << " Lat: " << latitud_ << endl; 
 }
 
 void AutonomousDrone::setCourse(float longitud, float latitud) {
-
+	longitud_ = longitud;
+	latitud_ = latitud;
 }
 
 
