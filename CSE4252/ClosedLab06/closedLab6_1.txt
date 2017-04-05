@@ -1,0 +1,70 @@
+Script started on Tue 04 Apr 2017 11:14:13 PM EDT
+]0;aj@Ulivia: ~/OSU/classes/CSE4252/ClosedLab06[01;32maj@Ulivia[00m:[01;34m~/OSU/classes/CSE4252/ClosedLab06[00m$ g++ -o closedLab06_1 closedLab-6)1[K[K[K[K06_1. cpp drone.cpp 
+]0;aj@Ulivia: ~/OSU/classes/CSE4252/ClosedLab06[01;32maj@Ulivia[00m:[01;34m~/OSU/classes/CSE4252/ClosedLab06[00m$ ./closedLab06_1 
+Enter name :
+drone1
+Enter id:
+1
+Enter name :
+drone2
+Enter id:
+2
+Enter name :
+drone3
+Enter id:
+2
+Enter name :
+drone4
+Enter id:
+4
+Enter name :
+drone5
+Enter id:
+5
+*************************
+Testing sort function
+prior to sort
+Drone: drone1  id: 1
+Drone: drone2  id: 2
+Drone: drone3  id: 2
+Drone: drone4  id: 4
+Drone: drone5  id: 5
+After sort
+Drone: drone1  id: 1
+Drone: drone2  id: 2
+Drone: drone3  id: 2
+Drone: drone4  id: 4
+Drone: drone5  id: 5
+
+
+*************************
+Testing overload operator:
+These two drones have the same ID: 
+Drone: drone2  id: 2
+Drone: drone3  id: 2
+These two drones have the same ID: 
+Drone: drone3  id: 2
+Drone: drone2  id: 2
+****************************
+
+Testing Compare() function 
+Drone: drone2  id: 2
+Drone: drone1  id: 1
+1
+Drone: drone2  id: 2
+Drone: drone2  id: 2
+0
+Drone: drone2  id: 2
+Drone: drone3  id: 2
+0
+Drone: drone2  id: 2
+Drone: drone4  id: 4
+-1
+Drone: drone2  id: 2
+Drone: drone5  id: 5
+-1
+End Ex. 1
+]0;aj@Ulivia: ~/OSU/classes/CSE4252/ClosedLab06[01;32maj@Ulivia[00m:[01;34m~/OSU/classes/CSE4252/ClosedLab06[00m$ exit
+exit
+
+Script done on Tue 04 Apr 2017 11:15:08 PM EDT

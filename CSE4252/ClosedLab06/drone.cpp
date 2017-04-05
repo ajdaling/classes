@@ -45,6 +45,30 @@ Drone::Drone(const Drone& currentDrone) {
   batteryVoltage_ = currentDrone.batteryVoltage_;
 }
 
+//b. class member function for < comparator
+bool Drone::operator<(const Drone& d2) const{
+	return(droneId_ < d2.droneId_);
+}
+
+//c. class member function for overloading operator
+bool Drone::operator==(const Drone& d2) const{
+	return(droneId_ == d2.droneId_);
+}
+
+//d. implement Compare() function
+//returns 0 if drones are same (id), 1 if d1>d2, -1 if d1<d2
+int Drone::Compare(const Drone& d2)const{
+	int ret_val;
+	int diff = droneId_ - d2.droneId_;
+	if(diff == 0){
+		ret_val = 0;
+	} else if(diff > 0){
+		ret_val = 1;
+	} else if(diff < 0){
+		ret_val = -1;
+	}
+	return(ret_val);
+}
 
 void Drone::setDroneName(string name) {
   droneName_ = name;

@@ -1,0 +1,57 @@
+Script started on Tue 04 Apr 2017 11:47:09 PM EDT
+]0;aj@Ulivia: ~/OSU/classes/CSE4252/ClosedLab06[01;32maj@Ulivia[00m:[01;34m~/OSU/classes/CSE4252/ClosedLab06[00m$ g++ -o closedLab06-[K_4[K3 closedLab06_3.cpp drone.cpp
+]0;aj@Ulivia: ~/OSU/classes/CSE4252/ClosedLab06[01;32maj@Ulivia[00m:[01;34m~/OSU/classes/CSE4252/ClosedLab06[00m$ ./closedLab06_3
+Enter name :
+drone1
+Enter id:
+^C
+]0;aj@Ulivia: ~/OSU/classes/CSE4252/ClosedLab06[01;32maj@Ulivia[00m:[01;34m~/OSU/classes/CSE4252/ClosedLab06[00m$ ./closedLab06_3g++ -o closedLab06_3 closedLab06_3.cpp drone.cpp[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexit[Kg++ -o closedLab06_3 closedLab06_3.cpp drone.cpp
+]0;aj@Ulivia: ~/OSU/classes/CSE4252/ClosedLab06[01;32maj@Ulivia[00m:[01;34m~/OSU/classes/CSE4252/ClosedLab06[00m$ g++ -o closedLab06_3 closedLab06_3.cpp drone.cpp[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./closedLab06_3[K
+Enter name :
+drone1
+Enter id:
+1
+Enter quadrant
+left
+Enter name :
+^C
+]0;aj@Ulivia: ~/OSU/classes/CSE4252/ClosedLab06[01;32maj@Ulivia[00m:[01;34m~/OSU/classes/CSE4252/ClosedLab06[00m$ ./closedLab06_3
+Enter name :
+drone1
+Enter id:
+east    north     1
+Enter quadrant
+north
+Enter name :
+drone2
+Enter id:
+south     2
+Enter quadrant
+south
+Enter name :
+drone3
+Enter id:
+east    3
+Enter quadrant
+east
+Enter name :
+drone4
+Enter id:
+4
+Enter quadrant
+west
+Enter name :
+drone45  5
+Enter id:
+5
+Enter quadrant
+center
+center: Drone: drone5  id: 5
+east: Drone: drone3  id: 3
+north: Drone: drone1  id: 1
+south: Drone: drone2  id: 2
+west: Drone: drone4  id: 4
+]0;aj@Ulivia: ~/OSU/classes/CSE4252/ClosedLab06[01;32maj@Ulivia[00m:[01;34m~/OSU/classes/CSE4252/ClosedLab06[00m$ exit
+exit
+
+Script done on Tue 04 Apr 2017 11:48:48 PM EDT
