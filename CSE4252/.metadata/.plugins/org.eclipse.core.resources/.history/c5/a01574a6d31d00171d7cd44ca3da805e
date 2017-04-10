@@ -1,0 +1,21 @@
+/*
+ * UI.cpp
+ *
+ *  Created on: Apr 10, 2017
+ *      Author: aj
+ */
+
+#include "UI.h"
+
+namespace caps {
+
+UI::UI() {
+	// TODO Auto-generated constructor stub
+
+}
+
+UI::~UI() {
+	// TODO Auto-generated destructor stub
+}
+
+} /* namespace caps */

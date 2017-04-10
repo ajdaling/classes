@@ -1,0 +1,19 @@
+/*
+ * User.h
+ *
+ *  Created on: Apr 10, 2017
+ *      Author: aj
+ */
+
+#ifndef USER_H_
+#define USER_H_
+#include <string>
+
+class User {
+public:
+	string user_name;
+	User();
+	virtual ~User();
+};
+
+#endif /* USER_H_ */

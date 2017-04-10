@@ -1,0 +1,15 @@
+07:44:40 **** Incremental Build of configuration Debug for project Caps ****
+make all 
+Building file: ../src/Game.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Game.d" -MT"src/Game.o" -o "src/Game.o" "../src/Game.cpp"
+Finished building: ../src/Game.cpp
+ 
+Building target: Caps
+Invoking: GCC C++ Linker
+g++  -o "Caps"  ./src/Capitals.o ./src/Game.o ./src/UI.o ./src/User.o ./src/UserDB.o   
+Finished building target: Caps
+ 
+
+07:44:41 Build Finished (took 482ms)
+

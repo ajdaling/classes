@@ -1,0 +1,23 @@
+/*
+ * User.h
+ *
+ *  Created on: Apr 10, 2017
+ *      Author: aj
+ */
+
+#ifndef USER_H_
+#define USER_H_
+#include <string>
+using namespace std;
+
+class User {
+public:
+	User(string name);
+	virtual ~User();
+	std::string getName();
+private:
+	string user_name;
+
+};
+
+#endif /* USER_H_ */

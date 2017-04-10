@@ -1,0 +1,46 @@
+#include <iostream>
+
+using namespace std;
+
+class User{
+	string user_name;
+
+    public:
+    void setName(string name){
+        user_name = name;
+    }
+
+    string getName(){
+        return(user_name);
+    }
+}
+
+class User_db{
+    vector<User> users;
+
+    vector<User> loadUsers{
+        //load users from text file
+    }
+
+    void addUser{
+
+    }
+
+    void removeUser{
+
+    }
+    void displayUsers{
+
+    }
+}
+
+class Game{
+
+}
+
+int main(){
+    cout << "Welcome.";
+
+
+    return(0);
+}

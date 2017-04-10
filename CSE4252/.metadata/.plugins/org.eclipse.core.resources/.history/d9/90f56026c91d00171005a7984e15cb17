@@ -1,0 +1,36 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+public class User{
+	string user_name;
+
+    public:
+    void setName(string name){
+        user_name = name;
+    }
+
+    string getName(){
+        return(user_name);
+    }
+}
+
+public class Userdb{
+    vector<User> users;
+
+    vector<User> loadUsers{
+        //load users from text file
+    }
+
+    void addUser{
+
+    }
+
+    void removeUser{
+
+    }
+    void displayUsers{
+
+    }
+}
+

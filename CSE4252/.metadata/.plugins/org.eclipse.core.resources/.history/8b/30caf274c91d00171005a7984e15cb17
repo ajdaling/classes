@@ -1,0 +1,20 @@
+//============================================================================
+// Name        : Capitals.cpp
+// Author      : Alec Daling
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+using namespace std;
+
+int main() {
+
+	Game game = new Game();
+	User user = new User();
+
+
+
+	return 0;
+}

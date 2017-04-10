@@ -1,0 +1,33 @@
+/*
+ * UI.cpp
+ *
+ *  Created on: Apr 10, 2017
+ *      Author: aj
+ */
+
+#include "UI.h"
+#include <iostream>
+using namespace std;
+namespace caps {
+
+UI::UI() {
+	// TODO Auto-generated constructor stub
+
+}
+
+UI::~UI() {
+	// TODO Auto-generated destructor stub
+}
+
+void UI::welcome(){
+	cout << "Hello" << endl;
+}
+
+void menu1(){
+	cout << "Select an Option:" << endl;
+	cout << "(1) - Add New User" << endl;
+	cout << "(2) - Continue as Existing User" << endl;
+	cout << "(3) - View Saved Users" << endl;
+}
+
+} /* namespace caps */

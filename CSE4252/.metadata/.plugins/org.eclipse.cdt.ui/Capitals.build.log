@@ -1,0 +1,17 @@
+05:23:50 **** Incremental Build of configuration Debug for project Capitals ****
+make all 
+Building file: ../src/tCapitals.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tCapitals.d" -MT"src/tCapitals.d" -o "src/tCapitals.o" "../src/tCapitals.cpp"
+../src/tCapitals.cpp: In function ‘int main()’:
+../src/tCapitals.cpp:16:2: error: ‘Game’ was not declared in this scope
+  Game game = new Game();
+  ^
+../src/tCapitals.cpp:17:2: error: ‘User’ was not declared in this scope
+  User user = new User();
+  ^
+make: *** [src/tCapitals.o] Error 1
+src/subdir.mk:24: recipe for target 'src/tCapitals.o' failed
+
+05:23:51 Build Finished (took 169ms)
+

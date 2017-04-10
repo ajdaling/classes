@@ -1,0 +1,29 @@
+/*
+ * Game.h
+ *
+ *  Created on: Apr 10, 2017
+ *      Author: aj
+ */
+
+#ifndef GAME_H_
+#define GAME_H_
+#include "user.h"
+
+
+namespace caps {
+
+class Game {
+public:
+	Game();
+	virtual ~Game();
+
+private:
+	User user;
+
+
+};
+
+
+} /* namespace caps */
+
+#endif /* GAME_H_ */

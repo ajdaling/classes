@@ -1,0 +1,722 @@
+05:20:05 **** Incremental Build of configuration Debug for project Caps ****
+make all 
+Building file: ../src/User.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/User.d" -MT"src/User.d" -o "src/User.o" "../src/User.cpp"
+../src/User.cpp:10:1: error: ‘User’ does not name a type
+ User::User(string name) {
+ ^
+../src/User.cpp:15:1: error: ‘User’ does not name a type
+ User::~User() {
+ ^
+../src/User.cpp:19:8: error: ‘User’ has not been declared
+ string User::getName(){
+        ^
+../src/User.cpp: In function ‘std::__cxx11::string getName()’:
+../src/User.cpp:20:9: error: invalid use of ‘this’ in non-member function
+  return(this->user_name);
+src/subdir.mk:27: recipe for target 'src/User.o' failed
+         ^
+make: *** [src/User.o] Error 1
+
+05:20:05 Build Finished (took 112ms)
+
+05:20:05 **** Incremental Build of configuration Release for project Caps ****
+make all 
+Building file: ../src/Capitals.cpp
+Invoking: GCC C++ Compiler
+g++ -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Capitals.d" -MT"src/Capitals.d" -o "src/Capitals.o" "../src/Capitals.cpp"
+Finished building: ../src/Capitals.cpp
+ 
+Building file: ../src/Game.cpp
+Invoking: GCC C++ Compiler
+g++ -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Game.d" -MT"src/Game.d" -o "src/Game.o" "../src/Game.cpp"
+Finished building: ../src/Game.cpp
+ 
+Building file: ../src/User.cpp
+Invoking: GCC C++ Compiler
+g++ -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/User.d" -MT"src/User.d" -o "src/User.o" "../src/User.cpp"
+../src/User.cpp:10:1: error: ‘User’ does not name a type
+ User::User(string name) {
+ ^
+../src/User.cpp:15:1: error: ‘User’ does not name a type
+ User::~User() {
+ ^
+../src/User.cpp:19:8: error: ‘User’ has not been declared
+ string User::getName(){
+        ^
+../src/User.cpp: In function ‘std::__cxx11::string getName()’:
+../src/User.cpp:20:9: error: invalid use of ‘this’ in non-member function
+  return(this->user_name);
+         ^
+src/subdir.mk:27: recipe for target 'src/User.o' failed
+make: *** [src/User.o] Error 1
+05:23:50 **** Incremental Build of configuration Debug for project Capitals ****
+make all 
+Building file: ../src/tCapitals.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tCapitals.d" -MT"src/tCapitals.d" -o "src/tCapitals.o" "../src/tCapitals.cpp"
+../src/tCapitals.cpp: In function ‘int main()’:
+../src/tCapitals.cpp:16:2: error: ‘Game’ was not declared in this scope
+  Game game = new Game();
+  ^
+../src/tCapitals.cpp:17:2: error: ‘User’ was not declared in this scope
+  User user = new User();
+  ^
+make: *** [src/tCapitals.o] Error 1
+src/subdir.mk:24: recipe for target 'src/tCapitals.o' failed
+05:23:51 **** Incremental Build of configuration Debug for project Caps ****
+make all 
+Building file: ../src/Capitals.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Capitals.d" -MT"src/Capitals.d" -o "src/Capitals.o" "../src/Capitals.cpp"
+Finished building: ../src/Capitals.cpp
+ 
+Building file: ../src/User.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/User.d" -MT"src/User.d" -o "src/User.o" "../src/User.cpp"
+../src/User.cpp:10:1: error: ‘User’ does not name a type
+ User::User(string name) {
+ ^
+../src/User.cpp:15:1: error: ‘User’ does not name a type
+ User::~User() {
+ ^
+src/subdir.mk:27: recipe for target 'src/User.o' failed
+make: *** [src/User.o] Error 1
+05:39:55 **** Incremental Build of configuration Debug for project Caps ****
+make all 
+Building file: ../src/User.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/User.d" -MT"src/User.o" -o "src/User.o" "../src/User.cpp"
+Finished building: ../src/User.cpp
+ 
+Building file: ../src/UserDB.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/UserDB.d" -MT"src/UserDB.o" -o "src/UserDB.o" "../src/UserDB.cpp"
+Finished building: ../src/UserDB.cpp
+ 
+Building target: Caps
+Invoking: GCC C++ Linker
+g++  -o "Caps"  ./src/Capitals.o ./src/Game.o ./src/User.o ./src/UserDB.o   
+Finished building target: Caps
+ 
+05:55:29 **** Incremental Build of configuration Debug for project Caps ****
+make all 
+Building file: ../src/Capitals.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Capitals.d" -MT"src/Capitals.o" -o "src/Capitals.o" "../src/Capitals.cpp"
+In file included from ../src/Capitals.cpp:7:0:
+../src/Game.h:15:2: error: ‘User’ does not name a type
+  User current_user;
+  ^
+../src/Capitals.cpp: In function ‘int main()’:
+../src/Capitals.cpp:14:2: error: ‘UI’ was not declared in this scope
+  UI ui = new UI();
+  ^
+../src/Capitals.cpp:15:2: error: ‘ui’ was not declared in this scope
+  ui.welcome();
+src/subdir.mk:30: recipe for target 'src/Capitals.o' failed
+  ^
+make: *** [src/Capitals.o] Error 1
+05:56:37 **** Incremental Build of configuration Debug for project Caps ****
+make all 
+Building file: ../src/Capitals.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Capitals.d" -MT"src/Capitals.o" -o "src/Capitals.o" "../src/Capitals.cpp"
+In file included from ../src/Capitals.cpp:7:0:
+../src/Game.h:15:2: error: ‘User’ does not name a type
+  User current_user;
+  ^
+../src/Capitals.cpp: In function ‘int main()’:
+../src/Capitals.cpp:15:17: error: conversion from ‘caps::UI*’ to non-scalar type ‘caps::UI’ requested
+  UI ui = new UI();
+                 ^
+src/subdir.mk:30: recipe for target 'src/Capitals.o' failed
+make: *** [src/Capitals.o] Error 1
+05:57:45 **** Incremental Build of configuration Debug for project Caps ****
+make all 
+Building file: ../src/Capitals.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Capitals.d" -MT"src/Capitals.o" -o "src/Capitals.o" "../src/Capitals.cpp"
+In file included from ../src/Capitals.cpp:7:0:
+../src/Game.h:15:2: error: ‘User’ does not name a type
+  User current_user;
+  ^
+../src/Capitals.cpp: In function ‘int main()’:
+../src/Capitals.cpp:16:5: error: request for member ‘welcome’ in ‘ui’, which is of pointer type ‘caps::UI*’ (maybe you meant to use ‘->’ ?)
+  ui.welcome();
+     ^
+make: *** [src/Capitals.o] Error 1
+src/subdir.mk:30: recipe for target 'src/Capitals.o' failed
+05:58:04 **** Incremental Build of configuration Debug for project Caps ****
+make all 
+Building file: ../src/Capitals.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Capitals.d" -MT"src/Capitals.o" -o "src/Capitals.o" "../src/Capitals.cpp"
+In file included from ../src/Capitals.cpp:7:0:
+../src/Game.h:15:2: error: ‘User’ does not name a type
+  User current_user;
+  ^
+src/subdir.mk:30: recipe for target 'src/Capitals.o' failed
+make: *** [src/Capitals.o] Error 1
+05:58:21 **** Incremental Build of configuration Debug for project Caps ****
+make all 
+Building file: ../src/Capitals.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Capitals.d" -MT"src/Capitals.o" -o "src/Capitals.o" "../src/Capitals.cpp"
+In file included from ../src/Capitals.cpp:7:0:
+../src/Game.h:15:2: error: ‘User’ does not name a type
+  User current_user;
+  ^
+src/subdir.mk:30: recipe for target 'src/Capitals.o' failed
+make: *** [src/Capitals.o] Error 1
+06:00:04 **** Incremental Build of configuration Debug for project Caps ****
+make all 
+Building file: ../src/Capitals.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Capitals.d" -MT"src/Capitals.o" -o "src/Capitals.o" "../src/Capitals.cpp"
+In file included from ../src/Capitals.cpp:7:0:
+../src/Game.h:15:2: error: ‘User’ does not name a type
+  User current_user;
+  ^
+make: *** [src/Capitals.o] Error 1
+src/subdir.mk:30: recipe for target 'src/Capitals.o' failed
+06:01:05 **** Incremental Build of configuration Debug for project Caps ****
+make all 
+Building file: ../src/Capitals.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Capitals.d" -MT"src/Capitals.o" -o "src/Capitals.o" "../src/Capitals.cpp"
+In file included from ../src/Capitals.cpp:7:0:
+../src/Game.h:15:2: error: ‘User’ does not name a type
+  User current_user;
+  ^
+make: *** [src/Capitals.o] Error 1
+src/subdir.mk:30: recipe for target 'src/Capitals.o' failed
+06:03:01 **** Incremental Build of configuration Debug for project Caps ****
+make all 
+Building file: ../src/Capitals.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Capitals.d" -MT"src/Capitals.o" -o "src/Capitals.o" "../src/Capitals.cpp"
+In file included from ../src/Capitals.cpp:7:0:
+../src/Game.h:7:18: fatal error: user.h: No such file or directory
+src/subdir.mk:30: recipe for target 'src/Capitals.o' failed
+compilation terminated.
+make: *** [src/Capitals.o] Error 1
+06:03:12 **** Incremental Build of configuration Debug for project Caps ****
+make all 
+Building file: ../src/Capitals.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Capitals.d" -MT"src/Capitals.o" -o "src/Capitals.o" "../src/Capitals.cpp"
+Finished building: ../src/Capitals.cpp
+ 
+Building file: ../src/Game.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Game.d" -MT"src/Game.o" -o "src/Game.o" "../src/Game.cpp"
+../src/Game.cpp: In constructor ‘caps::Game::Game()’:
+../src/Game.cpp:10:12: error: no matching function for call to ‘caps::User::User()’
+ Game::Game() {
+            ^
+In file included from ../src/Game.h:7:0,
+                 from ../src/Game.cpp:8:
+../src/User.h:17:2: note: candidate: caps::User::User(std::__cxx11::string)
+  User(string name);
+  ^
+../src/User.h:17:2: note:   candidate expects 1 argument, 0 provided
+../src/User.h:15:7: note: candidate: caps::User::User(const caps::User&)
+ class User {
+       ^
+../src/User.h:15:7: note:   candidate expects 1 argument, 0 provided
+src/subdir.mk:30: recipe for target 'src/Game.o' failed
+make: *** [src/Game.o] Error 1
+06:04:24 **** Incremental Build of configuration Debug for project Caps ****
+make all 
+Building file: ../src/Game.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Game.d" -MT"src/Game.o" -o "src/Game.o" "../src/Game.cpp"
+../src/Game.cpp: In constructor ‘caps::Game::Game()’:
+../src/Game.cpp:10:12: error: no matching function for call to ‘caps::User::User()’
+ Game::Game() {
+            ^
+In file included from ../src/Game.h:7:0,
+                 from ../src/Game.cpp:8:
+../src/User.h:17:2: note: candidate: caps::User::User(std::__cxx11::string)
+  User(string name);
+  ^
+../src/User.h:17:2: note:   candidate expects 1 argument, 0 provided
+src/subdir.mk:30: recipe for target 'src/Game.o' failed
+../src/User.h:15:7: note: candidate: caps::User::User(const caps::User&)
+ class User {
+       ^
+../src/User.h:15:7: note:   candidate expects 1 argument, 0 provided
+make: *** [src/Game.o] Error 1
+06:04:53 **** Incremental Build of configuration Debug for project Caps ****
+make all 
+Building file: ../src/Capitals.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Capitals.d" -MT"src/Capitals.o" -o "src/Capitals.o" "../src/Capitals.cpp"
+Finished building: ../src/Capitals.cpp
+ 
+Building file: ../src/Game.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Game.d" -MT"src/Game.o" -o "src/Game.o" "../src/Game.cpp"
+../src/Game.cpp: In constructor ‘caps::Game::Game()’:
+../src/Game.cpp:10:12: error: no matching function for call to ‘caps::User::User()’
+ Game::Game() {
+            ^
+In file included from ../src/Game.h:7:0,
+                 from ../src/Game.cpp:8:
+../src/User.h:17:2: note: candidate: caps::User::User(std::__cxx11::string)
+  User(string name);
+  ^
+../src/User.h:17:2: note:   candidate expects 1 argument, 0 provided
+../src/User.h:15:7: note: candidate: caps::User::User(const caps::User&)
+ class User {
+       ^
+src/subdir.mk:30: recipe for target 'src/Game.o' failed
+../src/User.h:15:7: note:   candidate expects 1 argument, 0 provided
+make: *** [src/Game.o] Error 1
+06:08:42 **** Incremental Build of configuration Debug for project Caps ****
+make all 
+Building file: ../src/Game.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Game.d" -MT"src/Game.o" -o "src/Game.o" "../src/Game.cpp"
+../src/Game.cpp: In constructor ‘caps::Game::Game()’:
+../src/Game.cpp:10:12: error: no matching function for call to ‘caps::User::User()’
+ Game::Game() {
+            ^
+In file included from ../src/Game.h:7:0,
+                 from ../src/Game.cpp:8:
+../src/User.h:17:2: note: candidate: caps::User::User(std::__cxx11::string)
+  User(string name);
+  ^
+../src/User.h:17:2: note:   candidate expects 1 argument, 0 provided
+../src/User.h:15:7: note: candidate: caps::User::User(const caps::User&)
+src/subdir.mk:30: recipe for target 'src/Game.o' failed
+ class User {
+       ^
+../src/User.h:15:7: note:   candidate expects 1 argument, 0 provided
+make: *** [src/Game.o] Error 1
+06:10:22 **** Incremental Build of configuration Debug for project Caps ****
+make all 
+Building file: ../src/Game.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Game.d" -MT"src/Game.o" -o "src/Game.o" "../src/Game.cpp"
+../src/Game.cpp: In constructor ‘caps::Game::Game()’:
+../src/Game.cpp:12:12: error: no matching function for call to ‘caps::User::User()’
+ Game::Game() {
+            ^
+In file included from ../src/Game.h:7:0,
+                 from ../src/Game.cpp:8:
+../src/User.h:17:2: note: candidate: caps::User::User(std::__cxx11::string)
+  User(string name);
+  ^
+../src/User.h:17:2: note:   candidate expects 1 argument, 0 provided
+../src/User.h:15:7: note: candidate: caps::User::User(const caps::User&)
+ class User {
+       ^
+../src/User.h:15:7: note:   candidate expects 1 argument, 0 provided
+src/subdir.mk:30: recipe for target 'src/Game.o' failed
+make: *** [src/Game.o] Error 1
+06:10:49 **** Incremental Build of configuration Debug for project Caps ****
+make all 
+Building file: ../src/Game.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Game.d" -MT"src/Game.o" -o "src/Game.o" "../src/Game.cpp"
+Finished building: ../src/Game.cpp
+ 
+Building file: ../src/UI.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/UI.d" -MT"src/UI.o" -o "src/UI.o" "../src/UI.cpp"
+Finished building: ../src/UI.cpp
+ 
+Building file: ../src/User.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/User.d" -MT"src/User.o" -o "src/User.o" "../src/User.cpp"
+Finished building: ../src/User.cpp
+ 
+Building file: ../src/UserDB.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/UserDB.d" -MT"src/UserDB.o" -o "src/UserDB.o" "../src/UserDB.cpp"
+Finished building: ../src/UserDB.cpp
+ 
+Building target: Caps
+Invoking: GCC C++ Linker
+g++  -o "Caps"  ./src/Capitals.o ./src/Game.o ./src/UI.o ./src/User.o ./src/UserDB.o   
+Finished building target: Caps
+ 
+06:10:54 **** Incremental Build of configuration Debug for project Caps ****
+make all 
+Building file: ../src/Game.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Game.d" -MT"src/Game.o" -o "src/Game.o" "../src/Game.cpp"
+../src/Game.cpp: In constructor ‘caps::Game::Game()’:
+../src/Game.cpp:12:12: error: no matching function for call to ‘caps::User::User()’
+ Game::Game() {
+            ^
+In file included from ../src/Game.h:7:0,
+                 from ../src/Game.cpp:8:
+../src/User.h:17:2: note: candidate: caps::User::User(std::__cxx11::string)
+  User(string name);
+  ^
+../src/User.h:17:2: note:   candidate expects 1 argument, 0 provided
+../src/User.h:15:7: note: candidate: caps::User::User(const caps::User&)
+ class User {
+       ^
+../src/User.h:15:7: note:   candidate expects 1 argument, 0 provided
+src/subdir.mk:30: recipe for target 'src/Game.o' failed
+make: *** [src/Game.o] Error 1
+06:12:32 **** Incremental Build of configuration Debug for project Caps ****
+make all 
+Building file: ../src/Capitals.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Capitals.d" -MT"src/Capitals.o" -o "src/Capitals.o" "../src/Capitals.cpp"
+../src/Capitals.cpp:7:18: fatal error: Game.h: No such file or directory
+src/subdir.mk:27: recipe for target 'src/Capitals.o' failed
+compilation terminated.
+make: *** [src/Capitals.o] Error 1
+06:12:50 **** Incremental Build of configuration Debug for project Caps ****
+make all 
+Building file: ../src/Capitals.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Capitals.d" -MT"src/Capitals.o" -o "src/Capitals.o" "../src/Capitals.cpp"
+Finished building: ../src/Capitals.cpp
+ 
+Building file: ../src/Game.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Game.d" -MT"src/Game.o" -o "src/Game.o" "../src/Game.cpp"
+Finished building: ../src/Game.cpp
+ 
+Building target: Caps
+Invoking: GCC C++ Linker
+g++  -o "Caps"  ./src/Capitals.o ./src/Game.o ./src/UI.o ./src/User.o ./src/UserDB.o   
+Finished building target: Caps
+ 
+06:13:15 **** Incremental Build of configuration Debug for project Caps ****
+make all 
+make: Nothing to be done for 'all'.
+06:16:54 **** Incremental Build of configuration Debug for project Caps ****
+make all 
+Building file: ../src/Capitals.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Capitals.d" -MT"src/Capitals.o" -o "src/Capitals.o" "../src/Capitals.cpp"
+Finished building: ../src/Capitals.cpp
+ 
+Building file: ../src/UI.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/UI.d" -MT"src/UI.o" -o "src/UI.o" "../src/UI.cpp"
+Finished building: ../src/UI.cpp
+ 
+Building target: Caps
+Invoking: GCC C++ Linker
+g++  -o "Caps"  ./src/Capitals.o ./src/Game.o ./src/UI.o ./src/User.o ./src/UserDB.o   
+Finished building target: Caps
+ 
+06:16:59 **** Incremental Build of configuration Debug for project Caps ****
+make all 
+make: Nothing to be done for 'all'.
+06:18:35 **** Incremental Build of configuration Debug for project Caps ****
+make all 
+Building file: ../src/Capitals.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Capitals.d" -MT"src/Capitals.o" -o "src/Capitals.o" "../src/Capitals.cpp"
+Finished building: ../src/Capitals.cpp
+ 
+Building file: ../src/UI.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/UI.d" -MT"src/UI.o" -o "src/UI.o" "../src/UI.cpp"
+Finished building: ../src/UI.cpp
+ 
+Building target: Caps
+Invoking: GCC C++ Linker
+g++  -o "Caps"  ./src/Capitals.o ./src/Game.o ./src/UI.o ./src/User.o ./src/UserDB.o   
+./src/UI.o: In function `caps::UI::welcome()':
+/home/aj/OSU/classes/CSE4252/Caps/Debug/../src/UI.cpp:24: undefined reference to `caps::UI::menu1()'
+collect2: error: ld returned 1 exit status
+makefile:45: recipe for target 'Caps' failed
+make: *** [Caps] Error 1
+06:18:58 **** Incremental Build of configuration Debug for project Caps ****
+make all 
+Building file: ../src/UI.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/UI.d" -MT"src/UI.o" -o "src/UI.o" "../src/UI.cpp"
+Finished building: ../src/UI.cpp
+ 
+Building target: Caps
+Invoking: GCC C++ Linker
+g++  -o "Caps"  ./src/Capitals.o ./src/Game.o ./src/UI.o ./src/User.o ./src/UserDB.o   
+./src/UI.o: In function `caps::UI::welcome()':
+/home/aj/OSU/classes/CSE4252/Caps/Debug/../src/UI.cpp:24: undefined reference to `caps::UI::menu1()'
+makefile:45: recipe for target 'Caps' failed
+collect2: error: ld returned 1 exit status
+make: *** [Caps] Error 1
+06:20:29 **** Incremental Build of configuration Debug for project Caps ****
+make all 
+Building file: ../src/UI.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/UI.d" -MT"src/UI.o" -o "src/UI.o" "../src/UI.cpp"
+Finished building: ../src/UI.cpp
+ 
+Building target: Caps
+Invoking: GCC C++ Linker
+g++  -o "Caps"  ./src/Capitals.o ./src/Game.o ./src/UI.o ./src/User.o ./src/UserDB.o   
+Finished building target: Caps
+ 
+06:49:28 **** Incremental Build of configuration Debug for project Caps ****
+make all 
+Building file: ../src/Capitals.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Capitals.d" -MT"src/Capitals.o" -o "src/Capitals.o" "../src/Capitals.cpp"
+In file included from ../src/Capitals.cpp:7:0:
+../src/Game.h:19:2: error: ‘User’ does not name a type
+  User user;
+  ^
+src/subdir.mk:30: recipe for target 'src/Capitals.o' failed
+make: *** [src/Capitals.o] Error 1
+06:49:39 **** Incremental Build of configuration Debug for project Caps ****
+make all 
+Building file: ../src/Capitals.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Capitals.d" -MT"src/Capitals.o" -o "src/Capitals.o" "../src/Capitals.cpp"
+In file included from ../src/Capitals.cpp:7:0:
+../src/Game.h:10:18: fatal error: user.h: No such file or directory
+compilation terminated.
+src/subdir.mk:30: recipe for target 'src/Capitals.o' failed
+make: *** [src/Capitals.o] Error 1
+06:49:46 **** Incremental Build of configuration Debug for project Caps ****
+make all 
+Building file: ../src/Capitals.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Capitals.d" -MT"src/Capitals.o" -o "src/Capitals.o" "../src/Capitals.cpp"
+Finished building: ../src/Capitals.cpp
+ 
+Building file: ../src/Game.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Game.d" -MT"src/Game.o" -o "src/Game.o" "../src/Game.cpp"
+../src/Game.cpp: In constructor ‘caps::Game::Game()’:
+../src/Game.cpp:12:12: error: no matching function for call to ‘caps::User::User()’
+ Game::Game() {
+            ^
+In file included from ../src/Game.h:10:0,
+                 from ../src/Game.cpp:8:
+../src/User.h:17:2: note: candidate: caps::User::User(std::__cxx11::string)
+  User(string name);
+  ^
+../src/User.h:17:2: note:   candidate expects 1 argument, 0 provided
+../src/User.h:15:7: note: candidate: caps::User::User(const caps::User&)
+ class User {
+       ^
+../src/User.h:15:7: note:   candidate expects 1 argument, 0 provided
+make: *** [src/Game.o] Error 1
+src/subdir.mk:30: recipe for target 'src/Game.o' failed
+06:50:55 **** Incremental Build of configuration Debug for project Caps ****
+make all 
+Building file: ../src/Capitals.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Capitals.d" -MT"src/Capitals.o" -o "src/Capitals.o" "../src/Capitals.cpp"
+Finished building: ../src/Capitals.cpp
+ 
+Building file: ../src/Game.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Game.d" -MT"src/Game.o" -o "src/Game.o" "../src/Game.cpp"
+../src/Game.cpp: In constructor ‘caps::Game::Game()’:
+../src/Game.cpp:12:12: error: no matching function for call to ‘caps::User::User()’
+ Game::Game() {
+            ^
+In file included from ../src/Game.h:10:0,
+                 from ../src/Game.cpp:8:
+../src/User.h:17:2: note: candidate: caps::User::User(std::__cxx11::string)
+  User(string name);
+  ^
+src/subdir.mk:30: recipe for target 'src/Game.o' failed
+../src/User.h:17:2: note:   candidate expects 1 argument, 0 provided
+../src/User.h:15:7: note: candidate: caps::User::User(const caps::User&)
+ class User {
+       ^
+../src/User.h:15:7: note:   candidate expects 1 argument, 0 provided
+../src/Game.cpp: At global scope:
+../src/Game.cpp:21:22: error: declaration of ‘void caps::Game::startGame()’ outside of class is not definition [-fpermissive]
+ void Game::startGame();
+                      ^
+make: *** [src/Game.o] Error 1
+06:51:16 **** Incremental Build of configuration Debug for project Caps ****
+make all 
+Building file: ../src/Game.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Game.d" -MT"src/Game.o" -o "src/Game.o" "../src/Game.cpp"
+../src/Game.cpp: In constructor ‘caps::Game::Game()’:
+../src/Game.cpp:12:12: error: no matching function for call to ‘caps::User::User()’
+ Game::Game() {
+            ^
+In file included from ../src/Game.h:10:0,
+                 from ../src/Game.cpp:8:
+../src/User.h:17:2: note: candidate: caps::User::User(std::__cxx11::string)
+  User(string name);
+  ^
+../src/User.h:17:2: note:   candidate expects 1 argument, 0 provided
+../src/User.h:15:7: note: candidate: caps::User::User(const caps::User&)
+ class User {
+       ^
+src/subdir.mk:30: recipe for target 'src/Game.o' failed
+../src/User.h:15:7: note:   candidate expects 1 argument, 0 provided
+make: *** [src/Game.o] Error 1
+06:56:52 **** Incremental Build of configuration Debug for project Caps ****
+make all 
+Building file: ../src/Capitals.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Capitals.d" -MT"src/Capitals.o" -o "src/Capitals.o" "../src/Capitals.cpp"
+Finished building: ../src/Capitals.cpp
+ 
+Building file: ../src/Game.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Game.d" -MT"src/Game.o" -o "src/Game.o" "../src/Game.cpp"
+Finished building: ../src/Game.cpp
+ 
+Building file: ../src/UI.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/UI.d" -MT"src/UI.o" -o "src/UI.o" "../src/UI.cpp"
+Finished building: ../src/UI.cpp
+ 
+Building file: ../src/User.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/User.d" -MT"src/User.o" -o "src/User.o" "../src/User.cpp"
+Finished building: ../src/User.cpp
+ 
+Building target: Caps
+Invoking: GCC C++ Linker
+g++  -o "Caps"  ./src/Capitals.o ./src/Game.o ./src/UI.o ./src/User.o ./src/UserDB.o   
+Finished building target: Caps
+ 
+06:58:52 **** Incremental Build of configuration Debug for project Caps ****
+make all 
+Building file: ../src/Capitals.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Capitals.d" -MT"src/Capitals.o" -o "src/Capitals.o" "../src/Capitals.cpp"
+In file included from ../src/Capitals.cpp:7:0:
+../src/Game.h:20:2: error: ‘vector’ does not name a type
+  vector<map<string,string>> cap_map;
+  ^
+make: *** [src/Capitals.o] Error 1
+src/subdir.mk:30: recipe for target 'src/Capitals.o' failed
+06:59:56 **** Incremental Build of configuration Debug for project Caps ****
+make all 
+Building file: ../src/Capitals.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Capitals.d" -MT"src/Capitals.o" -o "src/Capitals.o" "../src/Capitals.cpp"
+In file included from ../src/Capitals.cpp:7:0:
+../src/Game.h:22:26: error: ‘>>’ should be ‘> >’ within a nested template argument list
+  vector<map<string,string>> cap_map;
+                          ^
+make: *** [src/Capitals.o] Error 1
+src/subdir.mk:30: recipe for target 'src/Capitals.o' failed
+07:00:00 **** Incremental Build of configuration Debug for project Caps ****
+make all 
+Building file: ../src/Capitals.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Capitals.d" -MT"src/Capitals.o" -o "src/Capitals.o" "../src/Capitals.cpp"
+In file included from ../src/Capitals.cpp:7:0:
+../src/Game.h:22:26: error: ‘>>’ should be ‘> >’ within a nested template argument list
+  vector<map<string,string>> cap_map;
+                          ^
+src/subdir.mk:30: recipe for target 'src/Capitals.o' failed
+make: *** [src/Capitals.o] Error 1
+07:00:18 **** Incremental Build of configuration Debug for project Caps ****
+make all 
+Building file: ../src/Capitals.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Capitals.d" -MT"src/Capitals.o" -o "src/Capitals.o" "../src/Capitals.cpp"
+Finished building: ../src/Capitals.cpp
+ 
+Building file: ../src/Game.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Game.d" -MT"src/Game.o" -o "src/Game.o" "../src/Game.cpp"
+Finished building: ../src/Game.cpp
+ 
+Building target: Caps
+Invoking: GCC C++ Linker
+g++  -o "Caps"  ./src/Capitals.o ./src/Game.o ./src/UI.o ./src/User.o ./src/UserDB.o   
+Finished building target: Caps
+ 
+07:41:40 **** Incremental Build of configuration Debug for project Caps ****
+make all 
+Building file: ../src/Capitals.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Capitals.d" -MT"src/Capitals.o" -o "src/Capitals.o" "../src/Capitals.cpp"
+Finished building: ../src/Capitals.cpp
+ 
+Building file: ../src/Game.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Game.d" -MT"src/Game.o" -o "src/Game.o" "../src/Game.cpp"
+../src/Game.cpp: In member function ‘void caps::Game::startGame()’:
+../src/Game.cpp:25:2: error: ‘cout’ was not declared in this scope
+  cout << "loading data" << endl;
+  ^
+../src/Game.cpp: In member function ‘void caps::Game::loadCaps()’:
+../src/Game.cpp:38:3: error: ‘cout’ was not declared in this scope
+   cout << country << " *** " << capital << endl;
+   ^
+src/subdir.mk:30: recipe for target 'src/Game.o' failed
+make: *** [src/Game.o] Error 1
+07:41:57 **** Incremental Build of configuration Debug for project Caps ****
+make all 
+Building file: ../src/Game.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Game.d" -MT"src/Game.o" -o "src/Game.o" "../src/Game.cpp"
+../src/Game.cpp: In member function ‘void caps::Game::startGame()’:
+../src/Game.cpp:25:2: error: ‘cout’ was not declared in this scope
+  cout << "loading data" << endl;
+  ^
+../src/Game.cpp: In member function ‘void caps::Game::loadCaps()’:
+../src/Game.cpp:38:3: error: ‘cout’ was not declared in this scope
+   cout << country << " *** " << capital << endl;
+   ^
+make: *** [src/Game.o] Error 1
+src/subdir.mk:30: recipe for target 'src/Game.o' failed
+07:42:57 **** Incremental Build of configuration Debug for project Caps ****
+make all 
+Building file: ../src/Capitals.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Capitals.d" -MT"src/Capitals.o" -o "src/Capitals.o" "../src/Capitals.cpp"
+Finished building: ../src/Capitals.cpp
+ 
+Building file: ../src/Game.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Game.d" -MT"src/Game.o" -o "src/Game.o" "../src/Game.cpp"
+../src/Game.cpp: In member function ‘void caps::Game::startGame()’:
+../src/Game.cpp:25:2: error: ‘cout’ was not declared in this scope
+  cout << "loading data" << endl;
+  ^
+../src/Game.cpp: In member function ‘void caps::Game::loadCaps()’:
+../src/Game.cpp:38:3: error: ‘cout’ was not declared in this scope
+   cout << country << " *** " << capital << endl;
+   ^
+src/subdir.mk:30: recipe for target 'src/Game.o' failed
+make: *** [src/Game.o] Error 1
+07:43:59 **** Incremental Build of configuration Debug for project Caps ****
+make all 
+Building file: ../src/Game.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Game.d" -MT"src/Game.o" -o "src/Game.o" "../src/Game.cpp"
+Finished building: ../src/Game.cpp
+ 
+Building file: ../src/UI.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/UI.d" -MT"src/UI.o" -o "src/UI.o" "../src/UI.cpp"
+Finished building: ../src/UI.cpp
+ 
+Building target: Caps
+Invoking: GCC C++ Linker
+g++  -o "Caps"  ./src/Capitals.o ./src/Game.o ./src/UI.o ./src/User.o ./src/UserDB.o   
+Finished building target: Caps
+ 
+07:44:40 **** Incremental Build of configuration Debug for project Caps ****
+make all 
+Building file: ../src/Game.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Game.d" -MT"src/Game.o" -o "src/Game.o" "../src/Game.cpp"
+Finished building: ../src/Game.cpp
+ 
+Building target: Caps
+Invoking: GCC C++ Linker
+g++  -o "Caps"  ./src/Capitals.o ./src/Game.o ./src/UI.o ./src/User.o ./src/UserDB.o   
+Finished building target: Caps
+ 

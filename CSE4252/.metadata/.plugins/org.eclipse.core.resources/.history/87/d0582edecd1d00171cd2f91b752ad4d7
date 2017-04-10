@@ -1,0 +1,17 @@
+/*
+ * Capitals.cpp
+ *
+ *  Created on: Apr 10, 2017
+ *      Author: aj
+ */
+#include "Game.h"
+#include "User.h"
+#include "UserDB.h"
+#include <iostream>
+int main(){
+	cout << "hello";
+
+	return 0;
+}
+
+

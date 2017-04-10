@@ -1,0 +1,25 @@
+/*
+ * Game.cpp
+ *
+ *  Created on: Apr 10, 2017
+ *      Author: aj
+ */
+
+#include "Game.h"
+
+namespace caps {
+
+Game::Game() {
+	// TODO Auto-generated constructor stub
+
+}
+
+Game::~Game() {
+	// TODO Auto-generated destructor stub
+}
+
+void Game::startGame(){
+
+}
+
+} /* namespace caps */
