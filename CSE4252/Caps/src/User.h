@@ -7,6 +7,7 @@
 
 #ifndef USER_H_
 #define USER_H_
+#include <vector>
 #include <string>
 using namespace std;
 
@@ -14,12 +15,20 @@ using namespace std;
 namespace caps{
 class User {
 public:
-	User(string name);
+	User();
+	User(string username);
+	User(string name, vector<int> score_history);
 	virtual ~User();
 	string getName();
-	int high_score;
+	void displayUserInfo();
+	void displayUserName();
+	vector<int> score_history;
+
 private:
 	string user_name;
+	void saveScore(int);
+
+	int high_score;
 
 };
 

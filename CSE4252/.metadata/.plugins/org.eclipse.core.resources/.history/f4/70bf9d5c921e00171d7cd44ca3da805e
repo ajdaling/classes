@@ -1,0 +1,20 @@
+/*
+ * Capitals.cpp
+ *
+ *  Created on: Apr 10, 2017
+ *      Author: aj
+ */
+#include "Game.h"
+#include "User.h"
+#include "UserDB.h"
+#include "UI.h"
+#include <iostream>
+using namespace std;
+using namespace caps;
+int main(){
+	Game* game = new Game();
+	game->startGame();
+	return 0;
+}
+
+

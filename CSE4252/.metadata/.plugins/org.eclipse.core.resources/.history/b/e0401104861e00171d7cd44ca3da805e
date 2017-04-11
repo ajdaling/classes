@@ -1,0 +1,24 @@
+/*
+ * UserDB.cpp
+ *
+ *  Created on: Apr 10, 2017
+ *      Author: aj
+ */
+
+#include "UserDB.h"
+#include <fstream>
+namespace caps{
+UserDB::UserDB() {
+	// TODO Auto-generated constructor stub
+
+}
+
+UserDB::~UserDB() {
+	// TODO Auto-generated destructor stub
+}
+
+void loadAllUserData(){
+
+}
+
+}

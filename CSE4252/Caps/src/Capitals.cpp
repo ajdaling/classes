@@ -4,18 +4,15 @@
  *  Created on: Apr 10, 2017
  *      Author: aj
  */
-#include "Game.h"
-#include "User.h"
-#include "UserDB.h"
+#include <vector>
 #include "UI.h"
+
 #include <iostream>
 using namespace std;
 using namespace caps;
 int main(){
-	UI ui;
-	ui.welcome();
-	Game game;
-	game.startGame();
+	UI* ui =  new UI();
+	ui->welcome();
 	return 0;
 }
 

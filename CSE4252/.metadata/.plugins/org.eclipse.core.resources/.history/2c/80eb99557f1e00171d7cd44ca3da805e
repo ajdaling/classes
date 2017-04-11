@@ -1,0 +1,28 @@
+/*
+ * User.cpp
+ *
+ *  Created on: Apr 10, 2017
+ *      Author: aj
+ */
+
+#include "User.h"
+
+using namespace std;
+namespace caps{
+
+
+
+User::User(string name) {
+	user_name = name;
+
+}
+
+User::~User() {
+	// TODO Auto-generated destructor stub
+}
+
+string User::getName(){
+	return(user_name);
+}
+
+}

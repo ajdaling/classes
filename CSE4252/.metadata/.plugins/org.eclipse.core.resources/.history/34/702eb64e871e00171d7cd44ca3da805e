@@ -1,0 +1,43 @@
+/*
+ * User.cpp
+ *
+ *  Created on: Apr 10, 2017
+ *      Author: aj
+ */
+
+#include "User.h"
+
+using namespace std;
+namespace caps{
+
+
+User::User(){
+	high_score = 0;
+	user_name = "";
+}
+User::User(string name, vector<int> score_hist) {
+	user_name = name;
+	score_history = score_hist;
+	int high_score = 0;
+	for(int i = 0; i <= score_history.length(); i++){
+		if(score_history[i] > high_score){
+			high_score = score_history[i];
+		}
+	}
+}
+
+User::~User() {
+	// TODO Auto-generated destructor stub
+}
+
+string User::getName(){
+	return(user_name);
+}
+
+
+void User::saveScore(int round_score){
+	score_history.push_back(round_score);
+}
+
+
+}

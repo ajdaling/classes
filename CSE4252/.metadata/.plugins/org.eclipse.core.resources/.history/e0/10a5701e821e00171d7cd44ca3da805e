@@ -1,0 +1,123 @@
+/*
+ * Game.cpp
+ *
+ *  Created on: Apr 10, 2017
+ *      Author: aj
+ */
+
+#include "Game.h"
+#include <fstream>
+#include <assert.h>
+#include <iostream>
+#include <cstdlib>
+#include <string>
+using namespace std;
+namespace caps {
+
+Game::Game() {
+	ui = new UI();
+	userDB = new userDB();
+}
+
+Game::~Game() {
+	// TODO Auto-generated destructor stub
+}
+
+void Game::startGame(){
+	cout << "loading data" << endl;
+	ui.welcome();
+	loadCaps();
+	roundHandler();
+}
+
+void Game::loadCaps(){
+	ifstream in;
+	string country;
+	string capital;
+	in.open("capitals.csv");
+	assert(in.is_open());
+	while(getline(in,country)){
+		getline(in,capital);
+		caps_vec.push_back(make_pair(country,capital));
+	}
+}
+
+void Game::roundHandler(){
+	int question_index = 1;
+	bool keep_going = true;
+	pair<string,string> question;
+	int this_round_score = 0;
+	cout << "Beginning Quiz..." << endl;
+	cout << "You have " << MAX_TIME << " minutes to complete as many questions as you can." << endl;
+	cout << "Each question is worth " << MAX_SCORE << " points and you will have " << MAX_SCORE << " attempts per question." << endl;
+	cout << "You can enter \"hint\" to ask for a hint with a one point penalty." << endl;
+	cout << "Enter \"exit\" at any time to end the round early." << endl;
+	while(keep_going){
+		cout << "Question " << question_index << "---" << endl;
+		question_index++;
+		question = questionHandler();
+		this_round_score += answerHandler(question,&keep_going);
+	}
+
+
+}
+
+pair<string,string> Game::questionHandler(){
+	string country;
+	string capital;
+	//get random country
+	srand(time(NULL)); //seed the random generator
+	int random_index = rand() % caps_vec.size();
+	country = caps_vec[random_index].first;
+	capital = caps_vec[random_index].second;
+	//print country
+	cout << "What is the capital of: ";
+	cout << country;
+	cout << "?" << endl;
+	return(make_pair(country,capital));
+}
+
+int Game::answerHandler(pair<string,string> question, bool* keep_going){
+	string country = question.first;
+	string capital = question.second;
+	cout << "The answer is: " << capital << endl; // TODO remove
+	int score = MAX_SCORE;
+	bool done = false;
+	int cap_length = capital.length();
+	string ans, hint;
+
+	while(!done && score > 0){
+		getline(cin,ans);
+		if(ans.compare("exit")==0){ //check if user wants to quit
+			//exit
+			*keep_going = false; //end roundHandler loop
+			done = true; //end answerHandler loop
+		}else if(ans.compare("hint") == 0){ //check if user wants hint
+			if(score > 1){
+				hint = capital.substr(0,int(score * cap_length / MAX_SCORE));
+				cout << "one point deducted" << endl;
+				score--;
+				cout << "Hint: " << hint << endl;
+			}else{
+				cout << "You've had enough hints." << endl;
+			}
+			cout << score << " attempts remaining." << endl;
+		} else if(ans.compare(capital) == 0){ //check if answer is correct
+			cout << "Correct! " << endl;
+			done = true;
+		} else{ //answer is not correct
+			score--;
+			if(score > 0){
+				cout << "Incorrect. One point deducted." << endl;
+				cout << score << " attempts remaining." << endl;
+			} else{
+				cout << "Incorrect. The capital of " << country << " is " << capital << endl;
+				done = true;
+			}
+		}
+	}
+	cout << score << " points earned." << endl;
+	return(score);
+}
+
+} /* namespace caps */

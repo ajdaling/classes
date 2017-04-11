@@ -1,0 +1,51 @@
+/*
+ * UserDB.cpp
+ *
+ *  Created on: Apr 10, 2017
+ *      Author: aj
+ */
+#include "User.h"
+#include "UserDB.h"
+#include <fstream>
+#include <string>
+#include <iostream>
+#include <sstream>
+#include <vector>
+#include <algorithm>
+namespace caps{
+UserDB::UserDB() {
+	// TODO Auto-generated constructor stub
+
+}
+
+UserDB::~UserDB() {
+	// TODO Auto-generated destructor stub
+}
+
+void UserDB::loadAllUserData(){
+	cout << "Loading user data " << endl;
+	string line;
+	std::ifstream file("users.txt");
+	while(getline(file,line)){
+		//create new user
+		stringstream lineStream(line);
+		//get name
+		string name;
+		lineStream >> name;
+		//get scores
+		vector<int> score_hist;
+		int value;
+		while(lineStream >> value){
+			score_hist.push_back(value);
+		}
+		User usr = new User(name,score_hist);
+		all_users.push_back(usr);
+	}
+}
+
+void UserDB::displayAllUsers(){
+	for(int i = 0; i < all_users.size(); i++){
+		all_users[i].displayUserInfo();
+	}
+}
+}

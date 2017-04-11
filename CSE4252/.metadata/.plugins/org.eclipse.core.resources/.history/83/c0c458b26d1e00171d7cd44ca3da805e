@@ -1,0 +1,69 @@
+/*
+ * Game.cpp
+ *
+ *  Created on: Apr 10, 2017
+ *      Author: aj
+ */
+
+#include "Game.h"
+#include <fstream>
+#include <assert.h>
+#include <iostream>
+#include <cstdlib>
+#include <string>
+using namespace std;
+namespace caps {
+
+Game::Game() {
+
+
+}
+
+Game::~Game() {
+	// TODO Auto-generated destructor stub
+}
+
+void Game::startGame(){
+	cout << "loading data" << endl;
+	loadCaps();
+}
+
+void Game::loadCaps(){
+	ifstream in;
+	string country;
+	string capital;
+	in.open("capitals.csv");
+	assert(in.is_open());
+	while(getline(in,country)){
+		getline(in,capital);
+		caps_vec.push_back(make_pair(country,capital));
+	}
+
+}
+
+void Game::prompt(){
+	cout << "What is the capital of: ";
+	string country;
+	string capital;
+	int score;
+	//get random country
+	int random_index = rand() % caps_vec.size();
+	country = caps_vec[random_index].first;
+	capital = caps_vec[random_index].second;
+	//print country
+	cout << country << endl;
+	score = getAnswer(capital);
+}
+
+int Game::getAnswer(string capital){
+	cout << "The answer is: " << capital << endl; // TODO remove
+	int score = 3;
+	string ans;
+	cin >> ans;
+	while(capital.compare(ans) != 0 && score > 0){
+		cout << "Incorrect, try again." << endl;
+		cin >> ans;
+	}
+}
+
+} /* namespace caps */

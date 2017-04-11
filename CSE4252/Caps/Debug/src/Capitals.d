@@ -1,10 +1,10 @@
-src/Capitals.o: ../src/Capitals.cpp ../src/Game.h ../src/User.h \
- ../src/UserDB.h ../src/UI.h
+src/Capitals.o: ../src/Capitals.cpp ../src/UI.h ../src/UserDB.h \
+ ../src/User.h ../src/Game.h
 
-../src/Game.h:
-
-../src/User.h:
+../src/UI.h:
 
 ../src/UserDB.h:
 
-../src/UI.h:
+../src/User.h:
+
+../src/Game.h:

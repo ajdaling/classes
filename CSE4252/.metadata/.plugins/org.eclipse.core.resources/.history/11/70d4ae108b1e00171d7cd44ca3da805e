@@ -1,0 +1,77 @@
+/*
+ * UI.cpp
+ *
+ *  Created on: Apr 10, 2017
+ *      Author: aj
+ */
+
+#include "UI.h"
+#include "Game.h"
+#include <iostream>
+using namespace std;
+namespace caps {
+
+UI::UI() {
+	// TODO Auto-generated constructor stub
+
+}
+
+UI::~UI() {
+	// TODO Auto-generated destructor stub
+}
+
+void UI::welcome(Game* game){
+	cout << "Hello" << endl;
+	mainMenu(userdb);
+}
+
+void UI::mainMenu(Game* game){
+	int response;
+	cout << "Select an Option:" << endl;
+	cout << "(1) - Add New User" << endl;
+	cout << "(2) - Continue as Existing User" << endl;
+	cout << "(3) - View Saved Users" << endl;
+	cin >> response;
+	cin.ignore();
+	switch(response){
+	case 1:
+		UI::addUser();
+		break;
+	case 2:
+		continueAsUser();
+		break;
+	case 3:
+		userdb->displayAllUsers();
+		break;
+	default:
+		cout << "Invalid Response: Please Enter a valid number." << endl;
+	}
+}
+
+void UI::addUser(){
+
+}
+
+void UI::continueAsUser(){
+	cout << "Select a User: " << endl;
+	cout << "(1) - test" << endl;
+}
+
+void beginRound(){
+	cout << "Beginning Quiz..." << endl;
+	cout << "You have " << MAX_TIME << " minutes to complete as many questions as you can." << endl;
+	cout << "Each question is worth " << MAX_SCORE << " points and you will have " << MAX_SCORE << " attempts per question." << endl;
+	cout << "You can enter \"hint\" to ask for a hint with a one point penalty." << endl;
+	cout << "Enter \"exit\" at any time to end the round early." << endl;
+}
+
+void UI::afterRoundMenu(int this_round_score){
+	cout << "Nice job. You earned " << this_round_score << " this round. " << endl;
+	cout << "Choose from the following options." << endl;
+	cout << "(1) - Try again." << endl;
+	cout << "(2) - Exit. " << endl;
+	cout << "(3) - Return to main menu." << endl;
+	int response;
+}
+
+} /* namespace caps */

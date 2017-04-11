@@ -1,0 +1,31 @@
+/*
+ * UI.h
+ *
+ *  Created on: Apr 10, 2017
+ *      Author: aj
+ */
+
+#ifndef UI_H_
+#define UI_H_
+#include "UserDB.h"
+namespace caps {
+
+class UI {
+public:
+	UI();
+	virtual ~UI();
+
+	UserDB* userDB;
+	Game::Game* game;
+	void welcome();
+	void mainMenu();
+	void addUser();
+	void continueAsUser();
+	void afterRoundMenu(int);
+private:
+
+};
+
+} /* namespace caps */
+
+#endif /* UI_H_ */

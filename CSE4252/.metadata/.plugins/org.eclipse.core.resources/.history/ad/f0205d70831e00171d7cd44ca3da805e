@@ -1,0 +1,34 @@
+/*
+ * User.h
+ *
+ *  Created on: Apr 10, 2017
+ *      Author: aj
+ */
+
+#ifndef USER_H_
+#define USER_H_
+#include <vector>
+#include <string>
+using namespace std;
+
+
+namespace caps{
+class User {
+public:
+	User(string name);
+	virtual ~User();
+	string getName();
+	int high_score;
+
+private:
+	string user_name;
+	void saveScore();
+	vector<int> score_history;
+};
+
+
+}
+
+#endif /* USER_H_ */
+
+

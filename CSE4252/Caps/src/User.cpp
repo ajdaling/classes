@@ -6,15 +6,29 @@
  */
 
 #include "User.h"
+#include <iostream>
 
 using namespace std;
 namespace caps{
 
 
-
-User::User(string name) {
+User::User(){
+	high_score = 0;
+	user_name = "";
+}
+User::User(string username){
+	high_score = 0;
+	user_name = username;
+}
+User::User(string name, vector<int> score_hist) {
 	user_name = name;
-
+	score_history = score_hist;
+	high_score = 0;
+	for(unsigned int i = 0; i < score_history.size(); i++){
+		if(score_history[i] > high_score){
+			high_score = score_history[i];
+		}
+	}
 }
 
 User::~User() {
@@ -25,4 +39,19 @@ string User::getName(){
 	return(user_name);
 }
 
+
+void User::saveScore(int round_score){
+	score_history.push_back(round_score);
+}
+void User::displayUserInfo(){
+	cout << user_name << " High Score: " << high_score << endl;
+	cout << "Score History:";
+	for(unsigned int i = 0; i < score_history.size(); i++){
+		cout << " " << score_history[i] << ",";
+	}
+	cout << endl;
+}
+void User::displayUserName(){
+	cout << user_name << endl;
+}
 }
