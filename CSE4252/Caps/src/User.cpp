@@ -41,11 +41,25 @@ string User::getName(){
 
 
 void User::saveScore(int round_score){
+	cout << "saving score in User.cpp" << endl;
+	cout << "score is: " << round_score << endl;
 	score_history.push_back(round_score);
+	updateHighScore();
 }
+
+void User::updateHighScore(){
+	int hs = 0;
+	for(unsigned int i = 0; i < score_history.size(); i++){
+		if(score_history[i] > hs){
+			hs = score_history[i];
+		}
+	}
+	high_score = hs;
+}
+
 void User::displayUserInfo(){
-	cout << user_name << " High Score: " << high_score << endl;
-	cout << "Score History:";
+	cout << user_name << "||  High Score: " << high_score;
+	cout << " || Score History:";
 	for(unsigned int i = 0; i < score_history.size(); i++){
 		cout << " " << score_history[i] << ",";
 	}

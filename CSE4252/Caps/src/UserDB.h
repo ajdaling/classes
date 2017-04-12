@@ -17,15 +17,18 @@ class UserDB {
 public:
 	UserDB();
 	virtual ~UserDB();
+	User* getUser(string username);
 	void loadAllUserData();
 	void displayAllUsers();
-	void addUser(User);
+	User* addUser(string username);
+	void saveUserScore(string username, int score);
 	void displayUser();
 	void displayUserNames();
 	void writeUserData();
-	map<string,User> all_users;
-private:
+	bool hasUser(string username);
 
+private:
+	map<string,User*> all_users;
 };
 
 }

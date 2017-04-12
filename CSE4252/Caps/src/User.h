@@ -13,7 +13,7 @@ using namespace std;
 
 
 namespace caps{
-class User {
+class User{
 public:
 	User();
 	User(string username);
@@ -22,13 +22,14 @@ public:
 	string getName();
 	void displayUserInfo();
 	void displayUserName();
+	void saveScore(int);
 	vector<int> score_history;
+
 
 private:
 	string user_name;
-	void saveScore(int);
-
 	int high_score;
+	void updateHighScore();
 
 };
 

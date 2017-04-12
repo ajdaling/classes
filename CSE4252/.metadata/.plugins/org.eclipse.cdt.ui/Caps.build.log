@@ -1,33 +1,13 @@
-05:39:57 **** Incremental Build of configuration Debug for project Caps ****
+22:00:41 **** Incremental Build of configuration Debug for project Caps ****
 make all 
-Building file: ../src/Capitals.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Capitals.d" -MT"src/Capitals.o" -o "src/Capitals.o" "../src/Capitals.cpp"
-Finished building: ../src/Capitals.cpp
- 
-Building file: ../src/Game.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Game.d" -MT"src/Game.o" -o "src/Game.o" "../src/Game.cpp"
-Finished building: ../src/Game.cpp
- 
 Building file: ../src/UI.cpp
 Invoking: GCC C++ Compiler
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/UI.d" -MT"src/UI.o" -o "src/UI.o" "../src/UI.cpp"
-../src/UI.cpp: In member function ‘void caps::UI::afterRoundMenu(int)’:
-../src/UI.cpp:99:6: warning: unused variable ‘response’ [-Wunused-variable]
-  int response;
-      ^
+../src/UI.cpp: In member function ‘void caps::UI::mainMenu()’:
+../src/UI.cpp:40:7: warning: variable ‘done’ set but not used [-Wunused-but-set-variable]
+  bool done = false;
+       ^
 Finished building: ../src/UI.cpp
- 
-Building file: ../src/User.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/User.d" -MT"src/User.o" -o "src/User.o" "../src/User.cpp"
-Finished building: ../src/User.cpp
- 
-Building file: ../src/UserDB.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/UserDB.d" -MT"src/UserDB.o" -o "src/UserDB.o" "../src/UserDB.cpp"
-Finished building: ../src/UserDB.cpp
  
 Building target: Caps
 Invoking: GCC C++ Linker
@@ -35,5 +15,5 @@ g++  -o "Caps"  ./src/Capitals.o ./src/Game.o ./src/UI.o ./src/User.o ./src/User
 Finished building target: Caps
  
 
-05:39:59 Build Finished (took 1s.771ms)
+22:00:41 Build Finished (took 361ms)
 

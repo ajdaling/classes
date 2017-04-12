@@ -25,10 +25,15 @@ Game::~Game() {
 	// TODO Auto-generated destructor stub
 }
 
-void Game::startGame(){
+void Game::setUser(User* usr){
+	user = usr;
+}
+
+int Game::startGame(){
 	cout << "loading questions" << endl;
 	loadCaps();
-	roundHandler();
+	int round_score = roundHandler();
+	return(round_score);
 }
 
 void Game::loadCaps(){
@@ -51,7 +56,7 @@ void Game::beginRound(){
 	cout << "Enter \"exit\" at any time to end the round early." << endl;
 }
 
-void Game::roundHandler(){
+int Game::roundHandler(){
 	time_t begin, end;
 	int question_index = 1;
 	bool keep_going = true;
@@ -75,7 +80,7 @@ void Game::roundHandler(){
 			keep_going = false;
 		}
 	}
-
+	return(this_round_score);
 }
 
 pair<string,string> Game::questionHandler(){
@@ -105,12 +110,13 @@ int Game::answerHandler(pair<string,string> question, bool* keep_going){
 	while(!done && score > 0){
 		getline(cin,ans);
 		if(ans.compare("exit")==0){ //check if user wants to quit
+			score = 0;
 			//exit
 			*keep_going = false; //end roundHandler loop
 			done = true; //end answerHandler loop
 		}else if(ans.compare("hint") == 0){ //check if user wants hint
 			if(score > 1){
-				hint = capital.substr(0,int(score * cap_length / MAX_SCORE));
+				hint = capital.substr(0,int((MAX_SCORE - score + 1) * cap_length / MAX_SCORE));
 				cout << "one point deducted" << endl;
 				score--;
 				cout << "Hint: " << hint << endl;
@@ -134,6 +140,10 @@ int Game::answerHandler(pair<string,string> question, bool* keep_going){
 	}
 	cout << score << " points earned." << endl;
 	return(score);
+}
+
+string Game::getUserName(){
+	return(user->getName());
 }
 
 } /* namespace caps */

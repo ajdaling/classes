@@ -40,42 +40,61 @@ void UserDB::loadAllUserData(){
 			score_hist.push_back(value);
 		}
 		User* usr = new User(name,score_hist);
-		all_users[name] = *usr;
+		all_users[name] = usr;
 	}
 }
 
 void UserDB::displayAllUsers(){
-	map<string,User>::iterator it = all_users.begin();
+	map<string,User*>::iterator it = all_users.begin();
 	while(it != all_users.end()){
-		it->second.displayUserInfo();
+		it->second->displayUserInfo();
 		it++;
 	}
 }
-void UserDB::addUser(User usr){
-	all_users[usr.getName()] = usr;
+User* UserDB::addUser(string username){
+	User* usr = new User(username);
+	all_users[username] = usr;
+	return(usr);
 }
 void UserDB::displayUserNames(){
-	map<string,User>::iterator it = all_users.begin();
+	map<string,User*>::iterator it = all_users.begin();
 	while(it != all_users.end()){
-		it->second.displayUserName();
+		it->second->displayUserName();
 		it++;
 	}
+}
+
+/*assumes username exists in UserDB (i.e. hasUser() has already been called */
+User* UserDB::getUser(string username){
+	return(all_users[username]);
+}
+
+bool UserDB::hasUser(string username){
+	return(all_users.find(username)!=all_users.end());
 }
 
 void UserDB::writeUserData(){
 
 
-	ofstream file("users.text",std::ofstream::app);
-	map<string,User>::iterator it = all_users.begin();
+	ofstream file;
+	file.open("users.txt",std::ofstream::out | std::ofstream::trunc);
+	map<string,User*>::iterator it = all_users.begin();
 	while(it != all_users.end()){
 		string name = it->first;
-		User usr = it->second;
+		User* usr = it->second;
 		file << name;
-		vector<int> scores = usr.score_history;
+		vector<int> scores = usr->score_history;
 		for(unsigned int i = 0; i < scores.size(); i++){
 			file << " " << scores[i];
 		}
-		cout << endl;
+		file << endl;
+		it++;
 	}
+	file.close();
 }
+void UserDB::saveUserScore(string username, int score){
+	all_users[username]->saveScore(score);
 }
+
+}
+

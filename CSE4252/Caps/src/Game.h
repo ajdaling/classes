@@ -24,17 +24,19 @@ public:
 	static const int MAX_SCORE = 5; //max points (and attempts) per question
 	static const int MAX_TIME = 1; // max time per round
 	virtual ~Game();
-	void startGame();
+	int startGame();
+	void setUser(User* usr);
+	string getUserName();
 	std::vector< std::pair <std::string,std::string> > caps_vec;
-	User* user;
 
 private:
 
 	void loadCaps(); //loads question data from csv file
 	void beginRound();
-	void roundHandler(); //
+	int roundHandler(); //
 	pair<string,string> questionHandler(); //randomly selects and returns pair<country,capital> for question
 	int answerHandler(pair<string,string>, bool*); //decides what to do with input
+	User* user;
 };
 
 
