@@ -1,0 +1,1851 @@
+
+
+*******************************************************************************
+Thu Apr 13 01:59:41 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u ($1):(log(abs(($4-$2)/$4)))
+        format = x:z
+        x range restricted to [1.00000 : 1.09000]
+        #datapoints = 164
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x + b + 1e-19
+BREAK: Need via and either parameter list or file
+
+*******************************************************************************
+Thu Apr 13 02:01:03 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u ($1):(log(abs(($4-$2)/$4)))
+        format = x:z
+        x range restricted to [1.00000 : 1.09000]
+        #datapoints = 164
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x + b + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 1.0223788808e+03   0.00e+00  1.00e+00    1.000000e+00   1.000000e+00
+   5 2.8233826822e-01  -6.61e-07  1.00e-05   -1.937058e+01   1.894430e+01
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 0.282338
+rel. change during last iteration : -6.60617e-12
+
+degrees of freedom    (FIT_NDF)                        : 162
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0417472
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00174283
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = -19.3706         +/- 0.2963       (1.53%)
+b               = 18.9443          +/- 0.2972       (1.569%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 02:01:03 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u ($1):(log(abs(($4-$2)/$4)))
+        format = x:z
+        x range restricted to [1.10000 : 1.17000]
+        #datapoints = 3
+        residuals are weighted equally (unit weight)
+
+function used for fitting: g(x)
+	g(x) = c*x + d + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   c             d            
+   0 4.5448852570e+01   0.00e+00  1.07e+00    1.000000e+00   1.000000e+00
+   5 2.9695044757e-02  -2.74e-01  1.07e-05    2.342197e+01  -2.844374e+01
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 0.029695
+rel. change during last iteration : -2.73935e-06
+
+degrees of freedom    (FIT_NDF)                        : 1
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.172323
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.029695
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+c               = 23.422           +/- 4.763        (20.34%)
+d               = -28.4437         +/- 5.435        (19.11%)
+
+correlation matrix of the fit parameters:
+                c      d      
+c               1.000 
+d              -1.000  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 02:01:03 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u ($1):(log(abs(($4-$2)/$4)))
+        format = x:z
+        x range restricted to [1.18000 : 1.43000]
+        #datapoints = 5
+        residuals are weighted equally (unit weight)
+
+function used for fitting: h(x)
+	h(x) = e*x + f + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   e             f            
+   0 3.8391548701e+01   0.00e+00  1.16e+00    1.000000e+00   1.000000e+00
+   5 1.9180841671e-02  -1.24e-06  1.16e-05    3.070400e+00  -4.454472e+00
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 0.0191808
+rel. change during last iteration : -1.23797e-11
+
+degrees of freedom    (FIT_NDF)                        : 3
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0799601
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00639361
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+e               = 3.0704           +/- 0.4684       (15.25%)
+f               = -4.45447         +/- 0.6093       (13.68%)
+
+correlation matrix of the fit parameters:
+                e      f      
+e               1.000 
+f              -0.998  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 02:02:32 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u ($1):(log(abs(($4-$2)/$4)))
+        format = x:z
+        x range restricted to [1.00000 : 1.09000]
+        #datapoints = 164
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x + b + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 1.0223788808e+03   0.00e+00  1.00e+00    1.000000e+00   1.000000e+00
+   5 2.8233826822e-01  -6.61e-07  1.00e-05   -1.937058e+01   1.894430e+01
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 0.282338
+rel. change during last iteration : -6.60617e-12
+
+degrees of freedom    (FIT_NDF)                        : 162
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0417472
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00174283
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = -19.3706         +/- 0.2963       (1.53%)
+b               = 18.9443          +/- 0.2972       (1.569%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 02:02:32 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u ($1):(log(abs(($4-$2)/$4)))
+        format = x:z
+        x range restricted to [1.10000 : 1.17000]
+        #datapoints = 3
+        residuals are weighted equally (unit weight)
+
+function used for fitting: g(x)
+	g(x) = c*x + d + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   c             d            
+   0 4.5448852570e+01   0.00e+00  1.07e+00    1.000000e+00   1.000000e+00
+   5 2.9695044757e-02  -2.74e-01  1.07e-05    2.342197e+01  -2.844374e+01
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 0.029695
+rel. change during last iteration : -2.73935e-06
+
+degrees of freedom    (FIT_NDF)                        : 1
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.172323
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.029695
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+c               = 23.422           +/- 4.763        (20.34%)
+d               = -28.4437         +/- 5.435        (19.11%)
+
+correlation matrix of the fit parameters:
+                c      d      
+c               1.000 
+d              -1.000  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 02:02:32 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u ($1):(log(abs(($4-$2)/$4)))
+        format = x:z
+        x range restricted to [1.18000 : 1.43000]
+        #datapoints = 5
+        residuals are weighted equally (unit weight)
+
+function used for fitting: h(x)
+	h(x) = e*x + f + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   e             f            
+   0 3.8391548701e+01   0.00e+00  1.16e+00    1.000000e+00   1.000000e+00
+   5 1.9180841671e-02  -1.24e-06  1.16e-05    3.070400e+00  -4.454472e+00
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 0.0191808
+rel. change during last iteration : -1.23797e-11
+
+degrees of freedom    (FIT_NDF)                        : 3
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0799601
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00639361
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+e               = 3.0704           +/- 0.4684       (15.25%)
+f               = -4.45447         +/- 0.6093       (13.68%)
+
+correlation matrix of the fit parameters:
+                e      f      
+e               1.000 
+f              -0.998  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 02:04:06 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u ($1):(log(abs(($4-$2)/$4)))
+        format = x:z
+        x range restricted to [1.00000 : 1.09000]
+        #datapoints = 164
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x + b + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 1.0223788808e+03   0.00e+00  1.00e+00    1.000000e+00   1.000000e+00
+   5 2.8233826822e-01  -6.61e-07  1.00e-05   -1.937058e+01   1.894430e+01
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 0.282338
+rel. change during last iteration : -6.60617e-12
+
+degrees of freedom    (FIT_NDF)                        : 162
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0417472
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00174283
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = -19.3706         +/- 0.2963       (1.53%)
+b               = 18.9443          +/- 0.2972       (1.569%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 02:04:06 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u ($1):(log(abs(($4-$2)/$4)))
+        format = x:z
+        x range restricted to [1.10000 : 1.17000]
+        #datapoints = 3
+        residuals are weighted equally (unit weight)
+
+function used for fitting: g(x)
+	g(x) = c*x + d + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   c             d            
+   0 4.5448852570e+01   0.00e+00  1.07e+00    1.000000e+00   1.000000e+00
+   5 2.9695044757e-02  -2.74e-01  1.07e-05    2.342197e+01  -2.844374e+01
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 0.029695
+rel. change during last iteration : -2.73935e-06
+
+degrees of freedom    (FIT_NDF)                        : 1
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.172323
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.029695
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+c               = 23.422           +/- 4.763        (20.34%)
+d               = -28.4437         +/- 5.435        (19.11%)
+
+correlation matrix of the fit parameters:
+                c      d      
+c               1.000 
+d              -1.000  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 02:04:06 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u ($1):(log(abs(($4-$2)/$4)))
+        format = x:z
+        x range restricted to [1.18000 : 1.43000]
+        #datapoints = 5
+        residuals are weighted equally (unit weight)
+
+function used for fitting: h(x)
+	h(x) = e*x + f + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   e             f            
+   0 3.8391548701e+01   0.00e+00  1.16e+00    1.000000e+00   1.000000e+00
+   5 1.9180841671e-02  -1.24e-06  1.16e-05    3.070400e+00  -4.454472e+00
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 0.0191808
+rel. change during last iteration : -1.23797e-11
+
+degrees of freedom    (FIT_NDF)                        : 3
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0799601
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00639361
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+e               = 3.0704           +/- 0.4684       (15.25%)
+f               = -4.45447         +/- 0.6093       (13.68%)
+
+correlation matrix of the fit parameters:
+                e      f      
+e               1.000 
+f              -0.998  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 02:11:05 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u ($1):(log(abs(($4-$2)/$4)))
+        format = x:z
+        x range restricted to [1.00000 : 1.09000]
+BREAK: No data to fit
+
+*******************************************************************************
+Thu Apr 13 02:11:56 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u ($1):(log(abs(($4-$2)/$4)))
+        format = x:z
+        x range restricted to [1.00000 : 1.09000]
+BREAK: No data to fit
+
+*******************************************************************************
+Thu Apr 13 02:12:48 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u ($1):(log(abs(($4-$2)/$4)))
+        format = x:z
+        x range restricted to [1.00000 : 2.00000]
+BREAK: No data to fit
+
+*******************************************************************************
+Thu Apr 13 02:13:03 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u ($1):(log(abs(($4-$2)/$4)))
+        format = x:z
+        x range restricted to [1.00000 : 2.00000]
+BREAK: No data to fit
+
+*******************************************************************************
+Thu Apr 13 02:14:07 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u ($1):(log(abs(($4-$2)/$4)))
+        format = x:z
+        #datapoints = 177
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x + b + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 8.4900667587e+03   0.00e+00  5.78e+00    1.000000e+00   1.000000e+00
+   4 3.4740537446e+01  -2.74e-08  5.78e-04   -3.111232e-02  -7.401306e-01
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 34.7405
+rel. change during last iteration : -2.73659e-13
+
+degrees of freedom    (FIT_NDF)                        : 175
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.445553
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.198517
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = -0.0311123       +/- 0.008278     (26.61%)
+b               = -0.740131        +/- 0.06716      (9.074%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b               0.867  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 02:14:07 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u ($1):(log(abs(($4-$2)/$4)))
+        format = x:z
+        #datapoints = 177
+        residuals are weighted equally (unit weight)
+
+function used for fitting: g(x)
+	g(x) = c*x + d + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   c             d            
+   0 8.4900667587e+03   0.00e+00  5.78e+00    1.000000e+00   1.000000e+00
+   4 3.4740537446e+01  -2.74e-08  5.78e-04   -3.111232e-02  -7.401306e-01
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 34.7405
+rel. change during last iteration : -2.73659e-13
+
+degrees of freedom    (FIT_NDF)                        : 175
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.445553
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.198517
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+c               = -0.0311123       +/- 0.008278     (26.61%)
+d               = -0.740131        +/- 0.06716      (9.074%)
+
+correlation matrix of the fit parameters:
+                c      d      
+c               1.000 
+d               0.867  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 02:14:07 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u ($1):(log(abs(($4-$2)/$4)))
+        format = x:z
+        #datapoints = 177
+        residuals are weighted equally (unit weight)
+
+function used for fitting: h(x)
+	h(x) = e*x + f + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   e             f            
+   0 8.4900667587e+03   0.00e+00  5.78e+00    1.000000e+00   1.000000e+00
+   4 3.4740537446e+01  -2.74e-08  5.78e-04   -3.111232e-02  -7.401306e-01
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 34.7405
+rel. change during last iteration : -2.73659e-13
+
+degrees of freedom    (FIT_NDF)                        : 175
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.445553
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.198517
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+e               = -0.0311123       +/- 0.008278     (26.61%)
+f               = -0.740131        +/- 0.06716      (9.074%)
+
+correlation matrix of the fit parameters:
+                e      f      
+e               1.000 
+f               0.867  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 02:14:56 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u ($1):(log(abs(($4-$2)/$4)))
+        format = x:z
+        #datapoints = 64
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x + b + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 2.3752603864e+02   0.00e+00  2.17e+00    1.000000e+00   1.000000e+00
+   3 1.9805412717e+01  -2.04e-01  2.17e-03   -1.154097e-01  -9.347398e-01
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 19.8054
+rel. change during last iteration : -2.03788e-06
+
+degrees of freedom    (FIT_NDF)                        : 62
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.565192
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.319442
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = -0.11541         +/- 0.0483       (41.85%)
+b               = -0.93474         +/- 0.1401       (14.99%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b               0.864  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 02:14:56 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u ($1):(log(abs(($4-$2)/$4)))
+        format = x:z
+        #datapoints = 64
+        residuals are weighted equally (unit weight)
+
+function used for fitting: g(x)
+	g(x) = c*x + d + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   c             d            
+   0 2.3752603864e+02   0.00e+00  2.17e+00    1.000000e+00   1.000000e+00
+   3 1.9805412717e+01  -2.04e-01  2.17e-03   -1.154097e-01  -9.347398e-01
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 19.8054
+rel. change during last iteration : -2.03788e-06
+
+degrees of freedom    (FIT_NDF)                        : 62
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.565192
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.319442
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+c               = -0.11541         +/- 0.0483       (41.85%)
+d               = -0.93474         +/- 0.1401       (14.99%)
+
+correlation matrix of the fit parameters:
+                c      d      
+c               1.000 
+d               0.864  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 02:14:56 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u ($1):(log(abs(($4-$2)/$4)))
+        format = x:z
+        #datapoints = 64
+        residuals are weighted equally (unit weight)
+
+function used for fitting: h(x)
+	h(x) = e*x + f + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   e             f            
+   0 2.3752603864e+02   0.00e+00  2.17e+00    1.000000e+00   1.000000e+00
+   3 1.9805412717e+01  -2.04e-01  2.17e-03   -1.154097e-01  -9.347398e-01
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 19.8054
+rel. change during last iteration : -2.03788e-06
+
+degrees of freedom    (FIT_NDF)                        : 62
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.565192
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.319442
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+e               = -0.11541         +/- 0.0483       (41.85%)
+f               = -0.93474         +/- 0.1401       (14.99%)
+
+correlation matrix of the fit parameters:
+                e      f      
+e               1.000 
+f               0.864  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 02:15:18 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u ($1):(log(abs(($4-$2)/$4)))
+        format = x:z
+        #datapoints = 38
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x + b + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 8.6958414825e+04   0.00e+00  1.43e+00    1.000000e+00   1.000000e+00
+   3 5.0128323383e+02  -7.12e-01  1.43e-03   -2.398396e+00   4.339053e+01
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 501.283
+rel. change during last iteration : -7.12488e-06
+
+degrees of freedom    (FIT_NDF)                        : 36
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 3.73156
+variance of residuals (reduced chisquare) = WSSR/ndf   : 13.9245
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = -2.3984          +/- 0.6972       (29.07%)
+b               = 43.3905          +/- 1.23         (2.834%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b               0.870  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 02:15:18 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u ($1):(log(abs(($4-$2)/$4)))
+        format = x:z
+        #datapoints = 38
+        residuals are weighted equally (unit weight)
+
+function used for fitting: g(x)
+	g(x) = c*x + d + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   c             d            
+   0 8.6958414825e+04   0.00e+00  1.43e+00    1.000000e+00   1.000000e+00
+   3 5.0128323383e+02  -7.12e-01  1.43e-03   -2.398396e+00   4.339053e+01
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 501.283
+rel. change during last iteration : -7.12488e-06
+
+degrees of freedom    (FIT_NDF)                        : 36
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 3.73156
+variance of residuals (reduced chisquare) = WSSR/ndf   : 13.9245
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+c               = -2.3984          +/- 0.6972       (29.07%)
+d               = 43.3905          +/- 1.23         (2.834%)
+
+correlation matrix of the fit parameters:
+                c      d      
+c               1.000 
+d               0.870  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 02:15:18 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u ($1):(log(abs(($4-$2)/$4)))
+        format = x:z
+        #datapoints = 38
+        residuals are weighted equally (unit weight)
+
+function used for fitting: h(x)
+	h(x) = e*x + f + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   e             f            
+   0 8.6958414825e+04   0.00e+00  1.43e+00    1.000000e+00   1.000000e+00
+   3 5.0128323383e+02  -7.12e-01  1.43e-03   -2.398396e+00   4.339053e+01
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 501.283
+rel. change during last iteration : -7.12488e-06
+
+degrees of freedom    (FIT_NDF)                        : 36
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 3.73156
+variance of residuals (reduced chisquare) = WSSR/ndf   : 13.9245
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+e               = -2.3984          +/- 0.6972       (29.07%)
+f               = 43.3905          +/- 1.23         (2.834%)
+
+correlation matrix of the fit parameters:
+                e      f      
+e               1.000 
+f               0.870  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 02:18:32 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u ($1):(log(abs(($4-$2)/$4)))
+        format = x:z
+        #datapoints = 38
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x + b + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 8.6958414825e+04   0.00e+00  1.43e+00    1.000000e+00   1.000000e+00
+   3 5.0128323383e+02  -7.12e-01  1.43e-03   -2.398396e+00   4.339053e+01
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 501.283
+rel. change during last iteration : -7.12488e-06
+
+degrees of freedom    (FIT_NDF)                        : 36
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 3.73156
+variance of residuals (reduced chisquare) = WSSR/ndf   : 13.9245
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = -2.3984          +/- 0.6972       (29.07%)
+b               = 43.3905          +/- 1.23         (2.834%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b               0.870  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 02:18:32 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u ($1):(log(abs(($4-$2)/$4)))
+        format = x:z
+        #datapoints = 38
+        residuals are weighted equally (unit weight)
+
+function used for fitting: g(x)
+	g(x) = c*x + d + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   c             d            
+   0 8.6958414825e+04   0.00e+00  1.43e+00    1.000000e+00   1.000000e+00
+   3 5.0128323383e+02  -7.12e-01  1.43e-03   -2.398396e+00   4.339053e+01
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 501.283
+rel. change during last iteration : -7.12488e-06
+
+degrees of freedom    (FIT_NDF)                        : 36
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 3.73156
+variance of residuals (reduced chisquare) = WSSR/ndf   : 13.9245
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+c               = -2.3984          +/- 0.6972       (29.07%)
+d               = 43.3905          +/- 1.23         (2.834%)
+
+correlation matrix of the fit parameters:
+                c      d      
+c               1.000 
+d               0.870  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 02:18:32 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u ($1):(log(abs(($4-$2)/$4)))
+        format = x:z
+        #datapoints = 38
+        residuals are weighted equally (unit weight)
+
+function used for fitting: h(x)
+	h(x) = e*x + f + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   e             f            
+   0 8.6958414825e+04   0.00e+00  1.43e+00    1.000000e+00   1.000000e+00
+   3 5.0128323383e+02  -7.12e-01  1.43e-03   -2.398396e+00   4.339053e+01
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 501.283
+rel. change during last iteration : -7.12488e-06
+
+degrees of freedom    (FIT_NDF)                        : 36
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 3.73156
+variance of residuals (reduced chisquare) = WSSR/ndf   : 13.9245
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+e               = -2.3984          +/- 0.6972       (29.07%)
+f               = 43.3905          +/- 1.23         (2.834%)
+
+correlation matrix of the fit parameters:
+                e      f      
+e               1.000 
+f               0.870  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 02:59:42 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u (log($1)):(log(abs((($4)-($3))/($4))))
+        format = x:z
+        x range restricted to [-3.00000 : -2.20000]
+        #datapoints = 5
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x + b + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 1.1655934427e+04   0.00e+00  1.98e+00    1.000000e+00   1.000000e+00
+   5 4.7959520981e-02  -1.42e-05  1.98e-05   -3.742819e+00   3.693719e+01
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 0.0479595
+rel. change during last iteration : -1.42459e-10
+
+degrees of freedom    (FIT_NDF)                        : 3
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.126438
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0159865
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = -3.74282         +/- 0.2193       (5.859%)
+b               = 36.9372          +/- 0.5729       (1.551%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b               0.995  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 02:59:42 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u (log($1)):(log(abs((($4)-($2))/($4))))
+        format = x:z
+        x range restricted to [-3.00000 : -1.50000]
+        #datapoints = 9
+        residuals are weighted equally (unit weight)
+
+function used for fitting: g(x)
+	g(x) = c*x + d + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   c             d            
+   0 1.7218797035e+04   0.00e+00  1.76e+00    1.000000e+00   1.000000e+00
+   4 1.2069303767e+01  -8.20e-03  1.76e-04   -6.015539e+00   2.892025e+01
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 12.0693
+rel. change during last iteration : -8.19783e-08
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.31308
+variance of residuals (reduced chisquare) = WSSR/ndf   : 1.72419
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+c               = -6.01554         +/- 0.9298       (15.46%)
+d               = 28.9202          +/- 2.124        (7.343%)
+
+correlation matrix of the fit parameters:
+                c      d      
+c               1.000 
+d               0.979  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 02:59:42 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u (log($1)):(log(abs((($4)-($3))/($4))))
+        format = x:z
+        x range restricted to [-1.40000 : -0.600000]
+        #datapoints = 4
+        residuals are weighted equally (unit weight)
+
+function used for fitting: h(x)
+	h(x) = e*x + f + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   e             f            
+   0 8.1091510100e+03   0.00e+00  1.04e+00    1.000000e+00   1.000000e+00
+   4 9.3076086569e-01  -4.70e-01  1.04e-04    1.191680e+01   5.742934e+01
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.930761
+rel. change during last iteration : -4.70485e-06
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.682188
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.46538
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+e               = 11.9168          +/- 1.673        (14.04%)
+f               = 57.4293          +/- 1.79         (3.116%)
+
+correlation matrix of the fit parameters:
+                e      f      
+e               1.000 
+f               0.982  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 02:59:42 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u (log($1)):(log(abs((($4)-($2))/($4))))
+        format = x:z
+        x range restricted to [-1.20000 : -0.500000]
+        #datapoints = 4
+        residuals are weighted equally (unit weight)
+
+function used for fitting: i(x)
+	i(x) = g*x + h + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   g             h            
+   0 8.1595157302e+03   0.00e+00  9.47e-01    1.000000e+00   1.000000e+00
+   4 1.4912547748e-01  -6.86e-01  9.47e-05    1.143894e+01   5.517105e+01
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.149125
+rel. change during last iteration : -6.86226e-06
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.273062
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0745627
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+g               = 11.4389          +/- 0.6698       (5.855%)
+h               = 55.171           +/- 0.5969       (1.082%)
+
+correlation matrix of the fit parameters:
+                g      h      
+g               1.000 
+h               0.973  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 03:00:26 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u (log($1)):(log(abs((($4)-($3))/($4))))
+        format = x:z
+        x range restricted to [-3.00000 : -2.20000]
+        #datapoints = 5
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x + b + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 1.1655934427e+04   0.00e+00  1.98e+00    1.000000e+00   1.000000e+00
+   5 4.7959520981e-02  -1.42e-05  1.98e-05   -3.742819e+00   3.693719e+01
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 0.0479595
+rel. change during last iteration : -1.42459e-10
+
+degrees of freedom    (FIT_NDF)                        : 3
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.126438
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0159865
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = -3.74282         +/- 0.2193       (5.859%)
+b               = 36.9372          +/- 0.5729       (1.551%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b               0.995  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 03:00:26 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u (log($1)):(log(abs((($4)-($2))/($4))))
+        format = x:z
+        x range restricted to [-3.00000 : -1.50000]
+        #datapoints = 9
+        residuals are weighted equally (unit weight)
+
+function used for fitting: g(x)
+	g(x) = c*x + d + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   c             d            
+   0 1.7218797035e+04   0.00e+00  1.76e+00    1.000000e+00   1.000000e+00
+   4 1.2069303767e+01  -8.20e-03  1.76e-04   -6.015539e+00   2.892025e+01
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 12.0693
+rel. change during last iteration : -8.19783e-08
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.31308
+variance of residuals (reduced chisquare) = WSSR/ndf   : 1.72419
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+c               = -6.01554         +/- 0.9298       (15.46%)
+d               = 28.9202          +/- 2.124        (7.343%)
+
+correlation matrix of the fit parameters:
+                c      d      
+c               1.000 
+d               0.979  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 03:00:26 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u (log($1)):(log(abs((($4)-($3))/($4))))
+        format = x:z
+        x range restricted to [-1.40000 : -0.600000]
+        #datapoints = 4
+        residuals are weighted equally (unit weight)
+
+function used for fitting: h(x)
+	h(x) = e*x + f + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   e             f            
+   0 8.1091510100e+03   0.00e+00  1.04e+00    1.000000e+00   1.000000e+00
+   4 9.3076086569e-01  -4.70e-01  1.04e-04    1.191680e+01   5.742934e+01
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.930761
+rel. change during last iteration : -4.70485e-06
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.682188
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.46538
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+e               = 11.9168          +/- 1.673        (14.04%)
+f               = 57.4293          +/- 1.79         (3.116%)
+
+correlation matrix of the fit parameters:
+                e      f      
+e               1.000 
+f               0.982  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 03:00:26 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u (log($1)):(log(abs((($4)-($2))/($4))))
+        format = x:z
+        x range restricted to [-1.20000 : -0.500000]
+        #datapoints = 4
+        residuals are weighted equally (unit weight)
+
+function used for fitting: i(x)
+	i(x) = g*x + h + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   g             h            
+   0 8.1595157302e+03   0.00e+00  9.47e-01    1.000000e+00   1.000000e+00
+   4 1.4912547748e-01  -6.86e-01  9.47e-05    1.143894e+01   5.517105e+01
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.149125
+rel. change during last iteration : -6.86226e-06
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.273062
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0745627
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+g               = 11.4389          +/- 0.6698       (5.855%)
+h               = 55.171           +/- 0.5969       (1.082%)
+
+correlation matrix of the fit parameters:
+                g      h      
+g               1.000 
+h               0.973  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 03:01:08 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u (log($1)):(log(abs((($4)-($3))/($4))))
+        format = x:z
+        x range restricted to [-2.60000 : -2.10000]
+        #datapoints = 3
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x + b + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 6.7486406537e+03   0.00e+00  1.85e+00    1.000000e+00   1.000000e+00
+   5 2.8460426113e-03  -2.67e-02  1.85e-05   -4.393095e+00   3.538579e+01
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 0.00284604
+rel. change during last iteration : -2.67424e-07
+
+degrees of freedom    (FIT_NDF)                        : 1
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0533483
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00284604
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = -4.39309         +/- 0.2069       (4.71%)
+b               = 35.3858          +/- 0.5011       (1.416%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b               0.998  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 03:01:08 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u (log($1)):(log(abs((($4)-($2))/($4))))
+        format = x:z
+        x range restricted to [-3.00000 : -1.50000]
+        #datapoints = 9
+        residuals are weighted equally (unit weight)
+
+function used for fitting: g(x)
+	g(x) = c*x + d + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   c             d            
+   0 1.7218797035e+04   0.00e+00  1.76e+00    1.000000e+00   1.000000e+00
+   4 1.2069303767e+01  -8.20e-03  1.76e-04   -6.015539e+00   2.892025e+01
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 12.0693
+rel. change during last iteration : -8.19783e-08
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.31308
+variance of residuals (reduced chisquare) = WSSR/ndf   : 1.72419
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+c               = -6.01554         +/- 0.9298       (15.46%)
+d               = 28.9202          +/- 2.124        (7.343%)
+
+correlation matrix of the fit parameters:
+                c      d      
+c               1.000 
+d               0.979  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 03:01:08 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u (log($1)):(log(abs((($4)-($3))/($4))))
+        format = x:z
+        x range restricted to [-1.40000 : -0.600000]
+        #datapoints = 4
+        residuals are weighted equally (unit weight)
+
+function used for fitting: h(x)
+	h(x) = e*x + f + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   e             f            
+   0 8.1091510100e+03   0.00e+00  1.04e+00    1.000000e+00   1.000000e+00
+   4 9.3076086569e-01  -4.70e-01  1.04e-04    1.191680e+01   5.742934e+01
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.930761
+rel. change during last iteration : -4.70485e-06
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.682188
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.46538
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+e               = 11.9168          +/- 1.673        (14.04%)
+f               = 57.4293          +/- 1.79         (3.116%)
+
+correlation matrix of the fit parameters:
+                e      f      
+e               1.000 
+f               0.982  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 03:01:08 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u (log($1)):(log(abs((($4)-($2))/($4))))
+        format = x:z
+        x range restricted to [-1.20000 : -0.500000]
+        #datapoints = 4
+        residuals are weighted equally (unit weight)
+
+function used for fitting: i(x)
+	i(x) = g*x + h + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   g             h            
+   0 8.1595157302e+03   0.00e+00  9.47e-01    1.000000e+00   1.000000e+00
+   4 1.4912547748e-01  -6.86e-01  9.47e-05    1.143894e+01   5.517105e+01
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.149125
+rel. change during last iteration : -6.86226e-06
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.273062
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0745627
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+g               = 11.4389          +/- 0.6698       (5.855%)
+h               = 55.171           +/- 0.5969       (1.082%)
+
+correlation matrix of the fit parameters:
+                g      h      
+g               1.000 
+h               0.973  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 03:02:25 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u (log($1)):(log(abs((($4)-($3))/($4))))
+        format = x:z
+        x range restricted to [-3.00000 : -2.20000]
+        #datapoints = 5
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x + b + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 1.1655934427e+04   0.00e+00  1.98e+00    1.000000e+00   1.000000e+00
+   5 4.7959520981e-02  -1.42e-05  1.98e-05   -3.742819e+00   3.693719e+01
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 0.0479595
+rel. change during last iteration : -1.42459e-10
+
+degrees of freedom    (FIT_NDF)                        : 3
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.126438
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0159865
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = -3.74282         +/- 0.2193       (5.859%)
+b               = 36.9372          +/- 0.5729       (1.551%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b               0.995  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 03:02:25 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u (log($1)):(log(abs((($4)-($2))/($4))))
+        format = x:z
+        x range restricted to [-2.60000 : -2.20000]
+        #datapoints = 3
+        residuals are weighted equally (unit weight)
+
+function used for fitting: g(x)
+	g(x) = c*x + d + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   c             d            
+   0 5.9389420114e+03   0.00e+00  1.85e+00    1.000000e+00   1.000000e+00
+   5 2.7738095119e-02  -1.05e-04  1.85e-05   -1.248444e+01   1.285173e+01
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 0.0277381
+rel. change during last iteration : -1.05002e-09
+
+degrees of freedom    (FIT_NDF)                        : 1
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.166548
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0277381
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+c               = -12.4844         +/- 0.6459       (5.174%)
+d               = 12.8517          +/- 1.564        (12.17%)
+
+correlation matrix of the fit parameters:
+                c      d      
+c               1.000 
+d               0.998  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 03:02:25 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u (log($1)):(log(abs((($4)-($3))/($4))))
+        format = x:z
+        x range restricted to [-1.40000 : -0.600000]
+        #datapoints = 4
+        residuals are weighted equally (unit weight)
+
+function used for fitting: h(x)
+	h(x) = e*x + f + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   e             f            
+   0 8.1091510100e+03   0.00e+00  1.04e+00    1.000000e+00   1.000000e+00
+   4 9.3076086569e-01  -4.70e-01  1.04e-04    1.191680e+01   5.742934e+01
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.930761
+rel. change during last iteration : -4.70485e-06
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.682188
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.46538
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+e               = 11.9168          +/- 1.673        (14.04%)
+f               = 57.4293          +/- 1.79         (3.116%)
+
+correlation matrix of the fit parameters:
+                e      f      
+e               1.000 
+f               0.982  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 03:02:25 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u (log($1)):(log(abs((($4)-($2))/($4))))
+        format = x:z
+        x range restricted to [-1.20000 : -0.500000]
+        #datapoints = 4
+        residuals are weighted equally (unit weight)
+
+function used for fitting: i(x)
+	i(x) = g*x + h + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   g             h            
+   0 8.1595157302e+03   0.00e+00  9.47e-01    1.000000e+00   1.000000e+00
+   4 1.4912547748e-01  -6.86e-01  9.47e-05    1.143894e+01   5.517105e+01
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.149125
+rel. change during last iteration : -6.86226e-06
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.273062
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0745627
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+g               = 11.4389          +/- 0.6698       (5.855%)
+h               = 55.171           +/- 0.5969       (1.082%)
+
+correlation matrix of the fit parameters:
+                g      h      
+g               1.000 
+h               0.973  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 03:02:42 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u (log($1)):(log(abs((($4)-($3))/($4))))
+        format = x:z
+        x range restricted to [-3.00000 : -2.20000]
+        #datapoints = 5
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x + b + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 1.1655934427e+04   0.00e+00  1.98e+00    1.000000e+00   1.000000e+00
+   5 4.7959520981e-02  -1.42e-05  1.98e-05   -3.742819e+00   3.693719e+01
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 0.0479595
+rel. change during last iteration : -1.42459e-10
+
+degrees of freedom    (FIT_NDF)                        : 3
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.126438
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0159865
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = -3.74282         +/- 0.2193       (5.859%)
+b               = 36.9372          +/- 0.5729       (1.551%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b               0.995  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 03:02:42 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u (log($1)):(log(abs((($4)-($2))/($4))))
+        format = x:z
+        x range restricted to [-2.60000 : -1.50000]
+        #datapoints = 7
+        residuals are weighted equally (unit weight)
+
+function used for fitting: g(x)
+	g(x) = c*x + d + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   c             d            
+   0 1.2459926855e+04   0.00e+00  1.63e+00    1.000000e+00   1.000000e+00
+   4 9.4168495140e+00  -4.12e-02  1.63e-04   -4.804550e+00   3.120601e+01
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 9.41685
+rel. change during last iteration : -4.11705e-07
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.37236
+variance of residuals (reduced chisquare) = WSSR/ndf   : 1.88337
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+c               = -4.80455         +/- 1.422        (29.61%)
+d               = 31.206           +/- 2.966        (9.503%)
+
+correlation matrix of the fit parameters:
+                c      d      
+c               1.000 
+d               0.985  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 03:02:42 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u (log($1)):(log(abs((($4)-($3))/($4))))
+        format = x:z
+        x range restricted to [-1.40000 : -0.600000]
+        #datapoints = 4
+        residuals are weighted equally (unit weight)
+
+function used for fitting: h(x)
+	h(x) = e*x + f + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   e             f            
+   0 8.1091510100e+03   0.00e+00  1.04e+00    1.000000e+00   1.000000e+00
+   4 9.3076086569e-01  -4.70e-01  1.04e-04    1.191680e+01   5.742934e+01
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.930761
+rel. change during last iteration : -4.70485e-06
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.682188
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.46538
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+e               = 11.9168          +/- 1.673        (14.04%)
+f               = 57.4293          +/- 1.79         (3.116%)
+
+correlation matrix of the fit parameters:
+                e      f      
+e               1.000 
+f               0.982  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 03:02:42 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u (log($1)):(log(abs((($4)-($2))/($4))))
+        format = x:z
+        x range restricted to [-1.20000 : -0.500000]
+        #datapoints = 4
+        residuals are weighted equally (unit weight)
+
+function used for fitting: i(x)
+	i(x) = g*x + h + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   g             h            
+   0 8.1595157302e+03   0.00e+00  9.47e-01    1.000000e+00   1.000000e+00
+   4 1.4912547748e-01  -6.86e-01  9.47e-05    1.143894e+01   5.517105e+01
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.149125
+rel. change during last iteration : -6.86226e-06
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.273062
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0745627
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+g               = 11.4389          +/- 0.6698       (5.855%)
+h               = 55.171           +/- 0.5969       (1.082%)
+
+correlation matrix of the fit parameters:
+                g      h      
+g               1.000 
+h               0.973  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 03:03:12 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u (log($1)):(log(abs((($4)-($3))/($4))))
+        format = x:z
+        x range restricted to [-3.00000 : -2.20000]
+        #datapoints = 5
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x + b + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 1.1655934427e+04   0.00e+00  1.98e+00    1.000000e+00   1.000000e+00
+   5 4.7959520981e-02  -1.42e-05  1.98e-05   -3.742819e+00   3.693719e+01
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 0.0479595
+rel. change during last iteration : -1.42459e-10
+
+degrees of freedom    (FIT_NDF)                        : 3
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.126438
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0159865
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = -3.74282         +/- 0.2193       (5.859%)
+b               = 36.9372          +/- 0.5729       (1.551%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b               0.995  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 03:03:12 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u (log($1)):(log(abs((($4)-($2))/($4))))
+        format = x:z
+        x range restricted to [-2.60000 : -1.50000]
+        #datapoints = 7
+        residuals are weighted equally (unit weight)
+
+function used for fitting: g(x)
+	g(x) = c*x + d + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   c             d            
+   0 1.2459926855e+04   0.00e+00  1.63e+00    1.000000e+00   1.000000e+00
+   4 9.4168495140e+00  -4.12e-02  1.63e-04   -4.804550e+00   3.120601e+01
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 9.41685
+rel. change during last iteration : -4.11705e-07
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.37236
+variance of residuals (reduced chisquare) = WSSR/ndf   : 1.88337
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+c               = -4.80455         +/- 1.422        (29.61%)
+d               = 31.206           +/- 2.966        (9.503%)
+
+correlation matrix of the fit parameters:
+                c      d      
+c               1.000 
+d               0.985  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 03:03:12 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u (log($1)):(log(abs((($4)-($3))/($4))))
+        format = x:z
+        x range restricted to [-1.40000 : -0.600000]
+        #datapoints = 4
+        residuals are weighted equally (unit weight)
+
+function used for fitting: h(x)
+	h(x) = e*x + f + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   e             f            
+   0 8.1091510100e+03   0.00e+00  1.04e+00    1.000000e+00   1.000000e+00
+   4 9.3076086569e-01  -4.70e-01  1.04e-04    1.191680e+01   5.742934e+01
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.930761
+rel. change during last iteration : -4.70485e-06
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.682188
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.46538
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+e               = 11.9168          +/- 1.673        (14.04%)
+f               = 57.4293          +/- 1.79         (3.116%)
+
+correlation matrix of the fit parameters:
+                e      f      
+e               1.000 
+f               0.982  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 03:03:12 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u (log($1)):(log(abs((($4)-($2))/($4))))
+        format = x:z
+        x range restricted to [-1.20000 : -0.500000]
+        #datapoints = 4
+        residuals are weighted equally (unit weight)
+
+function used for fitting: i(x)
+	i(x) = g*x + h + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   g             h            
+   0 8.1595157302e+03   0.00e+00  9.47e-01    1.000000e+00   1.000000e+00
+   4 1.4912547748e-01  -6.86e-01  9.47e-05    1.143894e+01   5.517105e+01
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.149125
+rel. change during last iteration : -6.86226e-06
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.273062
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0745627
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+g               = 11.4389          +/- 0.6698       (5.855%)
+h               = 55.171           +/- 0.5969       (1.082%)
+
+correlation matrix of the fit parameters:
+                g      h      
+g               1.000 
+h               0.973  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 03:05:55 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u (log($1)):(log(abs((($4)-($3))/($4))))
+        format = x:z
+        x range restricted to [-3.00000 : -1.50000]
+        #datapoints = 9
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x + b + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 1.9275389113e+04   0.00e+00  1.76e+00    1.000000e+00   1.000000e+00
+   4 3.7344350259e-01  -4.27e-01  1.76e-04   -4.478640e+00   3.496154e+01
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.373444
+rel. change during last iteration : -4.2687e-06
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.230974
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0533491
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = -4.47864         +/- 0.1635       (3.652%)
+b               = 34.9615          +/- 0.3736       (1.068%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b               0.979  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 03:05:55 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u (log($1)):(log(abs((($4)-($2))/($4))))
+        format = x:z
+        x range restricted to [-2.80000 : -1.90000]
+        #datapoints = 5
+        residuals are weighted equally (unit weight)
+
+function used for fitting: g(x)
+	g(x) = c*x + d + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   c             d            
+   0 9.9236566505e+03   0.00e+00  1.86e+00    1.000000e+00   1.000000e+00
+   5 5.4657318915e-01  -5.93e-08  1.86e-05   -9.988005e+00   1.889749e+01
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 0.546573
+rel. change during last iteration : -5.92717e-13
+
+degrees of freedom    (FIT_NDF)                        : 3
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.426838
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.182191
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+c               = -9.988           +/- 0.7403       (7.412%)
+d               = 18.8975          +/- 1.8          (9.524%)
+
+correlation matrix of the fit parameters:
+                c      d      
+c               1.000 
+d               0.994  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 03:05:55 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u (log($1)):(log(abs((($4)-($3))/($4))))
+        format = x:z
+        x range restricted to [-1.40000 : -0.600000]
+        #datapoints = 4
+        residuals are weighted equally (unit weight)
+
+function used for fitting: h(x)
+	h(x) = e*x + f + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   e             f            
+   0 8.1091510100e+03   0.00e+00  1.04e+00    1.000000e+00   1.000000e+00
+   4 9.3076086569e-01  -4.70e-01  1.04e-04    1.191680e+01   5.742934e+01
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.930761
+rel. change during last iteration : -4.70485e-06
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.682188
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.46538
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+e               = 11.9168          +/- 1.673        (14.04%)
+f               = 57.4293          +/- 1.79         (3.116%)
+
+correlation matrix of the fit parameters:
+                e      f      
+e               1.000 
+f               0.982  1.000 
+
+
+*******************************************************************************
+Thu Apr 13 03:05:55 2017
+
+
+FIT:    data read from "diffeq_test3.dat" u (log($1)):(log(abs((($4)-($2))/($4))))
+        format = x:z
+        x range restricted to [-1.20000 : -0.500000]
+        #datapoints = 4
+        residuals are weighted equally (unit weight)
+
+function used for fitting: i(x)
+	i(x) = g*x + h + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   g             h            
+   0 8.1595157302e+03   0.00e+00  9.47e-01    1.000000e+00   1.000000e+00
+   4 1.4912547748e-01  -6.86e-01  9.47e-05    1.143894e+01   5.517105e+01
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.149125
+rel. change during last iteration : -6.86226e-06
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.273062
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0745627
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+g               = 11.4389          +/- 0.6698       (5.855%)
+h               = 55.171           +/- 0.5969       (1.082%)
+
+correlation matrix of the fit parameters:
+                g      h      
+g               1.000 
+h               0.973  1.000 

@@ -48,29 +48,27 @@ main (void)
   const int N = 1;		// size of arrays of y functions
   double y_euler[N], y_rk4[N];	// arrays of y functions 
 
-  ofstream out ("diffeq_test3.dat");	// open the output file 
+  ofstream out ("diffeq_test2.dat");	// open the output file 
 
   funct_parameters.alpha = 1.;	// function parameter to be passed 
   funct_parameters.beta = 1.;	// function parameter to be passed
   params_ptr = &funct_parameters;	// structure to pass to function 
 
-  //double tmin = 0.;		// starting t value 
-  //double tmax = 3.;		// last t value 
+  double tmin = 0.;		// starting t value 
+  double tmax = 3.;		// last t value 
   y_euler[0] = 1.0;		// initial condition for y(t) 
   y_rk4[0] = 1.0;		// initial condition for y(t) 
 
   // print out a header line and the first set of points 
-  out << "#      log10(h)           y_euler(t)         y_rk4(t)        y_exact(t) \n";
-  //out << scientific << setprecision (9)
-  //  << tmin << "  "
-  //  << y_euler[0] << "  "
-  //  << y_rk4[0] << "  " << exact_answer (tmin, params_ptr) << endl;
+  out << "#      t           y_euler(t)         y_rk4(t)        y_exact(t) \n";
+  out << scientific << setprecision (9)
+    << tmin << "  "
+    << y_euler[0] << "  "
+    << y_rk4[0] << "  " << exact_answer (tmin, params_ptr) << endl;
 
- // double h = 0.01;		// initialize mesh spacing
-	double t = 10.0;
-	double hmin = 0.01;
-	double hmax = 1;
-  for (double h = hmin; h <= hmax; h = h * 1.2)
+  double h = 0.01;		// initialize mesh spacing
+	
+  for (double t = tmin; t <= tmax; t += h)
   {
 
     // find y(t+h) and output vs. t+h 
@@ -78,13 +76,13 @@ main (void)
 
     runge4 (N, t, y_rk4, h, rhs, params_ptr);	        // 4th order R-K 
 
-    out << scientific << setprecision (16)
-      << h << "  "
+    out << scientific << setprecision (9)
+      << t + h << "  "
       << y_euler[0] << "  "
       << y_rk4[0] << "  " << exact_answer (t + h, params_ptr) << endl;
   }
 
-  cout << "data stored in diffeq_test3.dat\n";
+  cout << "data stored in diffeq_test2.dat\n";
   out.close ();			// close the output file 
 
   return (0);			// successful completion 

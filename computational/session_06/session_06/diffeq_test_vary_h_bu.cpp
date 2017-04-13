@@ -68,7 +68,7 @@ main (void)
 
  // double h = 0.01;		// initialize mesh spacing
 	double t = 10.0;
-	double hmin = 0.01;
+	double hmin = 0.001;
 	double hmax = 1;
   for (double h = hmin; h <= hmax; h = h * 1.2)
   {
@@ -79,7 +79,7 @@ main (void)
     runge4 (N, t, y_rk4, h, rhs, params_ptr);	        // 4th order R-K 
 
     out << scientific << setprecision (16)
-      << h << "  "
+      << log10(h) << "  "
       << y_euler[0] << "  "
       << y_rk4[0] << "  " << exact_answer (t + h, params_ptr) << endl;
   }
