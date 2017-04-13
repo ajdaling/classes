@@ -48,7 +48,7 @@ main (void)
   const int N = 1;		// size of arrays of y functions
   double y_euler[N], y_rk4[N];	// arrays of y functions 
 
-  ofstream out ("diffeq_test.dat");	// open the output file 
+  ofstream out ("diffeq_test2.dat");	// open the output file 
 
   funct_parameters.alpha = 1.;	// function parameter to be passed 
   funct_parameters.beta = 1.;	// function parameter to be passed
@@ -66,8 +66,8 @@ main (void)
     << y_euler[0] << "  "
     << y_rk4[0] << "  " << exact_answer (tmin, params_ptr) << endl;
 
-  double h = 0.1;		// initialize mesh spacing 
-
+  double h = 0.01;		// initialize mesh spacing
+	
   for (double t = tmin; t <= tmax; t += h)
   {
 
@@ -82,7 +82,7 @@ main (void)
       << y_rk4[0] << "  " << exact_answer (t + h, params_ptr) << endl;
   }
 
-  cout << "data stored in diffeq_test.dat\n";
+  cout << "data stored in diffeq_test2.dat\n";
   out.close ();			// close the output file 
 
   return (0);			// successful completion 
