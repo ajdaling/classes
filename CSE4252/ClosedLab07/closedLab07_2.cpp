@@ -57,13 +57,10 @@ int main()
 	vector<Drone> drone_vec;
 	int i = 0;
 	while(i < buff.size()){
-	  cout << "drone " << i << endl;
 		//get name and id
-		cout << buff[i] << endl;
 		string drone_name = buff[i];
 		i++;
 		string drone_id = buff[i];
-		cout << buff[i] << endl;
 		//create new drone
 		Drone* drn = new Drone(drone_name, atoi(drone_id.c_str()));
 		//add drone to vector
