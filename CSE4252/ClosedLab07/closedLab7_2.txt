@@ -1,0 +1,48 @@
+Script started on Mon 17 Apr 2017 07:16:14 AM EDT
+]0;aj@Ulivia: ~/OSU/classes/CSE4252/ClosedLab07[01;32maj@Ulivia[00m:[01;34m~/OSU/classes/CSE4252/ClosedLab07[00m$ g++ -o closedLab07_2 closedLab07_2.cpp drone.cpp
+]0;aj@Ulivia: ~/OSU/classes/CSE4252/ClosedLab07[01;32maj@Ulivia[00m:[01;34m~/OSU/classes/CSE4252/ClosedLab07[00m$ ./closedLab07_2 
+Enter output file name: outFile.txt    1.txt
+drone 0
+North
+1
+drone 2
+South
+2
+drone 4
+East
+3
+drone 6
+West
+4
+drone 8
+Central
+5
+There are 5 drones saved. Would you like to add more? (y/n)
+y
+Enter drone name: mydrone1
+Enter drone id: 88
+There are 6 drones saved. Would you like to add more? (y/n)
+m y
+Enter drone name: mydrone2
+Enter drone id: 99
+There are 7 drones saved. Would you like to add more? (y/n)
+n
+]0;aj@Ulivia: ~/OSU/classes/CSE4252/ClosedLab07[01;32maj@Ulivia[00m:[01;34m~/OSU/classes/CSE4252/ClosedLab07[00m$ cat outFile1.txt 
+North
+1
+South
+2
+East
+3
+West
+4
+Central
+5
+mydrone1
+88
+mydrone2
+99
+]0;aj@Ulivia: ~/OSU/classes/CSE4252/ClosedLab07[01;32maj@Ulivia[00m:[01;34m~/OSU/classes/CSE4252/ClosedLab07[00m$ exit
+exit
+
+Script done on Mon 17 Apr 2017 07:17:09 AM EDT

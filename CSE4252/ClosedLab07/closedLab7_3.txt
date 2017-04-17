@@ -1,0 +1,14 @@
+Script started on Mon 17 Apr 2017 08:13:34 AM EDT
+]0;aj@Ulivia: ~/OSU/classes/CSE4252/ClosedLab07[01;32maj@Ulivia[00m:[01;34m~/OSU/classes/CSE4252/ClosedLab07[00m$ g++ myDronec[Ks.cpp [K[K[K[K[K[K[K[K[K[K[K[K[K-o closedLab07_3 myd[KDrones.cpp drone.cpp closedLab07_3.cppp autonomous_drone.cpp 
+]0;aj@Ulivia: ~/OSU/classes/CSE4252/ClosedLab07[01;32maj@Ulivia[00m:[01;34m~/OSU/classes/CSE4252/ClosedLab07[00m$ ./closedLab07_3 
+Drone: north  id: 1
+Drone: South  id: 2
+Drone: east  id: 3
+Drone: west  id: 4
+Drone: center  id: 5
+Drone: north  id: 10 (Longitud: 15 , Latitud: 30)
+Drone: south  id: 20 (Longitud: 15 , Latitud: 32)
+]0;aj@Ulivia: ~/OSU/classes/CSE4252/ClosedLab07[01;32maj@Ulivia[00m:[01;34m~/OSU/classes/CSE4252/ClosedLab07[00m$ exit
+exit
+
+Script done on Mon 17 Apr 2017 08:14:09 AM EDT

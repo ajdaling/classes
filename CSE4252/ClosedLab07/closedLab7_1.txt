@@ -1,0 +1,41 @@
+Script started on Mon 17 Apr 2017 05:32:07 AM EDT
+]0;aj@Ulivia: ~/OSU/classes/CSE4252/ClosedLab07[01;32maj@Ulivia[00m:[01;34m~/OSU/classes/CSE4252/ClosedLab07[00m$ g++ -o closedLab07_1 closedLab07_1.cpp 
+]0;aj@Ulivia: ~/OSU/classes/CSE4252/ClosedLab07[01;32maj@Ulivia[00m:[01;34m~/OSU/classes/CSE4252/ClosedLab07[00m$ ./closedLab07_1 
+This program reads input from an input file
+Enter the name of the file:   smallfile.txt
+
+Reading input...
+end of file reached
+
+We successfully read in the following content:
+This file is a small file 
+(size < 64 bytes).Bye
+
+
+Press Enter to continue...
+
+Done, without any problems!]0;aj@Ulivia: ~/OSU/classes/CSE4252/ClosedLab07[01;32maj@Ulivia[00m:[01;34m~/OSU/classes/CSE4252/ClosedLab07[00m$ ./closedLab07_1 
+This program reads input from an input file
+Enter the name of the file:   largefile.txt
+
+Reading input...
+end of file reached
+
+We successfully read in the following content:
+This file is a larger file (> 64 bytes)
+ABCDEFGHJKLMNOPQRTSUVWXYZ
+abcdefghijklmnopqrstuvuxyz
+1234567890
+1234567890
+1234567890
+qwertyuioplkjhgfdsdsaazxcvbnmlkjjjj
+this is a larger file
+
+
+
+Press Enter to continue...
+
+Done, without any problems!]0;aj@Ulivia: ~/OSU/classes/CSE4252/ClosedLab07[01;32maj@Ulivia[00m:[01;34m~/OSU/classes/CSE4252/ClosedLab07[00m$ exit
+exit
+
+Script done on Mon 17 Apr 2017 05:33:07 AM EDT
