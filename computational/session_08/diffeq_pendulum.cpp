@@ -168,7 +168,7 @@ main (void)
     // open the output file 
     ofstream out;    // declare the output file
     out.open ("diffeq_pendulum.dat", ofstream::trunc); 
-
+    
     // load the force parameters into the structure 
     rhs_parameters.omega0 = omega0;
     rhs_parameters.alpha = alpha;

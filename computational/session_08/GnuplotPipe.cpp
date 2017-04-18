@@ -132,7 +132,7 @@ GnuplotPipe::init ( )
   cmd_stream << "plot \"" << filename 
              << "\" using 1:2 title \"" << plot_title 
              << "\", \"" << filename2
-             << "\" using 1:2 title \"" << plot_title2
+             << "\" using 1:2 pt 7 ps 2 title \"" << plot_title2
              << "\""; 
   plot_cmd2 = cmd_stream.str();
   plot2_flag = 0;
