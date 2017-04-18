@@ -26,6 +26,7 @@ int main()
    // You declare (create) a matrix object with "mat" 
    mat A_mat;
 
+
    // One way to load the matrix is with a stream; here endr indicates "end of row"
    A_mat << 0.165300 << 0.454037 << 0.995795 << 0.124098 << 0.047084 << endr 
              << 0.688782 << 0.036549 << 0.552848 << 0.937664 << 0.866401 << endr 
@@ -95,6 +96,26 @@ int main()
    vec x_vec_alt = solve(A_mat,b_vec);
    cout << "Using solve to find x_vec: " << endl << x_vec_alt << endl;
 
+	mat a_mat;
+	mat b_mat;
+	mat sol1_mat;
+	mat sol2_mat;
+	a_mat << 1. << 2. << 3. << endr 
+  			<< 2. << -3.<< 4. << endr
+  			<< 1. << 4. << -2.<< endr;
+	b_mat << 2. << endr << 5. << endr << -2. << endr;
+	sol1_mat = inv(a_mat) * b_mat;
+	sol2_mat = solve(a_mat,b_mat);
+	
+
+	cout << "solving problem first method." << endl;
+	cout << sol1_mat;
+	cout << "Solving second method" << endl;
+	cout << sol2_mat;
+	cout << "checking." << endl;
+	cout << a_mat * sol1_mat;
+	cout << "compared to" << endl;
+	cout << b_mat;
 
    return 0; 
 }

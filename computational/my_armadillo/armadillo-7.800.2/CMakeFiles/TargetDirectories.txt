@@ -1,0 +1,7 @@
+/home/aj/OSU/classes/computational/my_armadillo/armadillo-7.800.2/CMakeFiles/install.dir
+/home/aj/OSU/classes/computational/my_armadillo/armadillo-7.800.2/CMakeFiles/list_install_components.dir
+/home/aj/OSU/classes/computational/my_armadillo/armadillo-7.800.2/CMakeFiles/rebuild_cache.dir
+/home/aj/OSU/classes/computational/my_armadillo/armadillo-7.800.2/CMakeFiles/armadillo.dir
+/home/aj/OSU/classes/computational/my_armadillo/armadillo-7.800.2/CMakeFiles/install/strip.dir
+/home/aj/OSU/classes/computational/my_armadillo/armadillo-7.800.2/CMakeFiles/install/local.dir
+/home/aj/OSU/classes/computational/my_armadillo/armadillo-7.800.2/CMakeFiles/edit_cache.dir

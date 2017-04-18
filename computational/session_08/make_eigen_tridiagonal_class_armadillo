@@ -84,14 +84,14 @@ ZIPFILE= $(BASE).zip
 #
 
 CXX= g++
-CFLAGS=  -g -O2 
+CFLAGS=  -g -O2 -I/home/aj/OSU/classes/computational/my_armadillo/armadillo-7.800.2/include
 CWARNS= -Werror -Wall -W -Wshadow -fno-common 
 MOREFLAGS= -Wpedantic -Wpointer-arith -Wcast-qual -Wcast-align \
            -Wwrite-strings -fshort-enums 
 
 # add relevant libraries and link options
-LDFLAGS= 
-LIBS=      
+LDFLAGS= -L/home/aj/OSU/classes/computational/my_armadillo/armadillo-7.800.2
+LIBS= -larmadillo -llapack -lblas
  
 ###########################################################################
 # 4. Instructions to compile and link, with dependencies
