@@ -86,7 +86,7 @@ main (void)
 
   gsl_odeiv_system my_system;	// structure with the rhs function, etc. 
 
-  double mu = 1.0;		// parameter for the diffeq 
+  double mu = 2.0;		// parameter for the diffeq 
 
   // Load values into the my_system structure 
   my_system.function = rhs;	// the right-hand-side functions dy[i]/dt 
