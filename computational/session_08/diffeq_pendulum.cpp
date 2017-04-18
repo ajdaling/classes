@@ -183,7 +183,7 @@ main (void)
     y_rk4[1] = theta_dot0;    // initial condition for y1(t) 
 
     // print out the parameters, a header, and the first set of points 
-    out << "# omega0=" << omega0 << ", alpha=" << alpha << endl;
+    out << "# omega0=" << omega0 << ", alpha=" << fixed << setprecision(2) << alpha << endl;
     out << "# theta0=" << theta0 << ", theta_dot0=" << theta_dot0 << endl;
     out << "# t_start=" << tmin << ", t_end=" << tmax << ", h="
         << h << endl;
