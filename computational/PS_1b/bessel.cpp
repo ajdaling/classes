@@ -7,6 +7,7 @@
 //
 //  Revision history:
 //      02-Jan-2011  new version, for 780.20 Computational Physics
+//			17-Apr-2017 Alec Daling - modified for PS_1b.
 //
 //  Notes:  
 //   * compile with:  "g++ -o bessel bessel.cpp"
@@ -22,6 +23,7 @@
 #include <iomanip>		// note that .h is omitted
 #include <fstream>		// note that .h is omitted
 #include <cmath>
+#include <gsl/gsl_sf_bessel.h> //needed for gsl bessel function for PS_1b
 using namespace std;		// we need this when .h is omitted
 
 // function prototypes 
@@ -40,6 +42,8 @@ int
 main ()
 {
   double ans_down, ans_up, rel_diff;
+  double gsl_bessel;
+  double gsl_diff;
 
   // open an output file stream
   ofstream my_out ("bessel.dat");
@@ -53,12 +57,17 @@ main ()
       ans_down = down_recursion (x, order, start);
       ans_up = up_recursion (x, order);
       rel_diff = fabs(ans_down-ans_up)/(fabs(ans_down)+fabs(ans_up));
+      //add lines to compare gsl bessel function with downward recursion for PS1b.
+      gsl_bessel = gsl_sf_bessel_jl(order,x);
+      gsl_diff = fabs(ans_down-gsl_bessel)/(fabs(ans_down)+fabs(gsl_bessel));
+      
 
       my_out << fixed << setprecision (12) << setw (8) << x << " " //increased precision
-	<< scientific << setprecision (12)
-	<< setw (13) << ans_down << " "
+	<< scientific << setprecision (12) << setw (13) << ans_down << " "
 	<< setw (13) << ans_up << " " 
-	<< setw(13) << rel_diff
+	<< setw(13) << rel_diff << " "
+	<< setw(13) << gsl_bessel << " "
+	<< setw(13) << gsl_diff
         << endl;
     }
   cout << "data stored in bessel.dat." << endl;
