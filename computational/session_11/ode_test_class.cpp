@@ -81,13 +81,31 @@ main ()
   double tmax = 100.;      // final t value 
   double delta_t = 0.01;   // step size in time
   
-  double mu = 2;             // parameter for the diff-eq 
+  double mu = 3;             // parameter for the diff-eq 
   Rhs_VdP vdp_rhs_1 (mu);    // set up the right side of the diff-eq
     
   Ode vdp_ode_1 (vdp_rhs_1, eps_abs, eps_rel, "rk45");
   x0 = -1.5;
   v0 = 2.0;
   evolve_and_print(vdp_ode_1, vdp_rhs_1, x0, v0, tmin, tmax, delta_t);
+  
+  //x0 = 1., v0 = 0.
+  Rhs_VdP vdp_rhs_2 (mu);    // set up the right side of the diff-eq
+    
+  Ode vdp_ode_2 (vdp_rhs_2, eps_abs, eps_rel, "rk45");
+  x0 = 1.0;
+  v0 = 0.0;
+  evolve_and_print(vdp_ode_2, vdp_rhs_2, x0, v0, tmin, tmax, delta_t);
+  
+  //x0 = 0.1, v0 = 0.0
+  Rhs_VdP vdp_rhs_3 (mu);    // set up the right side of the diff-eq
+    
+  Ode vdp_ode_3 (vdp_rhs_3, eps_abs, eps_rel, "rk45");
+  x0 = 0.1;
+  v0 = 0.0;
+  evolve_and_print(vdp_ode_3, vdp_rhs_3, x0, v0, tmin, tmax, delta_t);
+  
+  
   
   return 0;
 }
@@ -133,7 +151,7 @@ evolve_and_print(Ode &vdp_ode, Rhs_VdP &vdp_rhs, const double x0,
             << setw (12) << y[0] << " " << setw (12) << y[1] << endl;
   }
   my_out.close();
-
+  
   return (0);    // successful completion 
 }
 
@@ -155,6 +173,7 @@ Rhs_VdP::rhs (double, const double y[], double f[])
 
   return 0;    // successful completion
 }
+
 
 //
 // Define the Jacobian matrix of df_i/dy_j for i,j = {0,1}

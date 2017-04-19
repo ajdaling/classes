@@ -984,3 +984,288 @@ Final set of parameters
 
 a               = -3.4357        
 b               = 0.7472         
+
+
+*******************************************************************************
+Tue Apr 18 23:21:34 2017
+
+
+FIT:    data read from "eigen_tridiagonal_error.dat" u 1:2
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 3
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x + b + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 -nan              -nan       8.43e-01    1.000000e+00   1.000000e+00
+
+Current data point
+=========================
+#               = 1 out of 3
+x               = nan            
+z               = -inf           
+
+Current set of parameters
+=========================
+a               = nan            
+b               = -inf           
+
+BREAK: Function evaluation yields NaN ("not a number")
+
+*******************************************************************************
+Tue Apr 18 23:22:47 2017
+
+
+FIT:    data read from "eigen_tridiagonal_error.dat" u 1:2
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 3
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x + b + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 4.4160322175e+01   0.00e+00  9.02e-01    1.000000e+00   1.000000e+00
+   4 4.0143477693e-02  -2.18e-01  9.02e-05   -4.220080e+00   1.301238e+00
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.0401435
+rel. change during last iteration : -2.17838e-06
+
+degrees of freedom    (FIT_NDF)                        : 1
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.200358
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0401435
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = -4.22008         +/- 0.8046       (19.06%)
+b               = 1.30124          +/- 0.6367       (48.93%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b              -0.983  1.000 
+
+
+*******************************************************************************
+Tue Apr 18 23:22:55 2017
+
+
+FIT:    data read from "eigen_tridiagonal_error.dat" u 1:2
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 3
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x + b + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 4.4160322175e+01   0.00e+00  9.02e-01    1.000000e+00   1.000000e+00
+   4 4.0143477693e-02  -2.18e-01  9.02e-05   -4.220080e+00   1.301238e+00
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.0401435
+rel. change during last iteration : -2.17838e-06
+
+degrees of freedom    (FIT_NDF)                        : 1
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.200358
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0401435
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = -4.22008         +/- 0.8046       (19.06%)
+b               = 1.30124          +/- 0.6367       (48.93%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b              -0.983  1.000 
+
+
+*******************************************************************************
+Tue Apr 18 23:23:46 2017
+
+
+FIT:    data read from "eigen_tridiagonal_error.dat" u 1:2
+        format = x:z
+        x range restricted to [0.00000 : 0.810000]
+        #datapoints = 2
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x + b + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 2.1485744836e+01   0.00e+00  8.61e-01    1.000000e+00   1.000000e+00
+   7 4.9303806576e-32   0.00e+00  8.61e-08   -2.826550e+00   3.804526e-01
+
+After 7 iterations the fit converged.
+final sum of squares of residuals : 4.93038e-32
+abs. change during last iteration : 0
+
+
+Exactly as many data points as there are parameters.
+In this degenerate case, all errors are zero by definition.
+
+Final set of parameters 
+======================= 
+
+a               = -2.82655       
+b               = 0.380453       
+
+
+*******************************************************************************
+Tue Apr 18 23:27:38 2017
+
+
+FIT:    data read from "eigen_tridiagonal_error.dat" u 1:2
+        format = x:z
+        x range restricted to [0.00000 : 0.810000]
+        #datapoints = 3
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x + b + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 3.2237061203e+01   0.00e+00  8.62e-01    1.000000e+00   1.000000e+00
+   5 1.5494443772e-04  -2.17e-06  8.62e-06   -2.820749e+00   3.815224e-01
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 0.000154944
+rel. change during last iteration : -2.16825e-11
+
+degrees of freedom    (FIT_NDF)                        : 1
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0124477
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.000154944
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = -2.82075         +/- 0.0998       (3.538%)
+b               = 0.381522         +/- 0.06954      (18.23%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b              -0.995  1.000 
+
+
+*******************************************************************************
+Tue Apr 18 23:28:15 2017
+
+
+FIT:    data read from "eigen_tridiagonal_error.dat" u 1:2
+        format = x:z
+        x range restricted to [0.00000 : 0.810000]
+        #datapoints = 3
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x + b + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 2.3581370019e+01   0.00e+00  8.62e-01    1.000000e+00   1.000000e+00
+   5 9.6183115336e-04  -1.12e-07  8.62e-06   -1.608945e+00   1.086497e-02
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 0.000961831
+rel. change during last iteration : -1.11719e-12
+
+degrees of freedom    (FIT_NDF)                        : 1
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0310134
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.000961831
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = -1.60895         +/- 0.2487       (15.45%)
+b               = 0.010865         +/- 0.1733       (1595%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b              -0.995  1.000 
+
+
+*******************************************************************************
+Tue Apr 18 23:28:42 2017
+
+
+FIT:    data read from "eigen_tridiagonal_error.dat" u 1:2
+        format = x:z
+        x range restricted to [0.00000 : 1.50000]
+        #datapoints = 11
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x + b + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 1.5719853563e+02   0.00e+00  1.01e+00    1.000000e+00   1.000000e+00
+   4 3.6479486315e-03  -9.31e-04  1.01e-04   -2.006122e+00   2.874404e-01
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.00364795
+rel. change during last iteration : -9.30557e-09
+
+degrees of freedom    (FIT_NDF)                        : 9
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0201328
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.000405328
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = -2.00612         +/- 0.0239       (1.192%)
+b               = 0.28744          +/- 0.02454      (8.537%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b              -0.969  1.000 
+
+
+*******************************************************************************
+Tue Apr 18 23:29:13 2017
+
+
+FIT:    data read from "eigen_tridiagonal_error.dat" u 1:2
+        format = x:z
+        x range restricted to [0.00000 : 0.810000]
+        #datapoints = 3
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x + b + 1e-19
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 3.2237061203e+01   0.00e+00  8.62e-01    1.000000e+00   1.000000e+00
+   5 1.5494443772e-04  -2.17e-06  8.62e-06   -2.820749e+00   3.815224e-01
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 0.000154944
+rel. change during last iteration : -2.16825e-11
+
+degrees of freedom    (FIT_NDF)                        : 1
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0124477
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.000154944
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = -2.82075         +/- 0.0998       (3.538%)
+b               = 0.381522         +/- 0.06954      (18.23%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b              -0.995  1.000 

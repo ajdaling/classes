@@ -75,8 +75,11 @@ main ()
   ofstream out ("eigen_tridiagonal_error.dat");
 	out << "# N			Rel_Err" << endl;
   
-  for(int N = 4; N <= 1024; N = N*2)
+  int ns[] = {4,5,6,7,8,9,10,14,18,22,26,32,38,44,50,64,128,256,512,1024};
+  
+  for(int idx=0 ; idx < 20; idx++)
   {
+  	int N = ns[idx];
 		int dimension = N-1;
 		
 		// Calculate h = Delta x
