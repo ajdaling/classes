@@ -76,7 +76,7 @@ main (void)
   cout << " actual relative error: " << setprecision (8)
     << fabs((diff_gsl_cd - answer)/answer) << endl;
 
-  double h = 0.5;		// initialize mesh spacing 
+  double h = 0.3;		// initialize mesh spacing 
   while (h >= hmin)
   {
     diff_fd = forward_diff (x, h, &test_function, params_ptr);
@@ -85,6 +85,9 @@ main (void)
 		diff_extrap2 = extrap_diff2 (x , h, &test_function, params_ptr);
 	//print column headers
 	out << left << setw(18) << "#h" << setw(18) << "fd_rel_err" << setw(18) << "cd_rel_err" << setw(18) << "RichEx_rel_err" << endl;
+		double bs = log10 (fabs ((diff_extrap2 - answer) / answer));
+		if(isinf(bs)) cout << "found inf" << endl;
+	cout << "diffextrap2 is " << bs << endl;
     // print relative errors to output file 
     out << scientific << setprecision (8)
       << log10 (h) << "   "
@@ -133,7 +136,8 @@ double
 central_diff (double x, double h,
 	      double (*f) (double x, void *params_ptr), void *params_ptr)
 {
-  return ( f(x + h/2., params_ptr) - f(x - h/2., params_ptr) ) / h;
+  //return ( f(x + h/2., params_ptr) - f(x - h/2., params_ptr) ) / h;
+	return( f(x+h, params_ptr) - f(x-h, params_ptr) ) / h;
 }
 
 //************************** extrap_diff *********************
@@ -149,5 +153,5 @@ extrap_diff (double x, double h,
 double extrap_diff2(double x, double h,
 				double (*f) (double x, void *params_ptr), void *params_ptr)
 {
-	return ( (1./15.)*(16.*extrap_diff(x,h/2,f,params_ptr) - extrap_diff(x,h,f,params_ptr) ) );
+	return ( (1./15.)*(16.*extrap_diff(x,h,f,params_ptr) - extrap_diff(x,2.*h,f,params_ptr) ) );
 }
