@@ -16,8 +16,7 @@
 #include <iomanip>     // manipulators like setprecision
 #include <cmath>
 #include <string>     // C++ strings    
-#include <fstream>           
-#include <gsl/gsl_integration.h>                  
+#include <fstream>                             
 using namespace std;    
 #include "GslSpline.h"  // Header file for the GSL Spline class
 

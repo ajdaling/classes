@@ -28,7 +28,7 @@ const double pi = 4.*atan(1.);
 int
 main (int argc, char *argv[])   // use the standard, if obscure, names
 {
-  if (argc != 2)   // check if there is exactly one argument  
+  if (argc < 2)   // check if there is exactly one argument  
   { 
     // argv[0] is the program name
     cout << "usage: " << argv[0] << " <radius>" << endl;
@@ -37,11 +37,12 @@ main (int argc, char *argv[])   // use the standard, if obscure, names
   }
 
   double radius = atof(argv[1]);    // convert 1st argument to a double
-
+	int tries = atoi(argv[2]);
+	
   double area = pi * radius * radius;	// area formula
-
-  cout << "radius = " << radius << ",  area = " << area << endl;
-
+	for(int i  = 0; i < tries; i++){
+	  cout << "radius = " << radius << ",  area = " << area << endl;
+	}
   return 0;			// "0" for successful completion
 }
 
