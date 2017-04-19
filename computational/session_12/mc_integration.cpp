@@ -39,8 +39,8 @@ double integrand1(gsl_rng *rng_ptr, int dim, double sigma, double lower,
 int
 main (void)
 {
-  const double lower = -5.;	    // lower limit of integration for uniform
-  const double upper = 5.;	    // upper limit of integration for uniform
+  const double lower = -3.;	    // lower limit of integration for uniform
+  const double upper = 3.;	    // upper limit of integration for uniform
   const double sigma = 1.;          // constant in gaussian
   const int dim = 1;                // dimension of the integral
   double exact = double(dim)*sqr(sigma);   // exact answer from Mathematica

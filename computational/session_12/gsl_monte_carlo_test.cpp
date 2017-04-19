@@ -117,7 +117,7 @@ my_integrand (double *x, size_t dim, void *)
       sum += x[i]; 
     }
   
-  return sum*sum;
+  return sum*sum * exp(1./sum) * cos(sum);
 }
 
 //*********************************************************************//

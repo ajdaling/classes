@@ -24,6 +24,8 @@ set key left
 set xrange [-3:3]
 #set yrange [0:100]
 
+b = 0
+
 # fit the curve
 f(x) = b*exp(-x**2/(2*sigma**2))
 fit [-3:3] f(x) "random_histogram.dat" using ($5):($6) via b,sigma 
@@ -41,6 +43,6 @@ plot "random_histogram.dat" using ($5):($6) title 'gaussian 1', \
      "random_histogram.dat" using ($5):($7) title 'gaussian 2'
 
 # output the plot to the file derivative_test_plt.ps   
-set out "gaussian_random_new_plt.ps"
+set out "gaussian_random_new_plt_10e6.ps"
 set term postscript 
 replot

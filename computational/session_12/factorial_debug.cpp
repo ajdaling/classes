@@ -25,7 +25,7 @@ int factorial (int n);
 int
 main (void)
 {
-  int n_max = 5;
+  const int n_max = 5;
   int stored_factorials[n_max] = {0};
 
   for (int i=0; i < n_max; i++)
@@ -68,6 +68,6 @@ factorial (int n)
   } 
   else
   {
-     return n * factorial(n);
+     return n * factorial(n-1);
   }   
 }

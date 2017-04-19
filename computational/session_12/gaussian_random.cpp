@@ -69,7 +69,7 @@ main ()
       double gaussian1 = gsl_ran_gaussian (rng_ptr, sigma);
       double gaussian2 = gsl_ran_gaussian (rng_ptr, sigma);
 
-      out << "  " << fixed << uniform1 << " " << uniform2 << " "
+      out << "  " << i+1 << "  " << fixed << uniform1 << " " << uniform2 << " "
 	  << gaussian1 << " " << gaussian2 << endl;
     }
 
