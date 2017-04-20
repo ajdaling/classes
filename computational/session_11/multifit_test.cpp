@@ -137,6 +137,9 @@ main (void)
   const size_t p = 3;  // # of parameters
   const double error = 0.1;  // standard deviation for all data oints
 
+
+	ofstream fout;
+	fout.open("multifit_test.dat");
   // allocate space for a covariance matrix of size p by p
   gsl_matrix *covariance_ptr = gsl_matrix_alloc (p, p);
 
@@ -168,6 +171,7 @@ main (void)
     {
       double t = (double) i;
       y[i] = 1.0 + 5.0 * exp (-0.1 * t) + gsl_ran_gaussian (rng_ptr, error);
+      fout << (double) i << "  " << y[i] << "  " << error << endl; 
       sigma[i] = error;
 
       // print out the data to make sure it looks ok

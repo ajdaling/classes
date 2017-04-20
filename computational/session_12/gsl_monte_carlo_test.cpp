@@ -117,7 +117,7 @@ my_integrand (double *x, size_t dim, void *)
       sum += x[i]; 
     }
   
-  return sum*sum * exp(1./sum) * cos(sum);
+  return (sum*sum * exp(1./sum) * cos(sum) * log10(5.+pow(exp(-sum),1.5))) + pow(sin(exp(-2.*sum-4.))+3.,.5);
 }
 
 //*********************************************************************//
