@@ -1,0 +1,22 @@
+Alec Daling
+4/23/2017
+CSE 4252 - Madrid
+Project
+
+
+Project can be compiled with "make" command (makefile included). Creates caps.x executable.
+
+Class Descriptions:
+
+class UI:
+	This class handles most of the user interface functions including the main menu and subsequent menus such as between rounds and postgame menus. It is the first object created and invokes each of the other classes depending on the user's input. For example, upon user request to start playing the game, the UI calls startGame() which creates a new Game object.
+	
+	
+class User:
+	The User class holds all necessary data for one user. It holds data for past scores, current game progress, name, etc. Upon starting the game, the user has the object to create a new user, which creates a new User object and loads the initial data (name). The User object uses a vector<int> to store data for each of the past rounds a user has played.
+
+class UserDB: 
+	This class serves as the user database. It loads user data from a text file and creates a User object for each disting user in the file. The user has the option to load a User object from UserDB to play as, or create a new User. The UserDB class uses a map<string,User*> to store each of the User objects loaded/created by the game.
+	
+class Game:
+	The Game class contains all functionality necessary to play a round of the game. It loads the game's data (countries and capitals) from a text file, prompts the user with a country, and checks the user's response. It offers multiple attempts to enter the correct answer, deducting a point for each incorrect answer. It also offers hints (at a 1 point deduction). It contains a roundHandler() function that controls the flow of the game, a questionHandler() function that controls the prompts (randomly selecting countries to prompt) and an answerHandler() that determines what to do with the user input. It determines the score and sends it to the UI class which determines whether or not to save the score to the User object, to then be written to file by the UserDB object. The Game class uses a map<string,string> to retain all of the question data (<country,capital>) so that data is saved in pairs to ensure that the correct countries/capitals are used in the questions. The Game class also has a User* object so that the game cannot be run without a corresponding user.

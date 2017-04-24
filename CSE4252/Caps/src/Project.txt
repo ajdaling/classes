@@ -1,0 +1,228 @@
+Script started on Sun 23 Apr 2017 10:35:48 PM EDT
+]0;aj@Ulivia: ~/OSU/classes/CSE4252/Caps/src[01;32maj@Ulivia[00m:[01;34m~/OSU/classes/CSE4252/Caps/src[00m$ make
+g++ -Wall -c Capitals.cpp
+g++ -Wall -c Game.cpp
+g++ -Wall -c User.cpp
+g++ -Wall -c UserDB.cpp
+g++ -Wall -c UI.cpp
+g++ -Wall Capitals.o Game.o User.o UserDB.o UI.o -o caps.x
+]0;aj@Ulivia: ~/OSU/classes/CSE4252/Caps/src[01;32maj@Ulivia[00m:[01;34m~/OSU/classes/CSE4252/Caps/src[00m$ ./caps.x 
+Loading user data 
+Hello
+Select an Option:
+(1) - Add New User
+(2) - Continue as Existing User
+(3) - View Saved Users
+(4) - Exit
+Enter a number: 3
+alec||  High Score: 15 || Score History: 10, 10, 5, 5, 15,
+test1||  High Score: 20 || Score History: 15, 20, 5,
+user1||  High Score: 33 || Score History: 2, 7, 33, 2,
+user2||  High Score: 99 || Score History: 4, 99, 73,
+user3||  High Score: 34435 || Score History: 3, 88, 88, 7, 6, 5, 55, 76, 34435, 3457, 43, 3, 15,
+Select an Option:
+(1) - Add New User
+(2) - Continue as Existing User
+(3) - View Saved Users
+(4) - Exit
+Enter a number: 1
+Enter Username (no spaces): test2
+Welcome. Your username is: test2
+loading questions
+Beginning Quiz...
+You have 1 minutes to complete as many questions as you can.
+Each question is worth 5 points and you will have 5 attempts per question.
+You can enter "hint" to ask for a hint with a one point penalty.
+Enter "exit" at any time to end the round early.
+Question 1---
+What is the capital of: Bahamas?
+The answer is: Nassau
+Nassau
+Correct! 
+5 points earned.
+elapsed time is: 2
+58 seconds remaining.
+Question 2---
+What is the capital of: Iceland?
+The answer is: Reykjavik
+Rejkjavik
+Incorrect. One point deducted.
+4 attempts remaining.
+hint
+one point deducted
+Hint: Rey
+3 attempts remaining.
+Rej ykjavik
+Correct! 
+3 points earned.
+elapsed time is: 13
+47 seconds remaining.
+Question 3---
+What is the capital of: Spain?
+The answer is: Madrid
+Madrid
+Correct! 
+5 points earned.
+elapsed time is: 22
+38 seconds remaining.
+Question 4---
+What is the capital of: Gabon?
+The answer is: Libreville
+Lire  breville
+Correct! 
+5 points earned.
+elapsed time is: 26
+34 seconds remaining.
+Question 5---
+What is the capital of: Nauru?
+The answer is: Yaren
+n n
+Incorrect. One point deducted.
+4 attempts remaining.
+n
+Incorrect. One point deducted.
+3 attempts remaining.
+n
+Incorrect. One point deducted.
+2 attempts remaining.
+n
+Incorrect. One point deducted.
+1 attempts remaining.
+n
+Incorrect. The capital of Nauru is Yaren
+0 points earned.
+elapsed time is: 31
+29 seconds remaining.
+Question 6---
+What is the capital of: Yemen?
+The answer is: Sanaa
+hint
+one point deducted
+Hint: S
+4 attempts remaining.
+hint
+one point deducted
+Hint: Sa
+3 attempts remaining.
+hint
+one point deducted
+Hint: San
+2 attempts remaining.
+hint
+one point deducted
+Hint: Sana
+1 attempts remaining.
+Sanaa
+Correct! 
+1 points earned.
+elapsed time is: 39
+21 seconds remaining.
+Question 7---
+What is the capital of: India?
+The answer is: New Delhi
+New Delhi
+Correct! 
+5 points earned.
+elapsed time is: 41
+19 seconds remaining.
+Question 8---
+What is the capital of: Guatemala?
+The answer is: Guatemala City
+Guatemala City
+Correct! 
+5 points earned.
+elapsed time is: 45
+15 seconds remaining.
+Question 9---
+What is the capital of: Argentina?
+The answer is: Buenos Aires
+j
+Incorrect. One point deducted.
+4 attempts remaining.
+j
+Incorrect. One point deducted.
+3 attempts remaining.
+j
+Incorrect. One point deducted.
+2 attempts remaining.
+
+Incorrect. One point deducted.
+1 attempts remaining.
+j
+Incorrect. The capital of Argentina is Buenos Aires
+0 points earned.
+elapsed time is: 58
+2 seconds remaining.
+Question 10---
+What is the capital of: Northern Mariana Islands?
+The answer is: Saipan
+j
+Incorrect. One point deducted.
+4 attempts remaining.
+j
+Incorrect. One point deducted.
+3 attempts remaining.
+j
+Incorrect. One point deducted.
+2 attempts remaining.
+j
+Incorrect. One point deducted.
+1 attempts remaining.
+j
+Incorrect. The capital of Northern Mariana Islands is Saipan
+0 points earned.
+elapsed time is: 63
+-3 seconds remaining.
+Time expired.
+Good Job. You earned 29 points. Save score? (y/n):y
+saving score.
+saving score in User.cpp
+score is: 29
+Choose from the following options.
+(1) - Try again.
+(2) - Exit. 
+(3) - Return to main menu.
+Enter a number: 3
+Select an Option:
+(1) - Add New User
+(2) - Continue as Existing User
+(3) - View Saved Users
+(4) - Exit
+Enter a number: 3
+alec||  High Score: 15 || Score History: 10, 10, 5, 5, 15,
+test1||  High Score: 20 || Score History: 15, 20, 5,
+test2||  High Score: 29 || Score History: 29,
+user1||  High Score: 33 || Score History: 2, 7, 33, 2,
+user2||  High Score: 99 || Score History: 4, 99, 73,
+user3||  High Score: 34435 || Score History: 3, 88, 88, 7, 6, 5, 55, 76, 34435, 3457, 43, 3, 15,
+Select an Option:
+(1) - Add New User
+(2) - Continue as Existing User
+(3) - View Saved Users
+(4) - Exit
+Enter a number: 4
+Writing data to file.]0;aj@Ulivia: ~/OSU/classes/CSE4252/Caps/src[01;32maj@Ulivia[00m:[01;34m~/OSU/classes/CSE4252/Caps/src[00m$ ./caps.x 
+Loading user data 
+Hello
+Select an Option:
+(1) - Add New User
+(2) - Continue as Existing User
+(3) - View Saved Users
+(4) - Exit
+Enter a number: 4 3
+alec||  High Score: 15 || Score History: 10, 10, 5, 5, 15,
+test1||  High Score: 20 || Score History: 15, 20, 5,
+test2||  High Score: 29 || Score History: 29,
+user1||  High Score: 33 || Score History: 2, 7, 33, 2,
+user2||  High Score: 99 || Score History: 4, 99, 73,
+user3||  High Score: 34435 || Score History: 3, 88, 88, 7, 6, 5, 55, 76, 34435, 3457, 43, 3, 15,
+Select an Option:
+(1) - Add New User
+(2) - Continue as Existing User
+(3) - View Saved Users
+(4) - Exit
+Enter a number: 4
+Writing data to file.]0;aj@Ulivia: ~/OSU/classes/CSE4252/Caps/src[01;32maj@Ulivia[00m:[01;34m~/OSU/classes/CSE4252/Caps/src[00m$ exit
+exit
+
+Script done on Sun 23 Apr 2017 10:37:34 PM EDT
