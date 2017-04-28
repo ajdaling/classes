@@ -1,0 +1,10 @@
+INSTUP2D.Sparse.Euler2DConstBC
+/home/aj/OSU/classes/computational/project/6810Project/2D/Sparse/Euler2DConstBC.py
+INFOS:&&2|1|2|0&&2|3|2|0&&2|4|2|0&&2|5|2|0&&2|6|2|0&&2|7|2|0
+MakeTridiagonalMatrix=5
+MakeBCVector=3
+2D.Sparse.Euler2DConstBC=2
+MakeDirichletMatrix=4
+Euler2DConstBC=1
+MakeUpdatedEulerMatrix=7
+MakeEulerVector=6
