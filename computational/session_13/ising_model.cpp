@@ -27,6 +27,9 @@
 #include <iomanip>		// manipulators like setprecision
 #include <fstream>		// file input and output
 #include <cmath>
+#include <string>
+#include <cstring>
+#include <sstream>
 using namespace std;		// we need this when .h is omitted
 
 #include <gsl/gsl_rng.h>	// GSL random number generators
@@ -37,7 +40,7 @@ extern unsigned long int random_seed ();	// routine to generate a seed
 double calculate_energy (int configuration[]);  // calculate the energy given
                                                 //  a spin configuration
 // global constants
-const double J_ising = 1.;      // The "J" in the Ising model (+1 or -1 ONLY) 
+const double J_ising = -1.;      // The "J" in the Ising model (+1 or -1 ONLY) 
 const int linear_sites = 20;    // number of lattice sites in one direction
 
 // For one dimensional Ising model, uncomment the next two lines:
@@ -58,9 +61,17 @@ const int num_mcs = 1000;       // # of Monte Carlo steps (mcs)
 int
 main (void)
 {
-  double kT = 2.;          // temperature (in energy units)
-  cout << "What temperature? (kT) ";
-  cin >> kT;
+  double kT= 2.;          // temperature (in energy units)
+  //cout << "What temperature? (kT) ";
+  //cin >> kT;
+  //string kT_str;
+  //getline(cin,kT_str);
+  //kT = double(atoi(kT_str.c_str()));
+  
+  //std::string ofname;
+  //cout << "filename: ";
+ // getline(std::cin, ofname);
+  //cout << endl;
 
   double dist_metropolis[num_energies]; // energy distribution at kT from 
                                         //  importance sampling (Metropolis)
@@ -75,11 +86,13 @@ main (void)
   gsl_rng_set (rng_ptr, random_seed());	             // seed the rng 
 
   // Open up an output file
-  ofstream out;
-  out.open ("ising_model.dat");
-  out << "# Ising model in " << dimension << "dimensions at kT = "
-      << kT << endl; 
-  out << "#  time     energy  " << endl;
+  //ofstream out;
+  //out.open ("ising_cooling.dat");
+  //out.open(ofname.c_str());
+  //cout << "entered: " << ofname.c_str();
+  //out << "# Ising model in " << dimension << "dimensions at kT = "
+  //    << kT << endl; 
+  //out << "#  time     energy  " << endl;
   
   
   // Find the energy distribution from a Markov chain of configurations
@@ -101,45 +114,53 @@ main (void)
     energy0 = calculate_energy ( config_metropolis );
   } 
   
-  // Take num_mcs Monte Carlo steps (mcs)  
-  for (int step = 0; step < num_mcs; step++)
-  {
-    for (int i = 0; i < num_sites; i++)  // Entire loop is only one mcs  
-    {
-      // pick a random lattice site
-      double random = gsl_ran_flat (rng_ptr, 0., 1.);
-      int id = int(random * num_sites);  // from 0 to num_sites
+  for(kT = 2.; kT >= 0.5; kT/=2.){
+  	ofstream out;
+  	ostringstream ofstream("ising_cooling_");
+  	ofstream << kT << ".dat";
+  	string ofname = ofstream.str();
+  	out.open(ofname.c_str());
+		// Take num_mcs Monte Carlo steps (mcs)  
+		for (int step = 0; step < num_mcs; step++)
+		{
+		  for (int i = 0; i < num_sites; i++)  // Entire loop is only one mcs  
+		  {
+		    // pick a random lattice site
+		    double random = gsl_ran_flat (rng_ptr, 0., 1.);
+		    int id = int(random * num_sites);  // from 0 to num_sites
 
-      // flip that spin (i.e., if +/- 1, change to -/+ 1)
-      config_metropolis[id] *= -1;  
+		    // flip that spin (i.e., if +/- 1, change to -/+ 1)
+		    config_metropolis[id] *= -1;  
 
-      energy = calculate_energy( config_metropolis );  // new energy
-      double delta_energy = energy - energy0;
+		    energy = calculate_energy( config_metropolis );  // new energy
+		    double delta_energy = energy - energy0;
 
-      // decide whether to accept or reject the new configuration
-      random = gsl_ran_flat (rng_ptr, 0., 1.);
-      if ( (delta_energy > 0.) && (random > exp(-delta_energy/kT)) )
-      {
-        // reject the new configuration: flip the spin back
-        config_metropolis[id] *= -1; 
-      }
-      else
-      {
-        energy0 = energy;  // accept the new configuration
-      }
-    }
-    // add to distribution
-    dist_metropolis[dimension * num_sites + (int)energy0] += 1.;  
+		    // decide whether to accept or reject the new configuration
+		    random = gsl_ran_flat (rng_ptr, 0., 1.);
+		    if ( (delta_energy > 0.) && (random > exp(-delta_energy/kT)) )
+		    {
+		      // reject the new configuration: flip the spin back
+		      config_metropolis[id] *= -1; 
+		    }
+		    else
+		    {
+		      energy0 = energy;  // accept the new configuration
+		    }
+		  }
+		  // add to distribution
+		  dist_metropolis[dimension * num_sites + (int)energy0] += 1.;  
 
-    // print out every once in a while the current energy
-    if ( (step < 100) || (step % 10 == 0) )
-    {
-      out << fixed << "  " << setw(5) << step << "   " 
-          << fixed << setprecision(3)
-          << setw(10) << energy0 << endl;
-    }
-  }
-  out.close ();
+		  // print out every once in a while the current energy
+		  if ( (step < 100) || (step % 10 == 0) )
+		  {
+		    out << fixed << "  " << setw(5) << step << "   " 
+		        << fixed << setprecision(3)
+		        << setw(10) << energy0 << endl;
+		  }
+		}
+		out.close();
+	}
+  //out.close ();
   cout << "Time evolution of energy output to ising_model.dat" << endl;
     
   // normalize the distribution

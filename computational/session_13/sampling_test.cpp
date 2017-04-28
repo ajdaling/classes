@@ -36,13 +36,14 @@ extern unsigned long int random_seed ();	// routine to generate a seed
 double calculate_energy (int configuration[]);  // calculate the energy given
                                                 //  a spin configuration
 int next_configuration (int configuration[], int k);  // find next configuration
+double calculate_average(double dist[], int num_es);
 
 // global constants
 const double J_ising = 1.;      // The "J" in the Ising model (+1 or -1 ONLY) 
 const int num_sites = 20;       // number of lattice sites with spins
 const int num_energies = 2*num_sites + 1;  // number of different energies
 const int num_samples = 100000; // # of random samples or Monte Carlo steps
-const double kT = 20.;          // temperature (in energy units)
+const double kT = 1.;          // temperature (in energy units)
 
 // i'th possible energy (from -num_sites to +num_sites)
 inline double energy_i (int i) {return double(i - num_sites);};
@@ -57,6 +58,10 @@ main (void)
                                         //  sampling of configurations         
   double dist_metropolis[num_energies]; // energy distribution at kT from 
                                         //  importance sampling (Metropolis)
+	double exact_ave = 0.;
+	double metro_ave = 0.;
+	ofstream fout;
+	fout.open("sampling_test_kT1.dat");
 
   // initialize all energy distribution histograms to zero
   for (int i = 0; i < num_energies; i++)
@@ -193,6 +198,10 @@ main (void)
     dist_metropolis[i] /= double(num_samples);
   }
 
+	//calculate thermal averages
+	metro_ave = calculate_average(dist_metropolis,num_energies);
+	exact_ave = calculate_average(dist_exact, num_energies);
+
   //*******************************************************************
   // output the distributions of energies P(E)
   cout << "#  energy     exact      random      metropolis  " << endl;
@@ -204,8 +213,19 @@ main (void)
          << setw(11) << dist_random[i] << "  "
          << setw(11) << dist_metropolis[i] << " "
          << endl;
+    fout << fixed << "  " << setw(5) << i - num_sites << "  "
+         << fixed << setprecision(8)
+         << setw(11) << dist_exact[i] << "  "
+         << setw(11) << dist_random[i] << "  "
+         << setw(11) << dist_metropolis[i] << " "
+         << endl;
   }
   cout << endl;
+  cout << "*****************" << endl;
+  cout << "Thermal averages: " << endl;
+  cout << "Exact: " << exact_ave << endl;
+  cout << "Metropolis: " << metro_ave << endl;
+  cout << "error: " << fabs((exact_ave - metro_ave)/exact_ave);
 
   return (0);
 }
@@ -271,5 +291,13 @@ next_configuration (int configuration[], int k)
   }
     
   return (end);
+}
+
+double calculate_average(double dist[], int num_es){
+	double e_sum = 0;
+	for(int i = 0; i < num_es; i++){
+		e_sum += dist[i] * double(i);
+	}
+	return(e_sum);
 }
 

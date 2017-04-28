@@ -28,7 +28,7 @@ plot \
      "sampling_test_kT10.dat" using 1:2 title 'exact T=10.', \
      "sampling_test_kT10.dat" using 1:4 title 'Metropolis T=10.' , \
      "sampling_test_kT1.dat" using 1:2 title 'exact T=1.0', \
-     "sampling_test_kT1.dat" using 1:4 title 'Metropolis T=1.0'
+     "sampling_test_kT1.dat" using 1:4 title 'Metropolis T=1.0',\
 
 
 # output the plot to the file sampling_test_plt.ps   

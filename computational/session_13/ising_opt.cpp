@@ -29,6 +29,8 @@
 #include <iomanip>		// manipulators like setprecision
 #include <fstream>		// file input and output
 #include <cmath>
+#include <string>
+#include <sstream>
 using namespace std;		// we need this when .h is omitted
 
 #include <gsl/gsl_rng.h>	// GSL random number generators
@@ -55,10 +57,9 @@ const int num_mcs = 10000;       // # of Monte Carlo steps (mcs)
 int
 main (void)
 {
-  double kT = 2.;          // temperature (in energy units)
-  cout << "What temperature? (kT) ";
-  cin >> kT;
-
+  double kT = 4.;          // temperature (in energy units)
+  //cout << "What temperature? (kT) ";
+  //cin >> kT;
   double dist_metropolis[num_energies]; // energy distribution at kT from 
                                         //  importance sampling (Metropolis)
   // initialize energy distribution histogram to zero
@@ -88,6 +89,7 @@ main (void)
       nearest_neighbor[id][3]=i+(j+1)%linear_sites*linear_sites;
     }
   }
+  
   for (int i = 0; i < num_sites; i++)
   {
     double random = gsl_ran_flat (rng_ptr, 0., 1.);
@@ -102,54 +104,83 @@ main (void)
     energy0 = calculate_energy ( config_metropolis,nearest_neighbor );
   } 
   // Open up an output file
+  //ofstream out;
+  //out.open ("ising_opt.dat");
+  //out << "# Ising model in " << dimension << "dimensions at kT = "
+  //    << kT << endl; 
+  //out << "#  time     energy  " << endl;
   ofstream out;
-  out.open ("ising_opt.dat");
-  out << "# Ising model in " << dimension << "dimensions at kT = "
-      << kT << endl; 
-  out << "#  time     energy  " << endl;
+  out.open("ising_magnetization_cooling.dat");
+  for(kT = 4.; kT >= 0.9; kT -= 0.2){
+  // Take num_mcs Monte Carlo steps (mcs) 
   
-  // Take num_mcs Monte Carlo steps (mcs)  
-  for (int step = 0; step < num_mcs; step++)
-  {
-    for (int i = 0; i < num_sites; i++)  // Entire loop is only one mcs  
-    {
+   	int mag_arr[num_mcs];
+  	//ostringstream fnstream("");
+  	//fnstream << "ising_opt_cooling_" << kT << ".dat";
+  	//string fn = fnstream.str();
+  	//out.open(fn.c_str());
+		for (int step = 0; step < num_mcs; step++)
+		{
+		  for (int i = 0; i < num_sites; i++)  // Entire loop is only one mcs  
+		  {
 
-      double delta_energy = 2*config_metropolis[i] 
-      *(config_metropolis[nearest_neighbor[i][0]]
-       +config_metropolis[nearest_neighbor[i][1]]
-       +config_metropolis[nearest_neighbor[i][2]]
-       +config_metropolis[nearest_neighbor[i][3]]);
+		    double delta_energy = 2*config_metropolis[i] 
+		    *(config_metropolis[nearest_neighbor[i][0]]
+		     +config_metropolis[nearest_neighbor[i][1]]
+		     +config_metropolis[nearest_neighbor[i][2]]
+		     +config_metropolis[nearest_neighbor[i][3]]);
 
 
-      // decide whether to accept or reject the new configuration
-      if (delta_energy < 0.) 
-      {
-        energy0 += delta_energy;  // accept the new configuration
-        config_metropolis[i] *= -1; 
-      }
-      else 
-      {
-        double random = gsl_ran_flat (rng_ptr, 0., 1.);
-        if(random < exp(-delta_energy/kT)) 
-        {
-          energy0 += delta_energy;  // accept the new configuration
-          config_metropolis[i] *= -1; 
-        }
-      }
-    }
-    // add to distribution
-    dist_metropolis[dimension * num_sites + (int)energy0] += 1.;  
-
-    // print out every once in a while the current energy
-    if ( (step < 100) || (step % 10 == 0) )
-    {
-      out << fixed << "  " << setw(5) << step << "   " 
-          << fixed << setprecision(3)
-          << setw(10) << energy0 << endl;
-    }
-  }
+		    // decide whether to accept or reject the new configuration
+		    if (delta_energy < 0.) 
+		    {
+		      energy0 += delta_energy;  // accept the new configuration
+		      config_metropolis[i] *= -1; 
+		    }
+		    else 
+		    {
+		      double random = gsl_ran_flat (rng_ptr, 0., 1.);
+		      if(random < exp(-delta_energy/kT)) 
+		      {
+		        energy0 += delta_energy;  // accept the new configuration
+		        config_metropolis[i] *= -1; 
+		      }
+		    }
+		  }
+		  if(step > 200){
+				//calculate magnetization for this config
+				double mag = 0;
+				for(int i = 0; i < num_sites; i++){
+					mag += config_metropolis[i];
+				}
+				mag = fabs(mag)/num_sites; //take absolute value
+				//add to magnetization array
+				mag_arr[step] = mag;
+		  }
+		  
+		  // add to distribution
+		  dist_metropolis[dimension * num_sites + (int)energy0] += 1.;  
+			/*
+		  // print out every once in a while the current energy
+		  if ( (step < 100) || (step % 10 == 0) )
+		  {
+		    out << fixed << "  " << setw(5) << step << "   " 
+		        << fixed << setprecision(3)
+		        << setw(10) << energy0 << endl;
+		  }
+		  */
+		}
+		//calculate average mag at current temp
+		double mag_ave = 0.;
+		double mag_sum = 0.;
+		for(int i = 200; i < num_mcs; i++){
+			mag_sum += mag_arr[i];
+		}  
+		mag_ave = mag_sum / (num_mcs - 200);
+		out << kT << "  " << fixed << setw(4) << mag_ave << endl;
+	}	
   out.close ();
-  cout << "Time evolution of energy output to ising_opt.dat" << endl;
+  //cout << "Time evolution of energy output to ising_opt.dat" << endl;
     
   // normalize the distribution
   for (int i = 0; i < num_energies; i++)
