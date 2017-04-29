@@ -1,12 +1,48 @@
 -- VERSION_4
 -- START DISKCACHE_2
 /home/aj/OSU/classes/computational/project/.metadata/.plugins/org.eclipse.core.resources/.projects/6810Project/com.python.pydev.analysis/v2_indexcache
+examples.slider_demo|1493424578952140000|/home/aj/OSU/classes/computational/project/6810Project/examples/slider_demo.py
 -- END DISKCACHE
 -- START DICTIONARY
-0
+1
+1=examples.slider_demo
 -- END DICTIONARY
 -- START TREE 1
-0
+34
+a0|1|a0!11@
+anm|0|
+ax_|0|
+axa|1|axamp!11@
+axc|1|axcolor!11@
+axe|0|
+axf|1|axfreq!11@
+bc_|0|
+but|1|button!11@
+col|1|colorfunc!10@
+dt|0|
+dx|0|
+f0|1|f0!11@
+fig|0|
+ini|0|
+lin|0|
+num|0|
+r|0|
+rad|1|radio!11@
+rax|1|rax!11@
+res|2|resetax!11@reset!10@
+s|1|s!11@
+sam|1|samp!11@
+sfr|1|sfreq!11@
+t|1|t!11@
+t0|0|
+t_l|0|
+t_m|0|
+tim|0|
+u|0|
+u_1|0|
+upd|1|update!10@
+x|0|
+x_m|0|
 -- END TREE
 -- START TREE 2
 0

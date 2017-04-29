@@ -322,3 +322,9 @@ java.lang.RuntimeException: Finished restoring information for: /usr/bin/python 
 
 !ENTRY org.python.pydev.shared_core 4 4 2017-04-28 15:59:55.503
 !MESSAGE Info: Rebuilding internal caches: /home/aj/OSU/classes/computational/project/.metadata/.plugins/org.eclipse.core.resources/.projects/6810Project/com.python.pydev.analysis/AdditionalProjectInterpreterInfo.pydevinfo (Expected error to be provided and got no error!)
+
+!ENTRY org.eclipse.launchbar.core 2 0 2017-04-28 16:55:58.952
+!MESSAGE Enablement expression is missing for descriptor type org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2017-04-28 16:55:58.954
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType

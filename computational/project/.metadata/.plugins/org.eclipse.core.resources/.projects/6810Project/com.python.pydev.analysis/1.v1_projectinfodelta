@@ -1,11 +1,1 @@
-INSTUP2D.FuncBoundary.Euler2DFuncBC
-/home/aj/OSU/classes/computational/project/6810Project/2D/FuncBoundary/Euler2DFuncBC.py
-INFOS:&&2|1|2|0&&2|3|2|0&&2|4|2|0&&2|5|2|0&&2|6|2|0&&2|7|2|0&&2|8|2|0
-2D.FuncBoundary.Euler2DFuncBC=2
-MakeTridiagonalMatrix=6
-MakeBCVector=4
-MakeDirichletMatrix=5
-Euler2DFuncBC=1
-UpdateBoundary=3
-MakeUpdatedEulerMatrix=8
-MakeEulerVector=7
+DELSTRfinite_difference_1d

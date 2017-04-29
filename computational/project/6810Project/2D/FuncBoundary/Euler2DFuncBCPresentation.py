@@ -18,7 +18,7 @@ U0 = f(X, Y, t0) # Our initial condition
 U = U0
 t = t0
 dt = 0.1*(2*dx**2)
-finaltime = 5
+finaltime = 50
 nr_times = int(finaltime/dt)
 
 for i in range(nr_times):

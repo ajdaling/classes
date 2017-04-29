@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;6810Project/2DHeatEquation&apos; to &apos;FiniteDifference1D&apos;" description="Rename resource &apos;2DHeatEquation&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="2DHeatEquation" name="FiniteDifference1D" stamp="1493416870598" updateReferences="true"/>
+</session>
