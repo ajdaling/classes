@@ -1,0 +1,73 @@
+'''
+Created on Apr 30, 2017
+
+@author: aj
+'''
+from matplotlib import animation as anim, pyplot, cm
+from matplotlib.widgets import Slider, Button, RadioButtons
+from numpy import e, linspace, zeros, arange, meshgrid, array
+from scipy.sparse import spdiags
+import mpl_toolkits.mplot3d.axes3d as p3
+from library import *
+from heat_model import heat_model
+from sliders import sliders
+
+
+
+
+
+fig = pyplot.figure()
+
+model_id = 1
+m1 = heat_model([0,19],model_id, fig)
+model_id += 1
+m2 = heat_model([0,19,0,19], model_id, fig)
+model_id += 1
+
+ax1 = fig.add_subplot(121)
+ax2 = fig.add_subplot(122,projection='3d')
+#create sliders
+s1 = sliders(fig,m1,0.01)
+s2 = sliders(fig,m2,0.5)
+
+line1, = ax1.plot([],[],lw=4)
+surf1 = ax2.plot_surface(m2.X,m2.Y,m2.u,rstride=1,cstride=1,cmap=cm.autumn,linewidth=1,antialiased=False)
+
+# ax_test1 = fig.add_axes([0.1,0.01,0.3,0.03])
+# ax_test2 = fig.add_axes([0.6,0.01,0.3,0.03])
+# ax_test3 = fig.add_axes([0.25,0.20,0.65,0.03])
+# ax_test4 = fig.add_axes([0.25,0.25,0.65,0.03])
+# ax_test5 = fig.add_axes([0.25,0.30,0.65,0.03])
+pyplot.subplots_adjust(left = 0.1, bottom = s1.y+0.2)
+# 
+# test = 0.
+# test_slider = Slider(ax_test1,'test1',0.,10.,valinit=0.)
+# test2 = 0.
+# test_slider2 = Slider(ax_test2,'test2',0.,10.,valinit=0.)
+
+time = 0
+steps = 1
+
+
+def update(garbage):
+	global time, u, u_1, bc_xmin, bc_xmax
+	bc_xmin = 0
+	bc_xmax = 0
+	bc_ymin = 0
+	bc_ymax = 0
+	bcs2 = [bc_xmin,bc_xmax,bc_ymin,bc_ymax]
+	steps = 1
+	time += m1.dt
+	bcs1 = [bc_xmin,bc_xmax]
+	m1.time_step(0.5, bcs1, 1)
+	m2.time_step(.2, bcs2, 1)
+	line1.set_data(m1.x,m1.u)
+	ax2.clear()
+	surf1 = ax2.plot_surface(m2.X,m2.Y,m2.u,rstride=1,cstride=1,cmap=cm.autumn,linewidth=1,antialiased=False)
+
+	return line1
+
+
+
+anm = anim.FuncAnimation(fig, update , frames = int(m1.t_max/m1.dt), interval = 10, blit = False, repeat = False)
+pyplot.show()

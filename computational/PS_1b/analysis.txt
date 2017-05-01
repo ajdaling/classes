@@ -1,0 +1,24 @@
+
+Bessel Analysis
+
+# Regions: (looking at the log-log plot)
+# 1. x = [1:10] 
+# 	This region shows a linear slope of -19.12, or a trend of x^-20. Here, we are seeing, 
+#		for both recursive directions, a linear decrease in error until x=l (at x = 10), where the
+# 	relative error is limited by the machine precision.
+#
+# 2. x = [1:35] 
+#		This region is roughly flat and the relative error corresponds to the machine
+#		precision for double's, ~10e-16.
+#
+#	3. x [35:50]
+#		This region shows a linear slope of ~68, (x^68) power law, which is a very steep increase
+# 	in the relative error. This is due to the fact that, looking at the bessel.ps plot, the
+#		downward recursion method exhibits asymptotic behavior while the upward recursion method
+#		is smooth. These deviations result in significant relative error (around unity).
+
+GSL Bessel Analysis
+#	The relative difference between the GSL bessel function and the downard recursion method
+#	exhibits the same behavior as between upward and downward recursion above x=35; however, 
+# between x = 0 and x = 35, the relative error is consistently at the machine precision of 
+# 10e-16, implying that the two functions give nearly identical results.

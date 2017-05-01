@@ -1,0 +1,53 @@
+'''
+Created on Apr 30, 2017
+
+@author: aj
+'''
+from matplotlib import Slider
+class sliders(object):
+	'''
+	classdocs
+	'''
+
+
+	def __init__(self, fig, m, x_coord):
+		'''
+		Constructor
+		'''
+		col1 = 0.01
+		col2 = x_coord / 2.
+		self.y =  0.01
+		self.x = 0.01
+		wid = 0.2
+		ht = 0.03
+		
+		#create bc sliders
+		self.ax_bc_xmin = fig.add_axes([self.get_x(),self.get_y(),wid,ht])
+		self.slider_bc_xmin = Slider(ax_bc_xmin,'Left Boundary Condition',0.,10.,valinit=0.)
+		
+		self.ax_bc_xmax = fig.add_axes([self.get_x(),self.get_y(),wid,ht])
+		self.slider_bc_xmax = Slider(ax_bc_xmax,'Right Boundary Condition',0.,10.,valinit=0.)
+		
+		if m.is2d:
+			self.ax_bc_ymin = fig.add_axes([self.get_x(),self.get_y(),wid,ht])
+			self.slider_bc_ymin = Slider(ax_bc_ymin,'Bottom Boundary Condition',0.,10.,valinit=0.)
+			
+			self.ax_bc_ymax = fig.add_axes([self.get_x(),self.get_y(),wid,ht])
+			self.slider_bc_ymax = Slider(ax_bc_ymax,'Top Boundary Condition',0.,10.,valinit=0.)
+		
+		#create r slider
+		self.ax_r = fig.add_axes([self.get_x(),self.get_y(),wid,ht])
+		self.r_slider = Slider(self.ax_r,)
+		
+	def get_y(self):
+		y_temp = self.y
+		self.y+=0.05
+		return y_temp
+	
+	def get_x(self):
+		x_temp = self.x
+		if self.x == 0.01:
+			self.x = 0.6
+		else:
+			self.x = 0.01
+		return x_temp

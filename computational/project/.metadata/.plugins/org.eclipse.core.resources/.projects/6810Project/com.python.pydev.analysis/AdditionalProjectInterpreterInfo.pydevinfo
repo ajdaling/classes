@@ -1,49 +1,92 @@
 -- VERSION_4
 -- START DISKCACHE_2
 /home/aj/OSU/classes/computational/project/.metadata/.plugins/org.eclipse.core.resources/.projects/6810Project/com.python.pydev.analysis/v2_indexcache
-examples.slider_demo|1493424578952140000|/home/aj/OSU/classes/computational/project/6810Project/examples/slider_demo.py
+all_demo|1493596488245230000|/home/aj/OSU/classes/computational/project/6810Project/All/all_demo.py
+sliders|1493607355389939000|/home/aj/OSU/classes/computational/project/6810Project/All/sliders.py
+basic_demo|1493612135927898000|/home/aj/OSU/classes/computational/project/6810Project/All/basic_demo.py
 -- END DISKCACHE
 -- START DICTIONARY
-1
-1=examples.slider_demo
+4
+1=all_demo
+3=sliders
+4=sliders.__init__
+2=basic_demo
 -- END DICTIONARY
 -- START TREE 1
-34
-a0|1|a0!11@
-anm|0|
+41
+a|0|
+anm|2|anm!11@anm!19@
+ax|0|
+ax1|2|ax1!11@ax1!19@
+ax2|2|ax2!19@ax2!11@
+ax3|0|
 ax_|0|
-axa|1|axamp!11@
-axc|1|axcolor!11@
+axa|0|
 axe|0|
-axf|1|axfreq!11@
 bc_|0|
-but|1|button!11@
-col|1|colorfunc!10@
 dt|0|
-dx|0|
-f0|1|f0!11@
-fig|0|
+fig|2|fig!19@fig!11@
+get|0|
+hea|0|
 ini|0|
-lin|0|
+l|0|
+m1|2|m1!11@m1!19@
+m2|2|m2!19@m2!11@
+max|0|
+mod|1|model_id!19@
+myc|0|
 num|0|
 r|0|
-rad|1|radio!11@
-rax|1|rax!11@
-res|2|resetax!11@reset!10@
-s|1|s!11@
-sam|1|samp!11@
-sfr|1|sfreq!11@
-t|1|t!11@
+r_s|0|
+s1|0|
+s2|0|
+sli|1|sliders!25@
+ste|2|steps!11@steps!19@
+sur|3|surf1!19@surf1!11@surf2!11@
 t0|0|
+t1d|0|
+t2d|0|
 t_l|0|
+t_m|0|
+tes|0|
+tim|2|time!11@time!19@
+u|0|
+u_1|0|
+upd|2|update!10@update!18@
+x_m|0|
+y_m|0|
+-- END TREE
+-- START TREE 2
+31
+X|0|
+Y|0|
+__i|1|__init__!3&26@
+ax_|7|ax_bc_xmin!4&27@ax_r!4&27@ax_bc_xmax!4&27@ax_bc_ymax!4&27@ax_bc_ymin!4&27@ax_ymax!4&27@ax_xmax!4&27@
+bc_|1|bc_sliders!4&27@
+bou|0|
+col|0|
+dim|1|dim_sliders!4&27@
+dt|0|
+get|2|get_x!3&26@get_y!3&26@
+idx|0|
+is2|0|
+is_|0|
+lx|0|
+ly|0|
+m|1|m!4&27@
+r|0|
+r_s|0|
+res|0|
+sli|7|slider_bc_ymin!4&27@slider_r!4&27@slider_xmax!4&27@slider_bc_ymax!4&27@slider_ymax!4&27@slider_bc_xmax!4&27@slider_bc_xmin!4&27@
 t_m|0|
 tim|0|
 u|0|
 u_1|0|
-upd|1|update!10@
-x|0|
+upd|3|update_r!3&26@update_dims!3&26@update_bc!3&26@
+x|1|x!4&27@
+x_c|1|x_coord!4&27@
 x_m|0|
--- END TREE
--- START TREE 2
-0
+y|1|y!4&27@
+y_m|0|
+yid|0|
 -- END TREE

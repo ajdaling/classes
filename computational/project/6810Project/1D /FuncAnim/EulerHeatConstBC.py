@@ -1,5 +1,6 @@
 from numpy import array, dot, diag, zeros, ones
 
+
 # Here are the important functions
 def EulerHeatConstBC(u0, x, dt, nr_times, t0):
 	""" This function solves the heat equation :

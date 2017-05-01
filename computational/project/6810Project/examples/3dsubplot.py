@@ -6,9 +6,10 @@
 Demonstrate including 3D plots as subplots.
 '''
 
+from matplotlib import cm
+
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d.axes3d import Axes3D, get_test_data
-from matplotlib import cm
 import numpy as np
 
 

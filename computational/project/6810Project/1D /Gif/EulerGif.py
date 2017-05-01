@@ -1,6 +1,8 @@
-from numpy import e, linspace, pi, vectorize, sin
-from EulerHeatConstBC import *
 from matplotlib import animation, pyplot as plt
+from numpy import e, linspace, pi, vectorize, sin
+
+from EulerHeatConstBC import *
+
 
  # Here we set some variables
 x = linspace(0, pi, 10)

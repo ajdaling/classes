@@ -1,0 +1,17 @@
+'''
+Created on Apr 30, 2017
+
+@author: aj
+'''
+
+class MyClass(object):
+	'''
+	classdocs
+	'''
+
+
+	def __init__(self, dims, *pos_params, **key_params):
+		'''
+		Constructor
+		'''
+		if 

@@ -1,0 +1,17 @@
+'''
+Created on Apr 29, 2017
+
+@author: aj
+'''
+
+from scipy.sparse import spdiags
+from numpy import array, dot, zeros, ones
+
+def get_tridiagonal_1d(dim, r):
+	main_diag = -2.*r*ones(dim)
+	off_diag = r*ones(dim)
+	data = array([main_diag,off_diag,off_diag])
+	tridiag = spdiags(data,[0,-1,1],dim,dim)
+	return(tridiag)
+
+	

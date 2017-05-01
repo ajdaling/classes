@@ -1,0 +1,14 @@
+'''
+Created on Apr 30, 2017
+
+@author: aj
+'''
+from matplotlib import animation as anim, pyplot as pp, cm
+from matplotlib.widgets import Slider, Button, RadioButtons
+from numpy import e, linspace, zeros, arange, meshgrid, array
+from scipy.sparse import spdiags
+import mpl_toolkits.mplot3d.axes3d as p3
+from library import *
+from heat_model import heat_model
+
+

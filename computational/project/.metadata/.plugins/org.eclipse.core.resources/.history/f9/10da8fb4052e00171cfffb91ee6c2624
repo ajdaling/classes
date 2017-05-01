@@ -1,0 +1,29 @@
+'''
+Created on Apr 30, 2017
+
+@author: aj
+'''
+
+class sliders(object):
+	'''
+	classdocs
+	'''
+
+
+	def __init__(self, fg, m):
+		'''
+		Constructor
+		'''
+		col1 = 0.01
+		col2 = 0.6
+		y0 = self.y =  0.01
+		
+		wid = 0.3
+		ht = 0.03
+		
+		#create bc sliders
+		if not m.is2d:
+			fig.add_axes([col1,yidx])
+			
+	def get_y(self):
+		

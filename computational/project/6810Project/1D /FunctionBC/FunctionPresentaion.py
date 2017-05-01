@@ -1,8 +1,10 @@
-from numpy import e, linspace, pi, vectorize
 from math import sin
-from EulerHeatFunctionBoundary import *
 from matplotlib import animation, pyplot as plt
+from numpy import e, linspace, pi, vectorize
 from time import time
+
+from EulerHeatFunctionBoundary import *
+
 
  # Here we set some variables
 x = linspace(-pi/2, pi/2, 10)

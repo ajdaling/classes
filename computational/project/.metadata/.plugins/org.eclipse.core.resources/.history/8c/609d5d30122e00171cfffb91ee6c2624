@@ -1,0 +1,87 @@
+'''
+Created on Apr 30, 2017
+
+@author: aj
+'''
+from matplotlib.widgets import Slider
+class sliders(object):
+	'''
+	classdocs
+	'''
+
+
+	def __init__(self, fig, m, x_coord):
+		'''
+		Constructor
+		'''
+		self.m = m
+		self.x_coord = x_coord
+		self.y =  0.01
+		self.x = x_coord + 0.2
+		wid = 0.2
+		ht = 0.03
+		
+		self.bc_sliders = []
+		#create bc sliders
+		self.ax_bc_xmin = fig.add_axes([self.get_x(),self.get_y(),wid,ht])
+		self.slider_bc_xmin = Slider(self.ax_bc_xmin,'Left B.C.',0.,10.,valinit=0.)
+		self.bc_sliders.append(self.slider_bc_xmin)
+		
+		self.ax_bc_xmax = fig.add_axes([self.get_x(),self.get_y(),wid,ht])
+		self.slider_bc_xmax = Slider(self.ax_bc_xmax,'Right B.C.',0.,10.,valinit=0.)
+		self.bc_sliders.append(self.slider_bc_xmax)
+		if m.is2d:
+			self.ax_bc_ymin = fig.add_axes([self.get_x(),self.get_y(),wid,ht])
+			self.slider_bc_ymin = Slider(self.ax_bc_ymin,'Bottom B.C.',0.,10.,valinit=0.)
+			self.bc_sliders.append(self.slider_bc_ymin)
+			self.ax_bc_ymax = fig.add_axes([self.get_x(),self.get_y(),wid,ht])
+			self.slider_bc_ymax = Slider(self.ax_bc_ymax,'Top B.C.',0.,10.,valinit=0.)
+			self.bc_sliders.append(self.slider_bc_ymax)
+		for s in self.bc_sliders:
+			s.on_changed(self.update_bc())
+		
+		#create r slider
+		self.ax_r = fig.add_axes([self.get_x(),self.get_y(),wid,ht])
+		self.slider_r = Slider(self.ax_r,'MU',0.,1.,valinit = 0.2)
+		self.slider_r.on_changed(self.update_r())
+		
+		#create dimension sliders
+		self.dim_sliders = []
+		self.ax_xmax = fig.add_axes([self.get_x(),self.get_y(),wid,ht])
+		self.slider_xmax = Slider(self.ax_xmax,'X length',0,100,valinit=self.m.x_max)
+		self.dim_sliders.append(self.slider_xmax)
+		if m.is2d:
+			self.ax_ymax = fig.add_axes([self.get_x(),self.get_y(),wid,ht])
+			self.slider_ymax = Slider(self.ax_ymax,'Y length',0,100,valinit=self.m.y_max)
+			self.dim_sliders.append(self.slider_ymax)
+		for s in self.dim_sliders:
+			s.on_changed(self.update_dims())
+		
+	def update_dims(self):
+		self.m.x_max = self.slider_xmax.val
+		if self.m.is2d:
+			self.m.y_max = self.slider_ymax.val
+		self.m.resize()
+		
+	def update_bc(self):
+		print("Changing BC's")
+		self.m.bc_xmin = self.slider_bc_xmin.val
+		self.m.bc_xmax = self.slider_bc_xmax.val
+		if self.m.is2d:
+			self.m.bc_ymin = self.slider_bc_ymin.val
+			self.m.bc_ymax = self.slider_bc_ymax.val
+			
+	def update_r(self):
+		self.m.r = self.slider_r.val
+		if not self.m.is2d:
+			self.m.dt = self.m.r * self.m.dx ** 2
+		else:
+			self.m.dt = self.m.r * self.m.dx * self.m.dy
+		
+	def get_y(self):
+		y_temp = self.y
+		self.y+=0.05
+		return y_temp
+	
+	def get_x(self):
+		return self.x

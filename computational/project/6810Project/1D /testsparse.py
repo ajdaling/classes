@@ -1,13 +1,14 @@
-import scipy.sparse as sp
-import numpy as np
 from time import time
+
+import numpy as np
+import scipy.sparse as sp
+
 
 ########################################################################
 #
 # Our matrix is going to be size x size. Our vector is going to be size x 1
 #
 ########################################################################
-
 size = 10
 
 ########################################################################

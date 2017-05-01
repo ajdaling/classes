@@ -1,5 +1,6 @@
 from numpy import *
 
+
 def Euler2DConstBC(U0, dx, dt, nr_times, num_unknowns,t0):
 	"""	This function solves 
 	                u_t = u_xx + u_yy

@@ -1579,6 +1579,7 @@ numpy.compat.__init__|/usr/local/lib/python2.7/dist-packages/numpy/compat/__init
 numpy.compat._inspect|/usr/local/lib/python2.7/dist-packages/numpy/compat/_inspect.py
 numpy.compat.py3k|/usr/local/lib/python2.7/dist-packages/numpy/compat/py3k.py
 numpy.compat.setup|/usr/lib/python2.7/dist-packages/numpy/compat/setup.py
+numpy.core
 numpy.core.__init__|/usr/local/lib/python2.7/dist-packages/numpy/core/__init__.py
 numpy.core._dummy|/usr/local/lib/python2.7/dist-packages/numpy/core/_dummy.so
 numpy.core._internal|/usr/lib/python2.7/dist-packages/numpy/core/_internal.py
@@ -1706,6 +1707,7 @@ numpy.fft.fftpack_lite|/usr/local/lib/python2.7/dist-packages/numpy/fft/fftpack_
 numpy.fft.helper|/usr/local/lib/python2.7/dist-packages/numpy/fft/helper.py
 numpy.fft.info|/usr/local/lib/python2.7/dist-packages/numpy/fft/info.py
 numpy.fft.setup|/usr/lib/python2.7/dist-packages/numpy/fft/setup.py
+numpy.lib
 numpy.lib.__init__|/usr/local/lib/python2.7/dist-packages/numpy/lib/__init__.py
 numpy.lib._datasource|/usr/lib/python2.7/dist-packages/numpy/lib/_datasource.py
 numpy.lib._iotools|/usr/local/lib/python2.7/dist-packages/numpy/lib/_iotools.py
@@ -1747,6 +1749,7 @@ numpy.ma.testutils|/usr/local/lib/python2.7/dist-packages/numpy/ma/testutils.py
 numpy.ma.timer_comparison|/usr/local/lib/python2.7/dist-packages/numpy/ma/timer_comparison.py
 numpy.ma.version|/usr/lib/python2.7/dist-packages/numpy/ma/version.py
 numpy.matlib|/usr/local/lib/python2.7/dist-packages/numpy/matlib.py
+numpy.matrixlib
 numpy.matrixlib.__init__|/usr/local/lib/python2.7/dist-packages/numpy/matrixlib/__init__.py
 numpy.matrixlib.defmatrix|/usr/local/lib/python2.7/dist-packages/numpy/matrixlib/defmatrix.py
 numpy.matrixlib.setup|/usr/lib/python2.7/dist-packages/numpy/matrixlib/setup.py
@@ -2817,6 +2820,7 @@ scipy.signal.spline|/usr/local/lib/python2.7/dist-packages/scipy/signal/spline.s
 scipy.signal.waveforms|/usr/local/lib/python2.7/dist-packages/scipy/signal/waveforms.py
 scipy.signal.wavelets|/usr/lib/python2.7/dist-packages/scipy/signal/wavelets.py
 scipy.signal.windows|/usr/local/lib/python2.7/dist-packages/scipy/signal/windows.py
+scipy.sparse
 scipy.sparse.__init__|/usr/lib/python2.7/dist-packages/scipy/sparse/__init__.py
 scipy.sparse._csparsetools|/usr/local/lib/python2.7/dist-packages/scipy/sparse/_csparsetools.so
 scipy.sparse._sparsetools|/usr/local/lib/python2.7/dist-packages/scipy/sparse/_sparsetools.so

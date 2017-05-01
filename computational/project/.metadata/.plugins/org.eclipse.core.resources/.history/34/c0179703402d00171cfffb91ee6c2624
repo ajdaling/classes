@@ -1,0 +1,67 @@
+'''
+Created on Apr 29, 2017
+
+@author: aj
+'''
+
+from numpy import array, dot, zeros, ones
+from scipy.sparse import spdiags
+
+
+def get_tridiagonal_1d(dim, r):
+	'''
+	return tridiagonal matrix for finite difference algorithm in 1-D
+	:type dim: array[int]
+	:param dim: 1x2 array of dimensions [xmin,xmax]
+	
+	:type r: float 
+	:param r: alpha*dt/dx^2, should be <0.5 for stability
+	'''
+	main_diag = -2.*r*ones(dim)
+	off_diag = r*ones(dim)
+	data = array([main_diag,off_diag,off_diag])
+	tridiag = spdiags(data,[0,-1,1],dim,dim)
+	return(tridiag)
+
+def time_step_fd_1d(u,u_1,r,dims,bc,steps):
+	'''
+	:type u: array[float]
+	:param u: u(x,t) function, 1-d array of current heat values
+	
+	:type u_1: array[float]
+	:param u_1: u(x,t-1), 1-d array of previous step's heat values
+	
+	:type r: float
+	:param r: alpha*dt/dx**2
+	
+	:type dims: array[int]
+	:param dims: 1x2 array [xmin,xmax]
+	
+	:type bc: array[float]
+	:param bc: 1x2 array containing boundary conditions [bc_xmin, bc_xmax]
+	
+	:type steps: int
+	:param steps: number of times to iterate
+	'''
+	for i in range(int(steps)):
+		x_min = dims[0]
+		x_max = dims[1]
+		bc_xmin = bc[0]
+		bc_xmax = bc[1]
+		for i in range(1,x_max):
+			u[i] = u_1[i]+r*(u_1[i-1] - 2*u_1[i] + u_1[i+1])
+		u[x_min] = bc_xmin
+		u[x_max] = bc_xmax
+		u_1[:] = u
+	return u, u_1
+
+
+def time_step(u,u_1,x_min,x_max):
+	
+	for i in range(1,x_max-1):
+		for j in range(1,y_max-1):
+			u[i,j] =  u_1[i,j]+r*( u_1[i,j-1] + u_1[i-1,j] - 4*u_1[i,j] + u_1[i+1,j] + u_1[i,j+1] )
+		u_1[:,:] = u
+	return u, u_1
+	
+	

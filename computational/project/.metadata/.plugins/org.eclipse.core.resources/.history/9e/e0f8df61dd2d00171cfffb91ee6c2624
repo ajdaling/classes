@@ -1,0 +1,35 @@
+'''
+Created on Apr 30, 2017
+
+@author: aj
+'''
+from numpy import e, linspace, zeros, arange
+
+class MyClass(object):
+	'''
+	classdocs
+	'''
+
+
+	def __init__(self, bounds, **key_params):
+		'''
+		Constructor
+		'''
+		#initialize dimension params
+		self.bounds = bounds
+		self.dimensions = len(bounds)/2
+		self.x_min = bounds[0]
+		self.x_max = bounds[1]
+		self.lx = self.x_min-self.x_max
+		if self.dimensions == 2:
+			self.y_min = bounds[2]
+			self.y_max = bounds[3]
+			self.ly = self.y_max - self.y_min
+		
+		#check if sparse
+		if 'sparse' in key_params:
+			self.is_sparse = key_params['sparse']
+		
+		#create necessary members
+		self.x, self.dx = linspace(x_min,x_max,)
+		

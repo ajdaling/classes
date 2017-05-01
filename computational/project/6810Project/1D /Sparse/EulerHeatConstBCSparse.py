@@ -1,5 +1,6 @@
-from scipy.sparse import spdiags
 from numpy import array, dot, diag, zeros, ones, vstack
+from scipy.sparse import spdiags
+
 
 # Here are the important functions
 def EulerHeatConstBCSparse(u0, x, dt, nr_times, t0):

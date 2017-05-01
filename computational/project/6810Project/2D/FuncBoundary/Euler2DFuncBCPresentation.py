@@ -1,9 +1,11 @@
-from Euler2DFuncBC import *
-from numpy import *
-from mpl_toolkits.mplot3d import Axes3D
 from matplotlib import cm
 from matplotlib.ticker import LinearLocator, FormatStrFormatter
+from numpy import *
+
+from Euler2DFuncBC import *
 import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
 
 set_printoptions(precision=3, suppress = True) # This is how to adjust the print options  for ndarrays in numpy.
 number = 11

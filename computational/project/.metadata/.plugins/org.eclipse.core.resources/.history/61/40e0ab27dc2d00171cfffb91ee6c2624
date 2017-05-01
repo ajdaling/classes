@@ -1,0 +1,28 @@
+'''
+Created on Apr 30, 2017
+
+@author: aj
+'''
+from sqlalchemy.sql.expression import false
+
+class MyClass(object):
+	'''
+	classdocs
+	'''
+
+
+	def __init__(self, dims, **key_params):
+		'''
+		Constructor
+		'''
+		#initialize dimension params
+		self.x_min = dims[0]
+		self.x_max = dims[1]
+		if dims.size() == 4:
+			self.y_min = dims[2]
+			self.y_max = dims[3]
+		is_sparse = False
+		if 'sparse' in key_params:
+			self.is_sparse = key_params['sparse']
+			
+		

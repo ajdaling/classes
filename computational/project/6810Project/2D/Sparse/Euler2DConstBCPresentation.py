@@ -1,8 +1,10 @@
-from Euler2DConstBC import Euler2DConstBC # We can just import the function we need
-from numpy import *
-from mpl_toolkits.mplot3d import Axes3D
 from matplotlib import cm
+from numpy import *
+
+from Euler2DConstBC import Euler2DConstBC  # We can just import the function we need
 import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
 
 set_printoptions(precision=3, suppress = True) # This is how to adjust the print options  for ndarrays in numpy.
 number = 20

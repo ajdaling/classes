@@ -1,0 +1,19 @@
+'''
+Created on Apr 30, 2017
+
+@author: aj
+'''
+
+class sliders(object):
+	'''
+	classdocs
+	'''
+
+
+	def __init__(self, fg, m):
+		'''
+		Constructor
+		'''
+		self.idx = 0.01
+		
+		

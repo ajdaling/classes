@@ -1,7 +1,8 @@
 from numpy import *
-from scipy.sparse import spdiags, kron # Be careful, because there is a kron in both numpy and scipy
-# look what happens when you import all of scippy -- errors because of conflicting versions of vstack.
+from scipy.sparse import spdiags, kron  # Be careful, because there is a kron in both numpy and scipy
 
+
+# look what happens when you import all of scippy -- errors because of conflicting versions of vstack.
 def Euler2DConstBC(U0, dx, dt, nr_times, num_unknowns,t0):
 	"""	This function solves 
 	                u_t = u_xx + u_yy

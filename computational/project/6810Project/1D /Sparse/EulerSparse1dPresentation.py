@@ -1,8 +1,10 @@
-from numpy import e, linspace, pi, sin # Use this sine
-#from math import sin # Don't use this sine. It isn't vectorized.
-from EulerHeatConstBCSparse import *
 from matplotlib import animation, pyplot as plt
+from numpy import e, linspace, pi, sin  # Use this sine
 
+from EulerHeatConstBCSparse import *
+
+
+#from math import sin # Don't use this sine. It isn't vectorized.
  # Here we set some variables
 x = linspace(0, pi, 20)
 f = lambda x, t: e**(-t)*sin(x) + 2 # An "anonymous function".

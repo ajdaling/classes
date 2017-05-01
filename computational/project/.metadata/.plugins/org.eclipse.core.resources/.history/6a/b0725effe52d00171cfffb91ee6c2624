@@ -1,0 +1,95 @@
+'''
+Created on Apr 30, 2017
+
+@author: aj
+'''
+from numpy import e, linspace, zeros, arange, meshgrid
+
+class heat_model(object):
+	'''
+	classdocs
+	'''
+
+
+	def __init__(self, bounds, **key_params):
+		'''
+		Constructor
+		'''
+		
+		#initialize dimension params
+		self.bounds = bounds
+		self.dimensions = len(bounds)/2
+		self.is2d = False
+		if(self.dimensions==2):
+			self.is2d = True
+		self.x_min = bounds[0]
+		self.x_max = bounds[1]
+		self.lx = self.x_max-self.x_min
+		if self.is2d:
+			self.y_min = bounds[2]
+			self.y_max = bounds[3]
+			self.ly = self.y_max - self.y_min
+		
+		self.is_sparse = False
+		#check if sparse
+		if 'sparse' in key_params:
+			self.is_sparse = key_params['sparse']
+		
+		#create necessary members
+		self.x, self.dx = linspace(self.x_min,self.x_max,self.lx+1,retstep = True)
+		if(self.is2d):
+			self.y, self.dy = linspace(self.y_min,self.y_max,self.ly+1,retstep = True)
+			self.X, self.Y = meshgrid(self.x,self.y)
+		
+		#create mu and dt
+		self.t_max = 2000
+		if not self.is2d:
+			self.r = 0.5
+			self.dt = self.r * self.dx ** 2
+		else:
+			self.r = 0.25
+			self.dt = self.r * self.dx * self.dy
+		
+		#creat u(x,t) or u(x,y,t)
+		if not self.is2d:
+			self.u = zeros(self.lx+1)
+			self.u_1 = zeros(self.lx+1)
+			for i in range(self.lx+1):
+				self.u[i] = self.u_1[i] = float(i)/2.
+			self.u[self.x_min] = self.u_1[self.x_max] = self.bc_xmin = self.bc_xmax = 0.
+		else:
+			self.u = zeros((self.lx+1,self.ly+1))
+			self.u_1 = zeros((self.lx+1,self.ly+1))
+			for i in range(self.lx+1):
+				for j in range(self.ly+1):
+					self.u[i,j] = self.u_1[i,j] = float(i+j)/2.
+			self.bc_xmin = self.bc_xmax = self.bc_ymin = self.bc_ymax = 0.
+			self.u[self.x_min,:] = self.u_1[self.x_max,:] = self.u[:,self.y_min] = self.u_1[:,self.y_max] = 0.
+		def time_step(self, r, bcs, steps_per_second):
+			#get new boundary conditions
+			self.bc_xmin = bcs[0]
+			self.bc_xmax = bcs[1]
+			if self.is2d:
+				self.bc_ymin = bcs[2]
+				self.bc_ymax = bcs[3]
+			#update u with new boundary conditions
+			if not self.is2d:
+				self.u[self.x_min] = self.bc_xmin
+				self.u[self.x_max] = self.bc_xmax
+			else:
+				self.u[self.x_min,:] = self.bc_xmin
+				self.u[self.x_max,:] = self.bc_xmax
+				self.u[:,self.y_min] = self.bc_ymin
+				self.u[:,self.y_max] = self.bc_ymax
+			#update u
+			if self.is2d and not self.is_sparse:
+				for step in range(int(steps_per_second)):
+					for i in range(1,self.lx-1):
+						self.u[i] = self.u_1[i] + self.r *(self.u_1[i-1] - 2.*self.u_1[i] + self.u_1[i+1])
+					self.u_1 = self.u
+				
+				
+a = [0,9]
+t1d = heat_model(a)
+t2d = heat_model([0,9,0,9])
+

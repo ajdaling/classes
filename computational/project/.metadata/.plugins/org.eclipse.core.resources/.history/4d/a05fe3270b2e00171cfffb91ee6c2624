@@ -1,0 +1,48 @@
+'''
+Created on Apr 30, 2017
+
+@author: aj
+'''
+from matplotlib.widgets import Slider
+class sliders(object):
+	'''
+	classdocs
+	'''
+
+
+	def __init__(self, fig, m, x_coord):
+		'''
+		Constructor
+		'''
+		self.x_coord = x_coord
+		self.y =  0.01
+		self.x = x_coord + 0.2
+		wid = 0.2
+		ht = 0.03
+		
+		#create bc sliders
+		self.ax_bc_xmin = fig.add_axes([self.get_x(),self.get_y(),wid,ht])
+		self.slider_bc_xmin = Slider(self.ax_bc_xmin,'Left B.C.',0.,10.,valinit=0.)
+		
+		self.ax_bc_xmax = fig.add_axes([self.get_x(),self.get_y(),wid,ht])
+		self.slider_bc_xmax = Slider(self.ax_bc_xmax,'Right B.C.',0.,10.,valinit=0.)
+		
+		if m.is2d:
+			self.ax_bc_ymin = fig.add_axes([self.get_x(),self.get_y(),wid,ht])
+			self.slider_bc_ymin = Slider(self.ax_bc_ymin,'Bottom B.C.',0.,10.,valinit=0.)
+			
+			self.ax_bc_ymax = fig.add_axes([self.get_x(),self.get_y(),wid,ht])
+			self.slider_bc_ymax = Slider(self.ax_bc_ymax,'Top B.C.',0.,10.,valinit=0.)
+		
+		#create r slider
+		self.ax_r = fig.add_axes([self.get_x(),self.get_y(),wid,ht])
+		self.r_slider = Slider(self.ax_r,'MU',0.,1.,valinit = 0.2)
+		
+		
+	def get_y(self):
+		y_temp = self.y
+		self.y+=0.05
+		return y_temp
+	
+	def get_x(self):
+		return self.x
