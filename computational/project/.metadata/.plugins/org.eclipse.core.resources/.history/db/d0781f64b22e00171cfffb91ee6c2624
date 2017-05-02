@@ -1,0 +1,128 @@
+'''
+Created on Apr 29, 2017
+
+@author: aj
+'''
+
+from numpy import array, dot, zeros, ones
+from scipy.sparse import spdiags, diags
+
+
+def get_tridiagonal_1d(dim, r):
+	'''
+	return sparse tridiagonal matrix for finite difference algorithm in 1-D
+	:type dim: int
+	:param dim: lx
+	
+	:type r: float 
+	:param r: alpha*dt/dx^2, should be <0.5 for stability
+	'''
+	
+	
+	main_diag = -2.*r*ones(dim)
+	off_diag1 = off_diag2 = r*ones(dim)
+	A = diags(diagonals = [main_diag, off_diag1, off_diag2], offsets = [0,-1,1], shape = (dim+1, dim+1), format = 'csr')
+	#data = array([main_diag,off_diag,off_diag])
+	#tridiag = spdiags(data,[0,-1,1],dim,dim)
+	return(tridiag)
+
+def time_step_fd_1d(u,u_1,r,dims,bcs,steps):
+	'''
+	:type u: array[float]
+	:param u: u(x,t) function, 1-d array of current heat values
+	
+	:type u_1: array[float]
+	:param u_1: u(x,t-1), 1-d array of previous step's heat values
+	
+	:type r: float
+	:param r: alpha*dt/dx**2
+	
+	:type dims: array[int]
+	:param dims: 1x2 array [xmin,xmax]
+	
+	:type bc: array[float]
+	:param bc: 1x2 array containing boundary conditions [bc_xmin, bc_xmax]
+	
+	:type steps: int
+	:param steps: number of times to iterate
+	'''
+	for i in range(int(steps)):
+		x_min = dims[0]
+		x_max = dims[1]
+		bc_xmin = bcs[0]
+		bc_xmax = bcs[1]
+		for i in range(1,x_max):
+			u[i] = u_1[i]+r*(u_1[i-1] - 2*u_1[i] + u_1[i+1])
+		u[x_min] = bc_xmin
+		u[x_max] = bc_xmax
+		u_1[:] = u
+	return u, u_1
+
+def time_step_fd_sparse_1d(u,u_1,r,dims,bcs,steps):
+	'''
+	:type u: array[float]
+	:param u: u(x,t) function, 1-d array of current heat values
+	
+	:type u_1: array[float]
+	:param u_1: u(x,t-1), 1-d array of previous step's heat values
+	
+	:type r: float
+	:param r: alpha*dt/dx**2
+	
+	:type dims: array[int]
+	:param dims: 1x2 array [xmin,xmax]
+	
+	:type bc: array[float]
+	:param bc: 1x2 array containing boundary conditions [bc_xmin, bc_xmax]
+	
+	:type steps: int
+	:param steps: number of times to iterate
+	'''
+	for i in range(int(steps)):
+		x_min = dims[0]
+		x_max = dims[1]
+		bc_xmin = bcs[0]
+		bc_xmax = bcs[1]
+		for i in range(1,x_max):
+			u[i] = u_1[i]+r*(u_1[i-1] - 2*u_1[i] + u_1[i+1])
+		u[x_min] = bc_xmin
+		u[x_max] = bc_xmax
+		u_1[:] = u
+	return u, u_1
+
+def time_step_fd_2d(u,u_1,r,dims,bcs,steps):
+	'''
+	:type u: array[float]
+	:param u: u(x,t)
+	
+	:type u_1: array[float]
+	:param u_1: u(x,t-1)
+	
+	:param r: alpha*dt/dx^2
+	
+	:param dims: 2x2 array [[xmin,xmax],[ymin,ymax]]
+	
+	:param bcs: 2x2 array boundary conditions [[bcx1,bcx2],[bcy1,bcy2]]
+	
+	:params steps: seconds per step, i.e. iterations
+	'''
+	#parse dimensions
+	x_min = dims[0,0]
+	x_max = dims[0,1]
+	y_min = dims[1,0]
+	y_max = dims[1,1]
+	
+	#set boundary conditions
+	u[x_min,:] = bcs[0,0]
+	u[x_max,:] = bcs[0,1]
+	u[:,y_min] = bcs[1,0]
+	u[:,y_max] = bcs[1,1]
+	
+	for step in range(int(steps)):
+		for i in range(1,x_max):
+			for j in range(1,y_max):
+				u[i,j] =  u_1[i,j]+r*( u_1[i,j-1] + u_1[i-1,j] - 4*u_1[i,j] + u_1[i+1,j] + u_1[i,j+1] )
+		u_1[:,:] = u
+	return u, u_1
+	
+	

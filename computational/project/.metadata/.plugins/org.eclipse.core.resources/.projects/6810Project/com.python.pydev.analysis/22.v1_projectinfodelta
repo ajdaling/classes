@@ -1,15 +1,1 @@
-INSTUPbasic_demo
-/home/aj/OSU/classes/computational/project/6810Project/All/basic_demo.py
-INFOS:&&3|1|2|0&&3|3|2|0&&3|4|2|0&&3|5|2|0&&3|6|2|0&&3|7|2|0&&3|8|2|0&&3|9|2|0&&3|10|2|0&&2|11|2|0&&3|12|2|0
-anm=12
-m1=4
-fig=1
-m2=5
-update=11
-model_id=3
-steps=10
-basic_demo=2
-surf1=8
-ax2=7
-ax1=6
-time=9
+DELSTRbasic_demo

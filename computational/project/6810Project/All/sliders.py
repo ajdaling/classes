@@ -24,18 +24,18 @@ class sliders(object):
 		self.bc_sliders = []
 		#create bc sliders
 		self.ax_bc_xmin = fig.add_axes([self.get_x(),self.get_y(),wid,ht])
-		self.slider_bc_xmin = Slider(self.ax_bc_xmin,'Left B.C.',0.,10.,valinit=0.)
+		self.slider_bc_xmin = Slider(self.ax_bc_xmin,'Left B.C.',0.,10.,valinit = 0.)
 		self.bc_sliders.append(self.slider_bc_xmin)
 		
 		self.ax_bc_xmax = fig.add_axes([self.get_x(),self.get_y(),wid,ht])
-		self.slider_bc_xmax = Slider(self.ax_bc_xmax,'Right B.C.',0.,10.,valinit=0.)
+		self.slider_bc_xmax = Slider(self.ax_bc_xmax,'Right B.C.',0.,10.,valinit = 0.)
 		self.bc_sliders.append(self.slider_bc_xmax)
 		if m.is2d:
 			self.ax_bc_ymin = fig.add_axes([self.get_x(),self.get_y(),wid,ht])
-			self.slider_bc_ymin = Slider(self.ax_bc_ymin,'Bottom B.C.',0.,10.,valinit=0.)
+			self.slider_bc_ymin = Slider(self.ax_bc_ymin,'Bottom B.C.',0.,10.,valinit = 0.)
 			self.bc_sliders.append(self.slider_bc_ymin)
 			self.ax_bc_ymax = fig.add_axes([self.get_x(),self.get_y(),wid,ht])
-			self.slider_bc_ymax = Slider(self.ax_bc_ymax,'Top B.C.',0.,10.,valinit=0.)
+			self.slider_bc_ymax = Slider(self.ax_bc_ymax,'Top B.C.',0.,10.,valinit= 0.)
 			self.bc_sliders.append(self.slider_bc_ymax)
 		for s in self.bc_sliders:
 			s.on_changed(self.update_bc)
@@ -50,18 +50,18 @@ class sliders(object):
 		self.ax_xmax = fig.add_axes([self.get_x(),self.get_y(),wid,ht])
 		self.slider_xmax = Slider(self.ax_xmax,'X length',0,100,valinit=self.m.x_max)
 		self.dim_sliders.append(self.slider_xmax)
-		if m.is2d:
-			self.ax_ymax = fig.add_axes([self.get_x(),self.get_y(),wid,ht])
-			self.slider_ymax = Slider(self.ax_ymax,'Y length',0,100,valinit=self.m.y_max)
-			self.dim_sliders.append(self.slider_ymax)
-		for s in self.dim_sliders:
-			s.on_changed(self.update_dims)
+# 		if m.is2d:
+# 			self.ax_ymax = fig.add_axes([self.get_x(),self.get_y(),wid,ht])
+# 			self.slider_ymax = Slider(self.ax_ymax,'Y length',0,100,valinit=self.m.y_max)
+# 			self.dim_sliders.append(self.slider_ymax)
+# 		for s in self.dim_sliders:
+# 			s.on_changed(self.update_dims)
 		
 	def update_dims(self, event):
 		self.m.x_max = int(self.slider_xmax.val)
 		if self.m.is2d:
-			self.m.y_max = int(self.slider_ymax.val)
-		self.m.resize()
+			self.m.y_max = int(self.slider_xmax.val)
+ 		self.m.resize()
 		
 	def update_bc(self, event):
 		self.m.bc_xmin = self.slider_bc_xmin.val
