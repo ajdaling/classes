@@ -10,6 +10,7 @@ from scipy.sparse import diags, spdiags, kron
 from scipy.sparse.linalg import spsolve
 from matplotlib.pyplot import step
 from scipy.linalg.basic import solve
+import timeit
 class heat_model(object):
 	'''
 	classdocs
@@ -22,7 +23,7 @@ class heat_model(object):
 		'''
 		#initialize dimension params
 		self.bc_xmin = self.bc_xmax = self.bc_ymin = self.bc_ymax = 0.
-
+		self.dur = 0
 		self.bounds = bounds
 		self.dimensions = len(bounds)/2
 		self.is2d = False
@@ -35,9 +36,11 @@ class heat_model(object):
 			self.y_min = bounds[2]
 			self.y_max = bounds[3]
 			self.ly = self.y_max - self.y_min
+		self.steps_per_second = 1
 		
 		self.is_sparse = False
 		print(key_params)
+		self.method = "fd" #default to forward difference algorithm
 		#check for solution method
 		if 'method' in key_params:
 			self.method = key_params['method']
@@ -61,7 +64,7 @@ class heat_model(object):
 		#create mu and dt
 		self.t_max = 2000
 		if not self.is2d:
-			self.r = 0.5
+			self.r = 0.5				
 			self.dt = self.r * self.dx ** 2
 		else:
 			self.r = 0.25
@@ -87,23 +90,34 @@ class heat_model(object):
 			self.sliderx = 0.5
 		self.sliders = sliders(fig,self,self.sliderx)
 		
-	def time_step(self, steps_per_second):
-		self.steps_per_second = steps_per_second
+	def time_step(self):
 		#update u
 		if self.is_sparse:
 			self.time_step_sparse()
 		elif self.method == "fd":
 			if not self.is2d:
-				self.fd_1d()
+				#self.fd_1d()
+				self.Timer = timeit.Timer(stmt = self.fd_1d)
 			else:
-				self.fd_2d()
+				#self.fd_2d()
+				self.Timer = timeit.Timer(stmt = self.fd_2d)
 		elif self.method == "bd":
-			print("here1")
 			if not self.is2d:
-				print("here2")
-				self.bd_1d()
+# 				self.bd_1d()
+				self.Timer = timeit.Timer(stmt = self.bd_1d)
+		self.dur = self.Timer.timeit(self.steps_per_second)
+		self.timer_text.set_text(str(self.dur) + "seconds per step")
 	
-	
+	def time_step_sparse(self):
+		if self.method == 'fd':
+# 			self.fd_sparse()
+			self.Timer = timeit.Timer(stmt = self.fd_sparse)
+		elif self.method == 'bd':
+# 			self.bd_1d_sparse()
+			self.Timer = timeit.Timer(stmt = self.bd_1d_sparse)
+		self.dur = self.Timer.timeit(self.steps_per_second)
+		self.timer_text.set_text(str(self.dur) + "seconds per step")
+				
 	
 	#backdward difference algorithm in 1 dimension
 	def bd_1d(self):
@@ -113,16 +127,25 @@ class heat_model(object):
 			A[i,i-1] = A[i,i+1] = -self.r
 			A[i,i] = 1 + 2 * self.r
 		A[0,0] = A[self.x_max,self.x_max] = 1
-		for i in range(1,self.lx):
-			b[i] = -self.u_1[i]
-		b[0] = b[self.x_max] = 0
-		print("Before")
-		print(self.u)
+		b = -self.u_1
 		self.u[:] = solve(A,b)
-		print("After:")
-		print(self.u)
+		self.u[self.x_min] = self.bc_xmin
+		self.u[self.x_max] = self.bc_xmax
 		self.u_1[:] = self.u
 	
+	def bd_1d_sparse(self):
+		print("got here")
+		d0 = (1+2*self.r)*ones(self.lx+1)
+		d_1 = d1 = -self.r * ones(self.lx+1)
+		d0[0] = 1
+		d0[self.lx] = 1
+		A = diags([d0,d_1,d1],[0,-1,1],shape=(self.lx+1,self.lx+1),format='csr')
+		b = self.u_1
+		b[0] = b[-1] = 0.
+		self.u[:] = spsolve(A,b)
+		self.u[self.x_min] = self.bc_xmin
+		self.u[self.x_max] = self.bc_xmax
+		
 	#forward difference algorithm in 1 dimension
 	def fd_1d(self):
 		for step in range(int(self.steps_per_second)):
@@ -153,7 +176,8 @@ class heat_model(object):
 				self.u[i,self.y_max] = self.bc_ymax
 				self.u_1[i,self.y_max] = self.bc_ymax
 	#forward difference algorithm with sparse matrices			
-	def time_step_sparse(self):
+	
+	def fd_sparse(self):
 		if not self.is2d:
 			self.tridiag = self.get_tridiagonal()
 			bc_array = zeros(self.lx)
@@ -186,6 +210,9 @@ class heat_model(object):
 			self.u[:,self.y_max] = self.bc_ymax
 			#save u_1
 			self.u_1 = self.u
+	
+	
+		
 	#returns tridiagonal matrix for sparse fd implementation in 1d		
 	def get_tridiagonal(self):
 		d0  = -2 * ones(self.lx+1)
@@ -194,20 +221,22 @@ class heat_model(object):
 		A = diags(diagonals=[d0, d_1, d1],offsets=[0, -1, 1], shape=(self.lx+1, self.lx+1),format='csr')
 		return(A)
 	#failed attempt at sparse df implementaiton in 2d	
-	def get_dirichlet(self):
-		A = B = self.get_tridiagonal()
-# 		I = eye(self.lx) #identity matrix
-# 		T = kron(A,I) + kron(I,A) #kronecker product
-		d_2 = ones(self.lx+1)
-		
-		d0 = zeros(self.lx+1)
-	
-		return(T)
+ 	def get_dirichlet(self):
+ 		A = B = self.get_tridiagonal()
+# # 		I = eye(self.lx) #identity matrix
+# # 		T = kron(A,I) + kron(I,A) #kronecker product
+# 		d_2 = ones(self.lx+1)
+# 		
+# 		d0 = zeros(self.lx+1)
+# 	
+# 		return(T)
 		
 	#called when user changes dimension with  slider
 	def resize(self):
+		print("resizing")
 		#reset dimensions
 		if not self.is2d:
+			print("resizing 1d")
 			self.bounds = [self.x_min,self.x_max]
 			self.lx = self.x_max - self.x_min
 			self.x, self.dx = linspace(self.x_min,self.x_max,self.lx+1,retstep = True)

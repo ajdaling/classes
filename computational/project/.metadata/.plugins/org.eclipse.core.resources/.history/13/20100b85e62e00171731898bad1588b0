@@ -1,0 +1,30 @@
+'''
+Created on May 1, 2017
+
+@author: aj
+'''
+from matplotlib import animation as anim, pyplot, cm
+from heat_model import heat_model
+
+
+def add_fd_basic_1d(model_id, fig, models, num_models):
+	#create basic 1d model
+	m = heat_model([0,19],model_id, fig)
+	ax = fig.add_subplot(121)
+	ax.set_xlabel('x')
+	ax.set_xlim(0.,basic_1d.x_max)
+	ax.set_ylim(0,10)
+	ax.set_ylabel('u(x,t)')
+# 	ax_basic_1d.autoscale(enable=True,axis='both',tight=True)
+	line, = ax.plot(m.x,m.u,lw=4)
+	txt = pyplot.text(0.05,0.5,str(m.dur),fontsize=12)
+	models["lines"].append({"axis":ax,"model":m,"line":line,"text":txt})
+	
+def add_fd_basic_2d(model_id,fig,models, num_models):
+	m = heat_model([0,19,0,19], model_id, fig)
+	ax = fig.add_subplot(122,projection='3d')
+	ax.set_xlabel('x')
+	ax.set_ylabel('y')
+	ax.set_zlabel('u(x,y,t)')
+	surf = ax2.plot_surface(m2.X,m2.Y,m2.u,rstride=1,cstride=1,cmap=cm.autumn,linewidth=1,antialiased=False)
+	txt = pyplot.text(0.05,0.5,str(m2))

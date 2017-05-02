@@ -1,0 +1,267 @@
+'''
+Created on Apr 30, 2017
+
+@author: aj
+'''
+from numpy import concatenate, e, eye, linspace, zeros,ones, arange, meshgrid, resize, mgrid, transpose
+from sliders import sliders
+from scipy.sparse import diags, spdiags, kron
+# from scipy.sparse.linalg import *
+from scipy.sparse.linalg import spsolve
+from matplotlib.pyplot import step
+from scipy.linalg.basic import solve
+import timeit
+class heat_model(object):
+	'''
+	classdocs
+	'''
+
+
+	def __init__(self, bounds , id, fig, **key_params):
+		'''
+		Constructor
+		'''
+		#initialize dimension params
+		self.bc_xmin = self.bc_xmax = self.bc_ymin = self.bc_ymax = 0.
+		self.dur = 0
+		self.bounds = bounds
+		self.dimensions = len(bounds)/2
+		self.is2d = False
+		if(self.dimensions==2):
+			self.is2d = True
+		self.x_min = bounds[0]
+		self.x_max = bounds[1]
+		self.lx = self.x_max-self.x_min
+		if self.is2d:
+			self.y_min = bounds[2]
+			self.y_max = bounds[3]
+			self.ly = self.y_max - self.y_min
+		self.steps_per_second = 1
+		
+		self.is_sparse = False
+		print(key_params)
+		self.method = "fd" #default to forward difference algorithm
+		#check for solution method
+		if 'method' in key_params:
+			self.method = key_params['method']
+		#check if sparse
+		if 'sparse' in key_params:
+			self.is_sparse = key_params['sparse']
+	
+		if self.is_sparse:
+			if self.is2d:
+				self.tridiag = self.get_tridiagonal()
+			else:
+				self.dirichlet = self.get_dirichlet()
+		#create necessary members
+		self.x, self.dx = linspace(self.x_min,self.x_max,self.lx+1,retstep = True)
+		
+		if(self.is2d):
+			self.y, self.dy = linspace(self.y_min,self.y_max,self.ly+1,retstep = True)
+			self.X, self.Y = meshgrid(self.x,self.y)
+			self.X = transpose(self.X)
+			self.Y = transpose(self.Y)
+		#create mu and dt
+		self.t_max = 2000
+		if not self.is2d:
+			self.r = 0.5				
+			self.dt = self.r * self.dx ** 2
+		else:
+			self.r = 0.25
+			self.dt = self.r * self.dx * self.dy
+		
+		#creat u(x,t) or u(x,y,t)
+		if not self.is2d:
+			self.u = zeros(self.lx+1)
+			self.u_1 = zeros(self.lx+1)
+			for i in range(1,self.lx):
+				self.u[i] = self.u_1[i] = 5.
+		else:
+			self.u = zeros((self.lx+1,self.ly+1))
+			self.u_1 = zeros((self.lx+1,self.ly+1))
+			for i in range(1,self.lx):
+				for j in range(1,self.ly):
+					self.u[i,j] = self.u_1[i,j] = float(i+j)/2.
+		
+		#create sliders
+		if id == 1:
+			self.sliderx = 0.01
+		elif id == 2:
+			self.sliderx = 0.5
+		self.sliders = sliders(fig,self,self.sliderx)
+		
+	def time_step(self):
+		#update u
+		if self.is_sparse:
+			self.time_step_sparse()
+		elif self.method == "fd":
+			if not self.is2d:
+				#self.fd_1d()
+				self.Timer = timeit.Timer(stmt = self.fd_1d)
+			else:
+				#self.fd_2d()
+				self.Timer = timeit.Timer(stmt = self.fd_2d)
+		elif self.method == "bd":
+			if not self.is2d:
+# 				self.bd_1d()
+				self.Timer = timeit.Timer(stmt = self.bd_1d)
+		self.dur = self.Timer.timeit(self.steps_per_second)
+		self.timer_text.set_text(str(self.dur) + "seconds per step")
+# 		self.sliders.timer_text.remove()
+# 		self.sliders.timer_text.update(text = str(self.dur))
+# 		 self.sliders.ax_timer.add_text(str(self.dur))
+	
+	def time_step_sparse(self):
+		if self.method == 'fd':
+# 			self.fd_sparse()
+			self.Timer = timeit.Timer(stmt = self.fd_sparse)
+		elif self.method == 'bd':
+# 			self.bd_1d_sparse()
+			self.Timer = timeit.Timer(stmt = self.bd_1d_sparse)
+		self.dur = self.Timer.timeit(self.steps_per_second)
+		self.timer_text.set_text(str(self.dur) + "seconds per step")
+# 		self.sliders.timer_text.set_text(str(self.dur))
+				
+	
+	#backdward difference algorithm in 1 dimension
+	def bd_1d(self):
+		A = zeros((self.lx+1,self.lx+1))
+		b = zeros(self.lx+1)
+		for i in range(1,self.lx):
+			A[i,i-1] = A[i,i+1] = -self.r
+			A[i,i] = 1 + 2 * self.r
+		A[0,0] = A[self.x_max,self.x_max] = 1
+		b = -self.u_1
+		self.u[:] = solve(A,b)
+		self.u[self.x_min] = self.bc_xmin
+		self.u[self.x_max] = self.bc_xmax
+		self.u_1[:] = self.u
+	
+	def bd_1d_sparse(self):
+		print("got here")
+		d0 = (1+2*self.r)*ones(self.lx+1)
+		d_1 = d1 = -self.r * ones(self.lx+1)
+		d0[0] = 1
+		d0[self.lx] = 1
+		A = diags([d0,d_1,d1],[0,-1,1],shape=(self.lx+1,self.lx+1),format='csr')
+		b = self.u_1
+		b[0] = b[-1] = 0.
+		self.u[:] = spsolve(A,b)
+		self.u[self.x_min] = self.bc_xmin
+		self.u[self.x_max] = self.bc_xmax
+		
+	#forward difference algorithm in 1 dimension
+	def fd_1d(self):
+		for step in range(int(self.steps_per_second)):
+				for i in range(1,self.lx):
+					self.u[i] = self.u_1[i] + self.r *(self.u_1[i-1] - 2.*self.u_1[i] + self.u_1[i+1])
+				self.u_1 = self.u
+	#forward difference algorithm in 2d
+	def fd_2d(self):
+		for step in range(int(self.steps_per_second)+1):
+				for i in range(1,self.lx):
+					for j in range(1,self.ly):
+						self.u[i,j] =  self.u_1[i,j]+self.r*( self.u_1[i,j-1] + self.u_1[i-1,j] - 4*self.u_1[i,j] + self.u_1[i+1,j] + self.u_1[i,j+1] )
+				self.u_1 = self.u
+	#update boundary conditions (called when slider changed)
+	def update_bc(self):
+		if not self.is2d:
+			self.u[self.x_min] = self.u_1[self.x_min] = self.bc_xmin
+			self.u[self.x_max] = self.u_1[self.x_max] = self.bc_xmax
+		else:
+			for i in range(self.ly+1):
+				self.u[self.x_min,i] = self.bc_xmin
+				self.u_1[self.x_min,i] = self.bc_xmin
+				self.u[self.x_max,i] = self.bc_xmax
+				self.u_1[self.x_max,i] = self.bc_xmax
+			for i in range(self.lx+1):
+				self.u[i,self.y_min] = self.bc_ymin
+				self.u_1[i,self.y_min] = self.bc_ymin
+				self.u[i,self.y_max] = self.bc_ymax
+				self.u_1[i,self.y_max] = self.bc_ymax
+	#forward difference algorithm with sparse matrices			
+	
+	def fd_sparse(self):
+		if not self.is2d:
+			self.tridiag = self.get_tridiagonal()
+			bc_array = zeros(self.lx)
+			bc_array[0] = self.bc_xmin
+			bc_array[-1] = self.bc_xmax
+			self.u = self.u_1 + self.r * self.tridiag* self.u_1
+			self.u[self.x_min] = self.bc_xmin
+			self.u[self.x_max] = self.bc_xmax
+			self.u_1[:] = self.u
+		else:
+			self.dirichlet = self.get_dirichlet()
+			print(self.dirichlet.shape)
+			print(self.u.shape)
+			
+			#prepare for matrix multiplication
+			u_temp = []
+			for i in range(self.lx - 2):
+				u_temp = concatenate((u_temp,self.u_1[i+1][1:self.lx-1]))
+			
+			u_temp = u_temp + self.r * self.dirichlet * self.u_1 
+
+			#save u_temp to u
+			for i  in range(self.lx-2):
+				self.u[i+1][1:self.lx-1] = u_temp[i*(self.lx-2):(i+1)*(self.lx-2)]
+			
+			#reset bc's 
+			self.u[self.x_min,:] = self.bc_xmin
+			self.u[self.x_max,:] = self.bc_xmax
+			self.u[:,self.y_min] = self.bc_ymin
+			self.u[:,self.y_max] = self.bc_ymax
+			#save u_1
+			self.u_1 = self.u
+	
+	
+		
+	#returns tridiagonal matrix for sparse fd implementation in 1d		
+	def get_tridiagonal(self):
+		d0  = -2 * ones(self.lx+1)
+		d_1 = ones(self.lx+1)
+		d1 = ones(self.lx+1)
+		A = diags(diagonals=[d0, d_1, d1],offsets=[0, -1, 1], shape=(self.lx+1, self.lx+1),format='csr')
+		return(A)
+	#failed attempt at sparse df implementaiton in 2d	
+ 	def get_dirichlet(self):
+ 		A = B = self.get_tridiagonal()
+# # 		I = eye(self.lx) #identity matrix
+# # 		T = kron(A,I) + kron(I,A) #kronecker product
+# 		d_2 = ones(self.lx+1)
+# 		
+# 		d0 = zeros(self.lx+1)
+# 	
+# 		return(T)
+		
+	#called when user changes dimension with  slider
+	def resize(self):
+		print("resizing")
+		#reset dimensions
+		if not self.is2d:
+			print("resizing 1d")
+			self.bounds = [self.x_min,self.x_max]
+			self.lx = self.x_max - self.x_min
+			self.x, self.dx = linspace(self.x_min,self.x_max,self.lx+1,retstep = True)
+			self.dt = self.r * self.dx ** 2
+			
+			self.u = resize(self.u,(self.lx+1))
+			self.u_1 = resize(self.u_1,(self.lx+1))
+			if self.is_sparse:
+				self.tridiag = self.get_tridiagonal()
+		else:
+			self.bounds = [self.x_min,self.x_max,self.y_min,self.y_max]
+			self.lx = self.x_max - self.x_min
+			self.ly = self.y_max - self.y_min
+			self.x, self.dx = linspace(self.x_min,self.x_max,self.lx+1,retstep = True)
+			self.y, self.dy = linspace(self.y_min,self.y_max,self.ly+1,retstep = True)
+			self.X, self.Y = meshgrid(self.x,self.y)
+			self.X = transpose(self.X)
+			self.Y = transpose(self.Y)
+			self.u = resize(self.u,(self.x_max+1, self.y_max+1))
+			self.u_1 = resize(self.u_1,(self.x_max+1, self.y_max+1))
+			if self.is_sparse:
+				self.dirichlet = self.get_dirichlet()
+			
+				

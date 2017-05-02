@@ -4,6 +4,7 @@ Created on Apr 30, 2017
 @author: aj
 '''
 from matplotlib.widgets import Slider
+from matplotlib import pyplot
 class sliders(object):
 	'''
 	classdocs
@@ -22,6 +23,13 @@ class sliders(object):
 		ht = 0.03
 		
 		self.bc_sliders = []
+		
+		
+		#create steps per second slider
+		self.ax_rate = fig.add_axes([self.get_x(),self.get_y(),wid,ht])
+		self.slider_rate = Slider(self.ax_rate,'Steps per Iteration.',0.,100.,valinit = 1)
+		self.slider_rate.on_changed(self.update_rate)
+		
 		#create bc sliders
 		self.ax_bc_xmin = fig.add_axes([self.get_x(),self.get_y(),wid,ht])
 		self.slider_bc_xmin = Slider(self.ax_bc_xmin,'Left B.C.',0.,10.,valinit = 0.)
@@ -54,8 +62,16 @@ class sliders(object):
 # 			self.ax_ymax = fig.add_axes([self.get_x(),self.get_y(),wid,ht])
 # 			self.slider_ymax = Slider(self.ax_ymax,'Y length',0,100,valinit=self.m.y_max)
 # 			self.dim_sliders.append(self.slider_ymax)
-# 		for s in self.dim_sliders:
-# 			s.on_changed(self.update_dims)
+		for s in self.dim_sliders:
+			s.on_changed(self.update_dims)
+		
+# 		self.ax_timer = fig.add_axes([self.get_x(), self.get_y(), wid, ht])
+# 		self.text_box = TextBox(self.ax_timer,'Second per Step',str(self.m.dur))
+		self.m.timer_text = pyplot.figtext(self.get_x(),0.95,"Seconds per Step: " + str(self.m.dur))
+		
+		
+	def update_rate(self,event):
+		self.m.steps_per_second = int(self.slider_rate.val)
 		
 	def update_dims(self, event):
 		self.m.x_max = int(self.slider_xmax.val)

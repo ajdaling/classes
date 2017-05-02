@@ -1,0 +1,22 @@
+'''
+Created on May 1, 2017
+
+@author: aj
+'''
+from matplotlib import animation as anim, pyplot, cm
+from heat_model import heat_model
+
+
+def add_fd_basic_1d(model_id, fig, models):
+	#create basic 1d model
+	basic_1d = heat_model([0,19],model_id, fig)
+	ax_basic_1d = fig.add_subplot(121)
+	ax_basic_1d.set_xlabel('x')
+	ax_basic_1d.set_xlim(0.,basic_1d.x_max)
+	ax_basic_1d.set_ylim(0,10)
+	ax_basic_1d.set_ylabel('u(x,t)')
+	ax_basic_1d.autoscale(enable=True,axis='both'tight=True)
+	line_basic_1d, = ax_basic_1d.plot([],[],lw=4)
+	txt = pyplot.text(0.05,0.5,str(basic_1d.dur),fontsize=12)
+	models["lines"].append({"model":basic_1d,"line":line_basic_1d,"text":txt})
+	
