@@ -1,0 +1,7 @@
+'''
+Created on May 2, 2017
+
+@author: aj
+'''
+s = "Enter option\nline1\nlin2"
+input = input(s)

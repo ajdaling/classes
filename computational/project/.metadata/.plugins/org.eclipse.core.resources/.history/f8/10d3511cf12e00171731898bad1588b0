@@ -1,0 +1,69 @@
+'''
+Created on May 1, 2017
+
+@author: aj
+'''
+from matplotlib import animation as anim, pyplot, cm, text
+from heat_model import heat_model
+from mpl_toolkits.mplot3d import Axes3D
+
+
+def add_fd_basic_1d(model_id, fig, models, num_models):
+	#create basic fd 1d model
+	model_id += 1
+	m = heat_model([0,19],model_id, fig)
+	ax = fig.add_subplot(1,num_models,model_id)
+	ax.set_xlabel('x')
+	ax.set_ylabel('u(x,t)')
+	ax.set_xlim(0.,m.x_max)
+	ax.set_ylim(0,10)
+	line, = ax.plot(m.x,m.u,lw=4)
+	models["lines"].append({"axis":ax,"model":m,"line":line})
+	
+def add_fd_basic_2d(model_id,fig,models, num_models):
+	m = heat_model([0,19,0,19], model_id, fig)
+	ax = fig.add_subplot(1,num_models,model_id,projection='3d')
+	ax.set_xlabel('x')
+	ax.set_ylabel('y')
+	ax.set_zlabel('u(x,y,t)')
+	surf = ax.plot_surface(m.X,m.Y,m.u,rstride=1,cstride=1,cmap=cm.autumn,linewidth=1,antialiased=False)
+	models["surfs"].append({"axis":ax,"model":m,"surf":surf})
+	
+def add_fd_sparse_1d(model_id,fig,models,num_models):
+	#create sparse fd 1d model
+	model_id += 1
+	m = heat_model([0,19],model_id, fig, sparse=True)
+	ax = fig.add_subplot(1,num_models,model_id)
+	ax.set_xlabel('x')
+	ax.set_xlim(0.,m.x_max)
+	ax.set_ylim(0,10)
+	ax.set_ylabel('u(x,t)')
+	line, = ax.plot(m.x,m.u,lw=4)
+	models["lines"].append({"axis":ax,"model":m,"line":line})
+
+def add_fd_sparse_2d(model_id,fig,models,num_models):
+	m = heat_model([0,19,0,19], model_id, fig, sparse=True)
+	ax = fig.add_subplot(1,num_models,model_id,projection='3d')
+	ax.set_xlabel('x')
+	ax.set_ylabel('y')
+	ax.set_zlabel('u(x,y,t)')
+	surf = ax.plot_surface(m.X,m.Y,m.u,rstride=1,cstride=1,cmap=cm.autumn,linewidth=1,antialiased=False)
+	models["surfs"].append({"axis":ax,"model":m,"surf":surf})
+
+def add_bd_basic_1d(model_id,fig,models,num_models,method="bd"):
+	#create basic bd 1d model
+	model_id += 1
+	m = heat_model([0,19],model_id, fig)
+	ax = fig.add_subplot(1,num_models,model_id)
+	ax.set_xlabel('x')
+	ax.set_ylabel('u(x,t)')
+	ax.set_xlim(0.,m.x_max)
+	ax.set_ylim(0,10)
+	line, = ax.plot(m.x,m.u,lw=4)
+	models["lines"].append({"axis":ax,"model":m,"line":line})
+	
+	
+	
+	
+	
+	

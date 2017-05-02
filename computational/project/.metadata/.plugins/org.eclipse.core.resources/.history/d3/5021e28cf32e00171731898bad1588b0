@@ -1,0 +1,12 @@
+'''
+Created on May 2, 2017
+
+@author: aj
+'''
+
+import sys
+import sys.argv
+s = "Enter option\nline1\nlin2\n"
+input = raw_input(s)
+
+print("user entered: " + input)

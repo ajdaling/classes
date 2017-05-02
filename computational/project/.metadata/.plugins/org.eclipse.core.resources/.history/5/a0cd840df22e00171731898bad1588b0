@@ -1,0 +1,77 @@
+'''
+Created on Apr 30, 2017
+
+@author: aj
+'''
+from matplotlib import animation as anim, pyplot, cm
+from matplotlib.widgets import Slider, Button, RadioButtons
+from numpy import e, linspace, zeros, arange, meshgrid, array
+from scipy.sparse import spdiags
+from mpl_toolkits.mplot3d import Axes3D
+from heat_model import heat_model
+
+from models import *
+from heat_model import heat_model
+
+
+
+
+
+fig = pyplot.figure()
+model_id = 1
+num_models = 2
+models = {"lines":[],"surfs":[]}
+
+add_fd_basic_1d(model_id,fig,models, num_models)
+model_id += 1
+add_fd_basic_2d(model_id,fig,models, num_models)
+# add_fd_sparse_1d(model_id,fig,models,num_models)
+# add_bd_basic_1d(model_id,fig,models,num_models)
+
+pyplot.subplots_adjust(left = 0.1, bottom = .4)
+
+time = 0
+steps = 1
+
+
+def update(garbage):
+	
+	for lin in models["lines"]:
+		m = lin["model"]
+		m.time_step()
+		lin["axis"].clear()
+		lin["axis"].set_xlim(m.x_min,m.x_max)
+		lin["axis"].set_ylim(0,10.)
+		lin["axis"].set_xlabel('x')
+		lin["axis"].set_ylabel('u(x,t)')
+		lin["line"], = lin["axis"].plot(m.x,m.u,lw=4)
+	
+	for surf in models["surfs"]:
+		m = surf["model"]
+		m.time_step()
+		surf["axis"].clear()
+		surf["axis"].set_xlabel('x')
+		surf["axis"].set_ylabel('y')
+		surf["axis"].set_zlabel('u(x,y,t)')
+		surf["surf"] = surf["axis"].plot_surface(m.X,m.Y,m.u,rstride=1,cstride=1,cmap=cm.autumn,linewidth=1,antialiased=False)
+		
+	
+	#clear surfaces
+# 	ax_basic_2d.clear()
+#	ax_sparse_2d.clear()
+# 	ax_sparse_1d.set_xlim(0,sparse_1d.x_max)
+# 	sparse_1d.time_step(steps)
+# 	basic_2d.time_step(steps)
+# 	line_sparse_1d.set_data(sparse_1d.x,sparse_1d.u)
+# 	bd_1d.time_step(steps_per_second)
+# 	line_bd_1d.set_data(bd_1d.x,bd_1d.u)
+# 	bd_1d_sparse.time_step()
+# 	line_bd_1d_sparse.set_data(bd_1d_sparse.x,bd_1d_sparse.u)
+# 	sparse_2d.time_step(steps_per_second)
+# 	surf1 = ax2.plot_surface(m2.X,m2.Y,m2.u,rstride=1,cstride=1,cmap=cm.autumn,linewidth=1,antialiased=False)
+# 	surf_basic_2d = ax_sparse_2d.plot_surface(sparse_2d.X,sparse_2d.Y,sparse_2d.u,rstride=1,cstride=1,cmap=cm.autumn,linewidth=1,antialiased=False)
+
+
+# frames = int(bd_1d_sparse.t_max/bd_1d_sparse.dt),
+anm = anim.FuncAnimation(fig, update , interval = 10, blit = False, repeat = False)
+pyplot.show()
